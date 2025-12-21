@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MR Motorsport - Lenzokart Deutschland
+
+Official website for MR Motorsport, the authorized Lenzokart importer for Germany. Built with modern web technologies for optimal performance and user experience.
+
+## Overview
+
+MR Motorsport is the official German distributor for Lenzokart racing chassis. This website serves as the primary digital presence, showcasing products, services, team information, and news related to professional karting.
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Deployment**: Vercel (recommended)
+
+## Features
+
+- Responsive design optimized for all devices
+- Modern glassmorphism UI with light theme
+- Smooth page transitions and micro-interactions
+- SEO optimized structure
+- Contact form integration
+- News and events management
+- Product showcase for Lenzo Chassis lineup
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── kontakt/           # Contact page
+│   ├── lenzo-chassis/     # Products page
+│   ├── motoren-service/   # Services page
+│   ├── news/              # News listing and articles
+│   ├── team/              # Team page
+│   ├── impressum/         # Legal notice
+│   ├── datenschutz/       # Privacy policy
+│   ├── globals.css        # Global styles and design system
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Homepage
+├── components/
+│   ├── layout/            # Navbar, Footer
+│   ├── ui/                # Reusable UI components
+│   └── icons/             # SVG icon components
+└── lib/                   # Utilities and helpers
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.x or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/eltahawyomar001-eng/Darmstadt.git
+cd Darmstadt
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Create production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project uses a custom design system with CSS variables for consistent theming:
 
-## Deploy on Vercel
+- **Primary Color**: Teal (#0d9488)
+- **Typography**: SF Pro Display / System fonts
+- **Spacing**: 4px base unit
+- **Border Radius**: Rounded corners (8px - 24px)
+- **Shadows**: Subtle elevation system
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Vercel (Recommended)
+
+1. Connect your GitHub repository to Vercel
+2. Configure build settings (auto-detected for Next.js)
+3. Deploy
+
+### Manual Deployment
+
+```bash
+npm run build
+npm run start
+```
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+This project is proprietary software developed for MR Motorsport.
+
+## Contact
+
+MR Motorsport  
+Darmstadt, Germany  
+info@mr-motorsport.de
