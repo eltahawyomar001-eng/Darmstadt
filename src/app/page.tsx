@@ -4,46 +4,46 @@ import Image from 'next/image';
 // Icons matching Figma exactly
 const ChassisIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 8L4 16H28L24 8H8Z" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M4 16V24H28V16" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="8" cy="24" r="2" stroke="#0C0800" strokeWidth="1.5"/>
-    <circle cx="24" cy="24" r="2" stroke="#0C0800" strokeWidth="1.5"/>
+    <path d="M8 8L4 16H28L24 8H8Z" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M4 16V24H28V16" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="8" cy="24" r="2" stroke="#0C0800" strokeWidth="1.5" />
+    <circle cx="24" cy="24" r="2" stroke="#0C0800" strokeWidth="1.5" />
   </svg>
 );
 
 const TuningIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 4V8M16 24V28M8 16H4M28 16H24" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round"/>
-    <circle cx="16" cy="16" r="6" stroke="#0C0800" strokeWidth="1.5"/>
+    <path d="M16 4V8M16 24V28M8 16H4M28 16H24" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="16" cy="16" r="6" stroke="#0C0800" strokeWidth="1.5" />
   </svg>
 );
 
 const RentalIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="4" y="8" width="24" height="16" rx="2" stroke="#0C0800" strokeWidth="1.5"/>
-    <path d="M4 14H28" stroke="#0C0800" strokeWidth="1.5"/>
-    <circle cx="10" cy="20" r="2" fill="#0C0800"/>
+    <rect x="4" y="8" width="24" height="16" rx="2" stroke="#0C0800" strokeWidth="1.5" />
+    <path d="M4 14H28" stroke="#0C0800" strokeWidth="1.5" />
+    <circle cx="10" cy="20" r="2" fill="#0C0800" />
   </svg>
 );
 
 const SupportIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="#0C0800" strokeWidth="1.5" strokeLinejoin="round"/>
-    <path d="M16 14V18M16 22V22.01" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="#0C0800" strokeWidth="1.5" strokeLinejoin="round" />
+    <path d="M16 14V18M16 22V22.01" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
 const ImagePlaceholder = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="6" y="10" width="36" height="28" rx="2" stroke="#999" strokeWidth="1.5"/>
-    <circle cx="16" cy="20" r="3" stroke="#999" strokeWidth="1.5"/>
-    <path d="M6 32L16 22L24 30L32 20L42 32" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <rect x="6" y="10" width="36" height="28" rx="2" stroke="#999" strokeWidth="1.5" />
+    <circle cx="16" cy="20" r="3" stroke="#999" strokeWidth="1.5" />
+    <path d="M6 32L16 22L24 30L32 20L42 32" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -159,19 +159,16 @@ export default function HomePage() {
                 ))}
               </div>
               <div className="features-links">
-                <Link href="/mehr" className="link-arrow">
+                <Link href="/chassis" className="link-arrow">
                   Mehr erfahren <ArrowRight />
-                </Link>
-                <Link href="/pfeil" className="link-arrow">
-                  Pfeil <ArrowRight />
                 </Link>
               </div>
             </div>
             <div className="features-image">
-              <Image 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop" 
-                alt="Kart Racing" 
-                width={600} 
+              <Image
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop"
+                alt="Kart Racing"
+                width={600}
                 height={500}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -192,7 +189,7 @@ export default function HomePage() {
             {news.map((item, index) => (
               <article key={item.title} className="news-card">
                 <div className="news-image">
-                  <Image 
+                  <Image
                     src={`https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&q=${80 - index * 10}`}
                     alt={item.title}
                     width={400}
@@ -224,36 +221,15 @@ export default function HomePage() {
       <section className="events">
         <div className="container">
           <div className="events-header">
-            <span className="section-label">Tagline</span>
+            <span className="section-label">Rennkalender</span>
             <h2 className="section-title">Events</h2>
-            <p className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-          </div>
-          <div className="events-tabs">
-            <button className="tab active">View all</button>
-            <button className="tab">Category one</button>
-            <button className="tab">Category two</button>
-            <button className="tab">Category three</button>
-            <button className="tab">Category four</button>
+            <p className="section-subtitle">Unsere kommenden Rennveranstaltungen und Termine</p>
           </div>
           <div className="events-list">
-            {events.map((event) => (
-              <div key={event.title} className="event-row">
-                <div className="event-date-box">
-                  <span className="event-weekday">{event.weekday}</span>
-                  <span className="event-day">{event.day}</span>
-                  <span className="event-month">{event.month}</span>
-                </div>
-                <div className="event-info">
-                  <div className="event-title-row">
-                    <h3 className="event-name">{event.title}</h3>
-                    {event.badge && <span className="event-badge">{event.badge}</span>}
-                  </div>
-                  <p className="event-location">{event.location}</p>
-                  <p className="event-sublocation">{event.sublocation}</p>
-                </div>
-                <Link href="#" className="event-link">Termin ansehen</Link>
-              </div>
-            ))}
+            {/* Event calendar will be populated later */}
+            <div className="events-empty">
+              <p>Veranstaltungen werden bald bekannt gegeben.</p>
+            </div>
           </div>
         </div>
       </section>

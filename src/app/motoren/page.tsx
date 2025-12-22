@@ -1,219 +1,280 @@
 import Link from 'next/link';
 
 const ImagePlaceholder = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="6" y="10" width="36" height="28" rx="2" stroke="#999" strokeWidth="1.5"/>
-    <circle cx="16" cy="20" r="3" stroke="#999" strokeWidth="1.5"/>
-    <path d="M6 32L16 22L24 30L32 20L42 32" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="8" y="12" width="48" height="40" rx="4"/>
+    <circle cx="22" cy="26" r="4"/>
+    <path d="M8 44L20 32L32 44L44 28L56 44"/>
   </svg>
 );
 
-const ArrowRight = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+const ChevronIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M19 9L12 16L5 9" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
-const PlusIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 4V16M4 10H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+const WrenchIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M38 10L28 20M20 28L10 38M38 10C38 10 42 14 38 18C34 22 30 18 30 18M10 38C10 38 6 34 10 30C14 26 18 30 18 30" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
-const CheckIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 8L6 11L13 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+const GaugeIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M8 32C8 20 16 12 24 12C32 12 40 20 40 32M24 24L30 30M12 32H16M32 32H36M20 20L22 22M26 20L28 22" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const CogIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="24" cy="24" r="6"/>
+    <path d="M24 8V12M24 36V40M40 24H36M12 24H8M35.3 12.7L32.5 15.5M15.5 32.5L12.7 35.3M35.3 35.3L32.5 32.5M15.5 15.5L12.7 12.7" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
 export default function MotorenPage() {
-  const motors = [
-    { name: 'IAME X30', category: 'Senior', image: null },
-    { name: 'Rotax Max', category: 'Senior', image: null },
-    { name: 'IAME X30', category: 'Junior', image: null },
-    { name: 'Rotax Mini', category: 'Mini', image: null },
-  ];
-
-  const services = [
-    {
-      title: 'Motortuning',
-      description: 'Professionelles Tuning für maximale Performance.',
-      features: ['Leistungsoptimierung', 'Abstimmung', 'Dokumentation'],
-    },
-    {
-      title: 'Wartung & Service',
-      description: 'Regelmäßige Wartung für Zuverlässigkeit.',
-      features: ['Inspektion', 'Verschleißteile', 'Reinigung'],
-    },
-  ];
-
-  const steps = [
-    { number: '01', title: 'Kontaktaufnahme', description: 'Nimm Kontakt mit uns auf und schildere dein Anliegen.' },
-    { number: '02', title: 'Beratungsgespräch', description: 'Wir besprechen deine Anforderungen und erstellen ein Angebot.' },
-    { number: '03', title: 'Terminvereinbarung', description: 'Wir vereinbaren einen passenden Termin für den Service.' },
-    { number: '04', title: 'Durchführung', description: 'Professionelle Durchführung mit Qualitätskontrolle.' },
-  ];
-
-  const faqs = [
-    { question: 'Wie lange dauert ein Motorservice?', answer: 'Je nach Umfang 1-3 Tage.' },
-    { question: 'Welche Motoren könnt ihr warten?', answer: 'IAME, Rotax, Vortex und weitere.' },
-    { question: 'Bietet ihr auch Notfall-Service?', answer: 'Ja, auf Anfrage auch kurzfristig.' },
-    { question: 'Kann ich Ersatzteile auch einzeln kaufen?', answer: 'Ja, wir haben ein breites Sortiment.' },
-  ];
-
   return (
     <>
       {/* Hero Section */}
       <section className="page-hero">
         <div className="container">
-          <div className="page-hero-breadcrumb">
-            <Link href="/">Lenzokart</Link>
-            <span>/</span>
-            <span>Motoren und Service</span>
-          </div>
-          <h1 className="page-hero-title">Motoren und service</h1>
-          <p className="page-hero-subtitle">
-            Entdecke unser Angebot an Rennmotoren und professionellem Motorservice.
-          </p>
-        </div>
-      </section>
-
-      {/* Hero Image */}
-      <section className="page-hero-image">
-        <div className="container">
-          <div className="page-hero-image-wrapper">
-            <ImagePlaceholder />
+          <div className="page-hero-content">
+            <h1 className="page-hero-title">Motoren</h1>
+            <p className="page-hero-subtitle">
+              Hochleistungsmotoren von Iame – zuverlässig, leistungsstark und auf Sieg programmiert. Wir bieten dir Verkauf, Wartung und Performance-Tuning aus einer Hand.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Motors Section */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <div>
-              <span className="section-label">Motoren</span>
-              <h2 className="section-title">Unsere Motoren</h2>
-              <p className="section-text">Hochwertige Rennmotoren für alle Klassen.</p>
-            </div>
-          </div>
-          <div className="four-col-grid">
-            {motors.map((motor, index) => (
-              <Link href={`/motoren/${index}`} key={index} className="product-card">
-                <div className="product-card-image">
-                  <ImagePlaceholder />
-                </div>
-                <div className="product-card-content">
-                  <span className="product-card-category">{motor.category}</span>
-                  <h3 className="product-card-title">{motor.name}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Service Section */}
-      <section className="section section-gray">
-        <div className="container">
-          <div className="two-col-grid">
-            <div className="two-col-image large">
-              <ImagePlaceholder />
-            </div>
-            <div className="two-col-content">
-              <span className="section-label">Service</span>
-              <h2 className="section-title">Lenzokart Chassis für Miniklasse</h2>
-              <p className="section-text">
-                Unser professioneller Motorservice bietet alles von der Wartung bis zum Tuning. Vertraue auf unsere langjährige Erfahrung.
-              </p>
-              <div className="section-buttons">
-                <Link href="/service" className="btn-primary">Service anfragen</Link>
-                <Link href="/kontakt" className="btn-outline-dark">Kontakt</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Steps Section */}
-      <section className="section">
+      {/* Unsere Motoren Carousel */}
+      <section className="section-white">
         <div className="container">
           <div className="section-header-center">
-            <span className="section-label">Ablauf</span>
-            <h2 className="section-title">Drei Schritte zur Miete</h2>
-            <p className="section-text">So einfach geht es zu deinem Motorservice.</p>
+            <span className="section-label">Iame</span>
+            <h2 className="section-heading">Unsere Motoren im Überblick</h2>
+            <p className="section-text">
+              Jeder Motor wird von uns geprüft, eingestellt und rennfertig ausgeliefert.
+            </p>
+          </div>
+          <div className="engine-carousel">
+            <div className="engine-cards">
+              <div className="engine-card">
+                <div className="engine-image">
+                  <div className="image-placeholder">
+                    <ImagePlaceholder />
+                  </div>
+                </div>
+                <div className="engine-content">
+                  <h3 className="engine-name">Iame X30</h3>
+                  <p className="engine-desc">
+                    Der meistgefahrene Motor im deutschen und internationalen Kartsport. Zuverlässig, kraftvoll und wartungsarm.
+                  </p>
+                  <ul className="engine-specs">
+                    <li>Leistung: 30 PS</li>
+                    <li>Hubraum: 125ccm</li>
+                    <li>Gewicht: 11kg</li>
+                  </ul>
+                  <p className="engine-price">ab 3.490€</p>
+                </div>
+              </div>
+              <div className="engine-card">
+                <div className="engine-image">
+                  <div className="image-placeholder">
+                    <ImagePlaceholder />
+                  </div>
+                </div>
+                <div className="engine-content">
+                  <h3 className="engine-name">Iame KZ2</h3>
+                  <p className="engine-desc">
+                    Hochleistungsmotor mit Schaltgetriebe für Profis und ambitionierte Fahrer in der Schaltkart-Klasse.
+                  </p>
+                  <ul className="engine-specs">
+                    <li>Leistung: 48 PS</li>
+                    <li>Hubraum: 125ccm</li>
+                    <li>Gewicht: 14kg</li>
+                  </ul>
+                  <p className="engine-price">ab 5.990€</p>
+                </div>
+              </div>
+              <div className="engine-card">
+                <div className="engine-image">
+                  <div className="image-placeholder">
+                    <ImagePlaceholder />
+                  </div>
+                </div>
+                <div className="engine-content">
+                  <h3 className="engine-name">Iame Leopard</h3>
+                  <p className="engine-desc">
+                    Einsteigermotor für Junioren – ideal für den Start in den Rennsport mit starker Performance.
+                  </p>
+                  <ul className="engine-specs">
+                    <li>Leistung: 23 PS</li>
+                    <li>Hubraum: 125ccm</li>
+                    <li>Gewicht: 10kg</li>
+                  </ul>
+                  <p className="engine-price">ab 2.790€</p>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-controls">
+              <button className="carousel-btn" aria-label="Previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <button className="carousel-btn" aria-label="Next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div className="carousel-dots">
+              <span className="dot active"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="section-light-blue">
+        <div className="container">
+          <div className="section-header-center">
+            <span className="section-label">Rundum-Service</span>
+            <h2 className="section-heading">Was wir für dich tun</h2>
+            <p className="section-text">
+              Von der Auslieferung bis zum Rennwochenende – wir kümmern uns um deinen Motor.
+            </p>
+          </div>
+          <div className="services-grid">
+            <div className="service-card">
+              <div className="service-icon">
+                <WrenchIcon />
+              </div>
+              <h3 className="service-title">Wartung & Service</h3>
+              <p className="service-text">
+                Regelmäßige Inspektionen, Ölwechsel und technische Checks halten deinen Motor in Topform.
+              </p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">
+                <GaugeIcon />
+              </div>
+              <h3 className="service-title">Performance-Tuning</h3>
+              <p className="service-text">
+                Wir holen das Maximum aus deinem Motor heraus – legal, präzise und messbar.
+              </p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">
+                <CogIcon />
+              </div>
+              <h3 className="service-title">Motorenbau nach Maß</h3>
+              <p className="service-text">
+                Individuelle Anpassungen für spezielle Anforderungen und höchste Ansprüche.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Drei Schritte Section */}
+      <section className="section-white">
+        <div className="container">
+          <div className="section-header-center">
+            <span className="section-label">Einfach starten</span>
+            <h2 className="section-heading">In drei Schritten zu deinem Motor</h2>
           </div>
           <div className="steps-grid">
-            {steps.map((step) => (
-              <div key={step.number} className="step-card">
-                <span className="step-number">{step.number}</span>
-                <h3 className="step-title">{step.title}</h3>
-                <p className="step-text">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Service Cards */}
-      <section className="section section-gray">
-        <div className="container">
-          <div className="section-header-center">
-            <span className="section-label">Leistungen</span>
-            <h2 className="section-title">Motorservice</h2>
-          </div>
-          <div className="two-col-grid">
-            {services.map((service) => (
-              <div key={service.title} className="service-card-detailed">
-                <h3 className="service-card-title">{service.title}</h3>
-                <p className="service-card-text">{service.description}</p>
-                <ul className="service-card-features">
-                  {service.features.map((feature) => (
-                    <li key={feature}>
-                      <CheckIcon />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/anfrage" className="btn-outline-dark">Anfragen</Link>
-              </div>
-            ))}
+            <div className="step-card">
+              <div className="step-number">1</div>
+              <h3 className="step-title">Beratung</h3>
+              <p className="step-text">
+                Wir analysieren deine Anforderungen und empfehlen dir den passenden Motor.
+              </p>
+            </div>
+            <div className="step-card">
+              <div className="step-number">2</div>
+              <h3 className="step-title">Abstimmung</h3>
+              <p className="step-text">
+                Dein Motor wird individuell auf dein Chassis und deinen Fahrstil eingestellt.
+              </p>
+            </div>
+            <div className="step-card">
+              <div className="step-number">3</div>
+              <h3 className="step-title">Rennstart</h3>
+              <p className="step-text">
+                Du erhältst einen rennfertigen Motor und unser Team steht dir zur Seite.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="section">
+      <section className="section-light-blue">
         <div className="container">
-          <div className="section-header-center">
-            <h2 className="section-title">FAQ</h2>
-            <p className="section-text">Häufig gestellte Fragen zu unseren Services.</p>
-          </div>
-          <div className="faq-list">
-            {faqs.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <div className="faq-question">
-                  <span>{faq.question}</span>
-                  <PlusIcon />
+          <div className="faq-container">
+            <div className="section-header-center">
+              <span className="section-label">Häufige Fragen</span>
+              <h2 className="section-heading">FAQ zu Motoren</h2>
+            </div>
+            <div className="faq-list">
+              <details className="faq-item">
+                <summary className="faq-question">
+                  Welcher Motor ist für Anfänger geeignet?
+                  <ChevronIcon />
+                </summary>
+                <div className="faq-answer">
+                  Für Einsteiger empfehlen wir den Iame Leopard oder den X30. Beide sind zuverlässig, wartungsarm und bieten ein ausgewogenes Leistungsprofil für den Einstieg in den Rennsport.
                 </div>
-              </div>
-            ))}
+              </details>
+              <details className="faq-item">
+                <summary className="faq-question">
+                  Wie oft muss ein Motor gewartet werden?
+                  <ChevronIcon />
+                </summary>
+                <div className="faq-answer">
+                  Das hängt von der Nutzung ab. Bei regelmäßigen Renneinsätzen empfehlen wir alle 10-15 Betriebsstunden eine Inspektion. Wir erstellen dir gerne einen individuellen Wartungsplan.
+                </div>
+              </details>
+              <details className="faq-item">
+                <summary className="faq-question">
+                  Bietet ihr auch Tuning an?
+                  <ChevronIcon />
+                </summary>
+                <div className="faq-answer">
+                  Ja, wir bieten legales Performance-Tuning innerhalb der Reglement-Vorgaben an. Dadurch optimierst du das Leistungsprofil und die Langlebigkeit deines Motors.
+                </div>
+              </details>
+              <details className="faq-item">
+                <summary className="faq-question">
+                  Was ist im Kaufpreis enthalten?
+                  <ChevronIcon />
+                </summary>
+                <div className="faq-answer">
+                  Der Preis umfasst den Motor, eine Grundabstimmung und die Erstinspektion. Zusätzliche Leistungen wie individuelles Setup oder Trackside-Support können optional gebucht werden.
+                </div>
+              </details>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta-yellow">
+      {/* Motor anfragen CTA */}
+      <section className="section-dark">
         <div className="container">
-          <div className="cta-inline">
-            <div className="cta-inline-content">
-              <h3 className="cta-inline-title">Motor anfragen oder Service buchen</h3>
-              <p className="cta-inline-text">Kontaktiere uns für ein individuelles Angebot.</p>
-            </div>
-            <div className="cta-inline-buttons">
-              <Link href="/anfrage" className="btn-dark">Anfrage</Link>
-              <Link href="/kontakt" className="btn-outline-dark">Kontakt</Link>
-            </div>
+          <div className="cta-content-center">
+            <h2 className="section-heading text-white">Dein Motor wartet auf dich</h2>
+            <p className="section-text text-white">
+              Bereit für den nächsten Schritt? Kontaktiere uns und wir finden gemeinsam den perfekten Motor für deine Ziele.
+            </p>
+            <Link href="/kontakt" className="btn-white">
+              Kontakt
+            </Link>
           </div>
         </div>
       </section>

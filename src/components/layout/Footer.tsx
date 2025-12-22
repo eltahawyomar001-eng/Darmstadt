@@ -8,11 +8,11 @@ export default function Footer() {
         {/* Logo */}
         <div className="footer-logo">
           <Image 
-            src="/image-1766422658331.png" 
-            alt="Lenzokart" 
+            src="/image-1766422823019.png" 
+            alt="NB Motorsport Logo" 
             width={200} 
             height={60}
-            style={{ height: 'auto' }}
+            style={{ height: '48px', width: 'auto' }}
           />
         </div>
         

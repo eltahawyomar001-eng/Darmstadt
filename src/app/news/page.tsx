@@ -1,107 +1,56 @@
 import Link from 'next/link';
+import { getAllArticles } from '@/data/news';
 
 const ImagePlaceholder = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="6" y="10" width="36" height="28" rx="2" stroke="#999" strokeWidth="1.5"/>
-    <circle cx="16" cy="20" r="3" stroke="#999" strokeWidth="1.5"/>
-    <path d="M6 32L16 22L24 30L32 20L42 32" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const ArrowRight = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="8" y="12" width="48" height="40" rx="4" />
+    <circle cx="22" cy="26" r="4" />
+    <path d="M8 44L20 32L32 44L44 28L56 44" />
   </svg>
 );
 
 export default function NewsPage() {
-  const categories = ['Alle Beiträge', 'Rennberichte', 'Technik', 'Team'];
-
-  const featuredArticle = {
-    title: 'Sieg in Lonato',
-    excerpt: 'Unser Fahrer Max Mustermann gewinnt das Finale in Lonato und sichert sich wichtige Meisterschaftspunkte.',
-    category: 'Rennbericht',
-    date: '15. Dez 2024',
-    image: null,
-  };
-
-  const articles = [
-    { title: 'Neues Chassis für 2025', excerpt: 'Die neue Lenzokart-Generation ist da.', category: 'Technik', date: '12. Dez 2024' },
-    { title: 'Wintertraining in Spanien', excerpt: 'Vorbereitung auf die kommende Saison.', category: 'Team', date: '10. Dez 2024' },
-    { title: 'Deutscher Meistertitel!', excerpt: 'Erfolgreicher Saisonabschluss.', category: 'Rennbericht', date: '5. Dez 2024' },
-    { title: 'Neue Partnerschaft', excerpt: 'Strategische Zusammenarbeit angekündigt.', category: 'Team', date: '1. Dez 2024' },
-    { title: 'Motorenupdate X30', excerpt: 'Technische Verbesserungen für 2025.', category: 'Technik', date: '28. Nov 2024' },
-    { title: 'Podium in Genk', excerpt: 'Starke Leistung auf belgischem Asphalt.', category: 'Rennbericht', date: '25. Nov 2024' },
-  ];
+  const articles = getAllArticles();
 
   return (
     <>
       {/* Hero Section */}
       <section className="page-hero">
         <div className="container">
-          <div className="page-hero-breadcrumb">
-            <Link href="/">NB Motorsport</Link>
-            <span>/</span>
-            <span>News</span>
-          </div>
-          <h1 className="page-hero-title">News und Updates</h1>
-          <p className="page-hero-subtitle">
-            Aktuelle Nachrichten, Rennberichte und Neuigkeiten aus dem Team.
-          </p>
-        </div>
-      </section>
-
-      {/* Filter Tabs */}
-      <section className="section-sm">
-        <div className="container">
-          <div className="filter-tabs">
-            {categories.map((cat, index) => (
-              <button key={cat} className={`filter-tab ${index === 0 ? 'active' : ''}`}>
-                {cat}
-              </button>
-            ))}
+          <div className="page-hero-content">
+            <h1 className="page-hero-title">News & Updates</h1>
+            <p className="page-hero-subtitle">
+              Aktuelle Neuigkeiten, Erfolge und Einblicke aus der Welt von NB Motorsport.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Featured Article */}
-      <section className="section">
+      {/* News Grid Section */}
+      <section className="section-white">
         <div className="container">
-          <Link href="/news/sieg-in-lonato" className="featured-article">
-            <div className="featured-article-image">
-              <ImagePlaceholder />
-            </div>
-            <div className="featured-article-content">
-              <div className="article-meta">
-                <span className="article-category">{featuredArticle.category}</span>
-                <span className="article-date">{featuredArticle.date}</span>
-              </div>
-              <h2 className="featured-article-title">{featuredArticle.title}</h2>
-              <p className="featured-article-excerpt">{featuredArticle.excerpt}</p>
-              <span className="read-more">
-                Weiterlesen <ArrowRight />
-              </span>
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* Articles Grid */}
-      <section className="section">
-        <div className="container">
-          <div className="news-articles-grid">
-            {articles.map((article, index) => (
-              <Link href={`/news/${index}`} key={index} className="news-article-card">
+          <div className="news-grid">
+            {articles.map((article) => (
+              <Link href={`/news/${article.id}`} key={article.id} className="news-article-card">
                 <div className="news-article-image">
-                  <ImagePlaceholder />
+                  <div className="image-placeholder">
+                    <ImagePlaceholder />
+                  </div>
                 </div>
                 <div className="news-article-content">
-                  <div className="article-meta">
-                    <span className="article-category">{article.category}</span>
-                    <span className="article-date">{article.date}</span>
+                  <div className="news-meta">
+                    <span className="news-category">{article.category}</span>
+                    <span className="news-date">
+                      {new Date(article.date).toLocaleDateString('de-DE', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </span>
                   </div>
-                  <h3 className="news-article-title">{article.title}</h3>
+                  <h2 className="news-article-title">{article.title}</h2>
                   <p className="news-article-excerpt">{article.excerpt}</p>
+                  <span className="news-read-more">Weiterlesen →</span>
                 </div>
               </Link>
             ))}
@@ -109,18 +58,17 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="cta-dark">
+      {/* Bleib informiert CTA */}
+      <section className="section-dark">
         <div className="container">
-          <div className="cta-content">
-            <h2 className="cta-title">Bleib informiert</h2>
-            <p className="cta-text">
-              Abonniere unseren Newsletter und verpasse keine Neuigkeiten.
+          <div className="cta-content-center">
+            <h2 className="section-heading text-white">Bleib informiert</h2>
+            <p className="section-text text-white">
+              Kontakt aufnehmen und immer aktuell bleiben
             </p>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Deine E-Mail-Adresse" className="newsletter-input" />
-              <button className="btn-primary">Abonnieren</button>
-            </div>
+            <Link href="/kontakt" className="btn-white">
+              Kontakt
+            </Link>
           </div>
         </div>
       </section>

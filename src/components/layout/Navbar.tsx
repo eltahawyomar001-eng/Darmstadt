@@ -1,24 +1,31 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import Logo from '../ui/Logo';
 
 const navLinks = [
   { href: '/', label: 'Startseite' },
   { href: '/chassis', label: 'Chassis' },
   { href: '/motoren', label: 'Motoren' },
-  { href: '/team', label: 'Rennteam' },
-  { href: '/mehr', label: 'Mehr', hasDropdown: true },
+];
+
+const moreLinks = [
+  { href: '/team', label: 'Team' },
+  { href: '/news', label: 'News' },
+  { href: '/events', label: 'Rennkalender' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsOpen(false);
+    setMoreOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -32,19 +39,23 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setMoreOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <>
       <header className="navbar">
         <div className="navbar-container">
           <Link href="/" className="navbar-logo">
-            <Image 
-              src="/image-1766422823019.png" 
-              alt="NB Motorsport" 
-              width={120} 
-              height={40}
-              priority
-              style={{ width: 'auto', height: '32px' }}
-            />
+            <Logo variant="light" showText={true} />
           </Link>
 
           <nav className="navbar-nav">
@@ -57,24 +68,49 @@ export default function Navbar() {
                   className={`navbar-link ${isActive ? 'active' : ''}`}
                 >
                   {link.label}
-                  {link.hasDropdown && (
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  )}
                 </Link>
               );
             })}
+            
+            {/* Mehr Dropdown */}
+            <div className="navbar-dropdown" ref={dropdownRef}>
+              <button
+                className={`navbar-link ${moreLinks.some(l => pathname === l.href) ? 'active' : ''}`}
+                onClick={() => setMoreOpen(!moreOpen)}
+                aria-expanded={moreOpen}
+              >
+                Mehr
+                <svg 
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 12 12" 
+                  fill="none"
+                  style={{ transform: moreOpen ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}
+                >
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              {moreOpen && (
+                <div className="navbar-dropdown-menu">
+                  {moreLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`navbar-dropdown-item ${pathname === link.href ? 'active' : ''}`}
+                      onClick={() => setMoreOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
-          <div className="navbar-buttons">
-            <Link href="/anmelden" className="navbar-btn-anmelden">
-              Anmelden
-            </Link>
-            <Link href="/anfrage" className="navbar-btn-anfrage">
-              Anfrage
-            </Link>
-          </div>
+          <Link href="/kontakt" className="navbar-cta">
+            Anfrage
+          </Link>
 
           <button
             className="navbar-mobile-toggle"
@@ -113,15 +149,24 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            {/* More links in mobile */}
+            {moreLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`mobile-menu-link ${isActive ? 'active' : ''}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
-          <div className="mobile-menu-buttons">
-            <Link href="/anmelden" className="mobile-menu-anmelden" onClick={() => setIsOpen(false)}>
-              Anmelden
-            </Link>
-            <Link href="/anfrage" className="mobile-menu-anfrage" onClick={() => setIsOpen(false)}>
-              Anfrage
-            </Link>
-          </div>
+          <Link href="/kontakt" className="mobile-menu-cta" onClick={() => setIsOpen(false)}>
+            Anfrage
+          </Link>
         </div>
       )}
     </>

@@ -1,199 +1,170 @@
 import Link from 'next/link';
 
 const ImagePlaceholder = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="6" y="10" width="36" height="28" rx="2" stroke="#999" strokeWidth="1.5"/>
-    <circle cx="16" cy="20" r="3" stroke="#999" strokeWidth="1.5"/>
-    <path d="M6 32L16 22L24 30L32 20L42 32" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="8" y="12" width="48" height="40" rx="4"/>
+    <circle cx="22" cy="26" r="4"/>
+    <path d="M8 44L20 32L32 44L44 28L56 44"/>
   </svg>
 );
 
-const FairnessIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 4L4 8V16C4 22.6274 9.37258 28 16 28C22.6274 28 28 22.6274 28 16V8L16 4Z" stroke="#0C0800" strokeWidth="1.5" strokeLinejoin="round"/>
-    <path d="M12 16L15 19L20 13" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+const HandshakeIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M16 24L8 16L12 12L20 20M32 24L40 16L36 12L28 20M16 24L24 32L32 24M24 32L20 36L16 40M24 32L28 36L32 40" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
-const CustomerIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 12C8 8.68629 10.6863 6 14 6H18C21.3137 6 24 8.68629 24 12V14C24 17.3137 21.3137 20 18 20H14C10.6863 20 8 17.3137 8 14V12Z" stroke="#0C0800" strokeWidth="1.5"/>
-    <path d="M12 26H20" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M16 20V26" stroke="#0C0800" strokeWidth="1.5"/>
+const PhoneIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M14 8C14 8 18 12 18 16C18 20 14 20 14 24C14 28 20 34 24 34C28 34 28 30 32 30C36 30 40 34 40 34M12 36L16 40M32 8L36 12" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
-const HungerIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 16L12 10L18 16L26 8" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M20 8H26V14" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const ArrowRight = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const ArrowLeft = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+const TrophyIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M12 8H36M12 8V16C12 20 16 24 24 24C32 24 36 20 36 16V8M12 8H8V16C8 18 10 20 12 20M36 8H40V16C40 18 38 20 36 20M24 24V32M20 32H28M18 40H30" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
 export default function TeamPage() {
-  const values = [
-    {
-      icon: <FairnessIcon />,
-      title: 'Fairness und Integrität',
-      description: 'Wir fahren sauber und erwarten das gleiche von unseren Fahrern.',
-    },
-    {
-      icon: <CustomerIcon />,
-      title: 'Kundenorientiert und erreichbar',
-      description: 'Deine Ziele sind unsere Ziele – wir arbeiten eng mit dir zusammen.',
-    },
-    {
-      icon: <HungerIcon />,
-      title: 'Hunger nach Erfolg',
-      description: 'Wir bringen deine Performance nach vorne, mit Leidenschaft und Präzision.',
-    },
-  ];
-
   return (
     <>
-      {/* Hero Section - Blue with breadcrumbs */}
+      {/* Hero Section */}
       <section className="page-hero">
         <div className="container">
-          <div className="page-hero-breadcrumb">
-            <Link href="/">NB Motorsport</Link>
-            <span>/</span>
-            <span>Rennteam</span>
-          </div>
-          <h1 className="page-hero-title">Unser Rennteam</h1>
-          <p className="page-hero-subtitle">
-            Wir sind mit unserem Kart-Rennteam im deutschen und internationalen Kartsport vertreten.
-          </p>
-        </div>
-      </section>
-
-      {/* Hero Image */}
-      <section className="page-hero-image">
-        <div className="container">
-          <div className="page-hero-image-wrapper">
-            <ImagePlaceholder />
+          <div className="page-hero-content">
+            <h1 className="page-hero-title">Unser Rennteam</h1>
+            <p className="page-hero-subtitle">
+              Wir sind mit unserem Kart-Rennteam im deutschen und internationalen Kartsport vertreten.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* About Section - Two columns */}
-      <section className="section">
+      {/* Wer wir sind Section */}
+      <section className="section-white">
         <div className="container">
-          <div className="two-col-grid">
-            <div className="two-col-image">
-              <ImagePlaceholder />
-            </div>
-            <div className="two-col-content">
-              <span className="section-label">Professionell</span>
-              <h2 className="section-title">Wer wir sind und was wir tun</h2>
-              <p className="section-text">
-                NB Motorsport ist ein engagiertes und professionelles Kart-Rennteam mit Einsatz auf internationalem Top-Niveau. Wir begleiten Nachwuchsfahrer und ambitionierte Kartfahrer durch alle Rennserien und führen sie an die Spitze.
-              </p>
-              <div className="section-buttons">
-                <Link href="/erfahren" className="btn-outline-dark">Erfahren</Link>
-                <Link href="#" className="link-with-arrows">
-                  <ArrowRight />
-                  <ArrowRight />
-                </Link>
+          <div className="two-col-layout">
+            <div className="image-side">
+              <div className="image-placeholder">
+                <ImagePlaceholder />
               </div>
             </div>
+            <div className="content-side">
+              <span className="section-label">Professional</span>
+              <h2 className="section-heading">Wer wir sind und was wir tun</h2>
+              <p className="section-text">
+                NB Motorsport ist ein engagiertes und professionelles Kart-Rennteam mit Einsatz auf nationalem und internationalem Top-Niveau. Wir begleiten Nachwuchsfahrer und ambitionierte Kartfahrer durch alle Rennserien und führen sie an die Spitze.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section - 3 cards */}
-      <section className="section section-gray">
+      {/* Das macht uns als Team besonders */}
+      <section className="section-light-blue">
         <div className="container">
           <div className="section-header-center">
             <span className="section-label">Charakter</span>
-            <h2 className="section-title">Das macht uns als Team besonders</h2>
+            <h2 className="section-heading">Das macht uns als Team besonders</h2>
             <p className="section-text">
               Wir sind klein, aber entschlossen. Jeder Fahrer erhält unsere volle Aufmerksamkeit und Unterstützung auf dem Weg nach oben.
             </p>
           </div>
-          <div className="three-col-grid">
-            {values.map((value) => (
-              <div key={value.title} className="value-card">
-                <div className="value-card-icon">{value.icon}</div>
-                <h3 className="value-card-title">{value.title}</h3>
-                <p className="value-card-text">{value.description}</p>
+          <div className="values-grid">
+            <div className="value-card">
+              <div className="value-icon">
+                <HandshakeIcon />
               </div>
-            ))}
-          </div>
-          <div className="section-buttons-center">
-            <Link href="/mehr" className="btn-outline-dark">Mehr erfahren</Link>
-            <Link href="#" className="link-with-arrows">
-              <ArrowRight />
-              <ArrowRight />
-            </Link>
+              <h3 className="value-title">Fairness und Integrität</h3>
+              <p className="value-text">
+                Wir fahren sauber und erweisen das gleiche von unseren Fahrern.
+              </p>
+            </div>
+            <div className="value-card">
+              <div className="value-icon">
+                <PhoneIcon />
+              </div>
+              <h3 className="value-title">Kundenorientiert und erreichbar</h3>
+              <p className="value-text">
+                Deine Ziele sind unsere Ziele - wir arbeiten eng mit dir zusammen.
+              </p>
+            </div>
+            <div className="value-card">
+              <div className="value-icon">
+                <TrophyIcon />
+              </div>
+              <h3 className="value-title">Hunger nach Erfolg</h3>
+              <p className="value-text">
+                Wir bringen deine Performance nach vorne, mit Leidenschaft und Präzision.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="section">
+      {/* Auf der Strecke Section */}
+      <section className="section-white">
         <div className="container">
-          <div className="gallery-header">
-            <div>
-              <h2 className="section-title">Auf der Strecke</h2>
-              <p className="section-text">Momente, die zeigen, wer wir sind.</p>
+          <div className="carousel-section">
+            <div className="carousel-content">
+              <h2 className="section-heading">Auf der Strecke</h2>
+              <p className="section-text">Momente, die zählen, von wer wir sind</p>
             </div>
-            <div className="gallery-nav">
-              <button className="gallery-nav-btn">
-                <ArrowLeft />
-              </button>
-              <button className="gallery-nav-btn">
-                <ArrowRight />
-              </button>
+            <div className="carousel-wrapper">
+              <div className="carousel-images">
+                <div className="carousel-image">
+                  <div className="image-placeholder">
+                    <ImagePlaceholder />
+                  </div>
+                </div>
+                <div className="carousel-image">
+                  <div className="image-placeholder">
+                    <ImagePlaceholder />
+                  </div>
+                </div>
+                <div className="carousel-image">
+                  <div className="image-placeholder">
+                    <ImagePlaceholder />
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-controls">
+                <button className="carousel-btn" aria-label="Previous">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+                <button className="carousel-btn" aria-label="Next">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div className="carousel-dots">
+                <span className="dot active"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
             </div>
-          </div>
-          <div className="gallery-grid">
-            <div className="gallery-item">
-              <ImagePlaceholder />
-            </div>
-            <div className="gallery-item">
-              <ImagePlaceholder />
-            </div>
-            <div className="gallery-item">
-              <ImagePlaceholder />
-            </div>
-          </div>
-          <div className="gallery-dots">
-            <span className="dot active"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Dark with background image */}
-      <section className="cta-dark">
+      {/* Werde Teil unseres Teams */}
+      <section className="section-dark">
         <div className="container">
-          <div className="cta-content">
-            <h2 className="cta-title">Werde Teil unseres Teams</h2>
-            <p className="cta-text">
+          <div className="cta-content-center">
+            <h2 className="section-heading text-white">Werde Teil unseres Teams</h2>
+            <p className="section-text text-white">
               Interessiert an einem Platz im Team oder Trackside Support? Kontaktiere uns jetzt.
             </p>
-            <div className="cta-buttons">
-              <Link href="/rennbetreuung" className="btn-primary">Rennbetreuung anfragen</Link>
-              <Link href="/kontakt" className="btn-outline-white">Kontakt</Link>
-            </div>
+            <Link href="/kontakt" className="btn-white">
+              Kontakt
+            </Link>
           </div>
         </div>
       </section>
