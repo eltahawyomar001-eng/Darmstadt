@@ -12,10 +12,10 @@ export default function Logo({ variant = 'light', showText = true }: LogoProps) 
     <Image
       src="/image-1766422823019.png"
       alt="NB Motorsport Logo"
-      width={180}
-      height={50}
+      width={220}
+      height={60}
       style={{ 
-        height: '50px', 
+        height: '60px', 
         width: 'auto',
         objectFit: 'contain'
       }}
