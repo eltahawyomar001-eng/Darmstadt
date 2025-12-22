@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-// Icons
 const ImagePlaceholder = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="6" y="10" width="36" height="28" rx="2" stroke="#999" strokeWidth="1.5"/>
@@ -64,38 +63,48 @@ export default function TeamPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="team-hero">
+      {/* Hero Section - Blue with breadcrumbs */}
+      <section className="page-hero">
         <div className="container">
-          <div className="team-hero-content">
-            <h1 className="team-hero-title">Unser Rennteam</h1>
-            <p className="team-hero-subtitle">
-              Wir sind mit unserem Kart-Rennteam im deutschen und internationalen Kartsport vertreten.
-            </p>
-            <div className="team-hero-placeholder">
-              <ImagePlaceholder />
-            </div>
+          <div className="page-hero-breadcrumb">
+            <Link href="/">NB Motorsport</Link>
+            <span>/</span>
+            <span>Rennteam</span>
+          </div>
+          <h1 className="page-hero-title">Unser Rennteam</h1>
+          <p className="page-hero-subtitle">
+            Wir sind mit unserem Kart-Rennteam im deutschen und internationalen Kartsport vertreten.
+          </p>
+        </div>
+      </section>
+
+      {/* Hero Image */}
+      <section className="page-hero-image">
+        <div className="container">
+          <div className="page-hero-image-wrapper">
+            <ImagePlaceholder />
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="team-about">
+      {/* About Section - Two columns */}
+      <section className="section">
         <div className="container">
-          <div className="team-about-grid">
-            <div className="team-about-image">
+          <div className="two-col-grid">
+            <div className="two-col-image">
               <ImagePlaceholder />
             </div>
-            <div className="team-about-content">
-              <span className="team-label">Professionell</span>
-              <h2 className="team-about-title">Wer wir sind und was wir tun</h2>
-              <p className="team-about-text">
+            <div className="two-col-content">
+              <span className="section-label">Professionell</span>
+              <h2 className="section-title">Wer wir sind und was wir tun</h2>
+              <p className="section-text">
                 NB Motorsport ist ein engagiertes und professionelles Kart-Rennteam mit Einsatz auf internationalem Top-Niveau. Wir begleiten Nachwuchsfahrer und ambitionierte Kartfahrer durch alle Rennserien und führen sie an die Spitze.
               </p>
-              <div className="team-about-buttons">
+              <div className="section-buttons">
                 <Link href="/erfahren" className="btn-outline-dark">Erfahren</Link>
-                <Link href="#" className="link-arrow">
-                  <ArrowRight /> <ArrowRight />
+                <Link href="#" className="link-with-arrows">
+                  <ArrowRight />
+                  <ArrowRight />
                 </Link>
               </div>
             </div>
@@ -103,63 +112,64 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="team-values">
+      {/* Values Section - 3 cards */}
+      <section className="section section-gray">
         <div className="container">
-          <div className="team-values-header">
-            <span className="team-label">Charakter</span>
-            <h2 className="team-values-title">Das macht uns als Team besonders</h2>
-            <p className="team-values-subtitle">
+          <div className="section-header-center">
+            <span className="section-label">Charakter</span>
+            <h2 className="section-title">Das macht uns als Team besonders</h2>
+            <p className="section-text">
               Wir sind klein, aber entschlossen. Jeder Fahrer erhält unsere volle Aufmerksamkeit und Unterstützung auf dem Weg nach oben.
             </p>
           </div>
-          <div className="team-values-grid">
+          <div className="three-col-grid">
             {values.map((value) => (
-              <div key={value.title} className="team-value-card">
-                <div className="team-value-icon">{value.icon}</div>
-                <h3 className="team-value-title">{value.title}</h3>
-                <p className="team-value-text">{value.description}</p>
+              <div key={value.title} className="value-card">
+                <div className="value-card-icon">{value.icon}</div>
+                <h3 className="value-card-title">{value.title}</h3>
+                <p className="value-card-text">{value.description}</p>
               </div>
             ))}
           </div>
-          <div className="team-values-buttons">
+          <div className="section-buttons-center">
             <Link href="/mehr" className="btn-outline-dark">Mehr erfahren</Link>
-            <Link href="#" className="link-arrow">
-              <ArrowRight /> <ArrowRight />
+            <Link href="#" className="link-with-arrows">
+              <ArrowRight />
+              <ArrowRight />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section className="team-gallery">
+      <section className="section">
         <div className="container">
-          <div className="team-gallery-header">
-            <div className="team-gallery-text">
-              <h2 className="team-gallery-title">Auf der Strecke</h2>
-              <p className="team-gallery-subtitle">Momente, die zeigen, wer wir sind.</p>
+          <div className="gallery-header">
+            <div>
+              <h2 className="section-title">Auf der Strecke</h2>
+              <p className="section-text">Momente, die zeigen, wer wir sind.</p>
+            </div>
+            <div className="gallery-nav">
+              <button className="gallery-nav-btn">
+                <ArrowLeft />
+              </button>
+              <button className="gallery-nav-btn">
+                <ArrowRight />
+              </button>
             </div>
           </div>
-          <div className="team-gallery-grid">
-            <div className="team-gallery-item">
+          <div className="gallery-grid">
+            <div className="gallery-item">
               <ImagePlaceholder />
             </div>
-            <div className="team-gallery-item">
+            <div className="gallery-item">
               <ImagePlaceholder />
             </div>
-            <div className="team-gallery-item">
+            <div className="gallery-item">
               <ImagePlaceholder />
             </div>
           </div>
-          <div className="team-gallery-nav">
-            <button className="gallery-nav-btn">
-              <ArrowLeft />
-            </button>
-            <button className="gallery-nav-btn">
-              <ArrowRight />
-            </button>
-          </div>
-          <div className="team-gallery-dots">
+          <div className="gallery-dots">
             <span className="dot active"></span>
             <span className="dot"></span>
             <span className="dot"></span>
@@ -172,15 +182,15 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="team-cta">
+      {/* CTA Section - Dark with background image */}
+      <section className="cta-dark">
         <div className="container">
-          <div className="team-cta-content">
-            <h2 className="team-cta-title">Werde Teil unseres Teams</h2>
-            <p className="team-cta-text">
+          <div className="cta-content">
+            <h2 className="cta-title">Werde Teil unseres Teams</h2>
+            <p className="cta-text">
               Interessiert an einem Platz im Team oder Trackside Support? Kontaktiere uns jetzt.
             </p>
-            <div className="team-cta-buttons">
+            <div className="cta-buttons">
               <Link href="/rennbetreuung" className="btn-primary">Rennbetreuung anfragen</Link>
               <Link href="/kontakt" className="btn-outline-white">Kontakt</Link>
             </div>

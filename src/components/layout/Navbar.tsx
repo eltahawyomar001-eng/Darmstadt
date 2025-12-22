@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/', label: 'Startseite' },
   { href: '/chassis', label: 'Chassis' },
   { href: '/motoren', label: 'Motoren' },
+  { href: '/team', label: 'Rennteam' },
   { href: '/mehr', label: 'Mehr', hasDropdown: true },
 ];
 
