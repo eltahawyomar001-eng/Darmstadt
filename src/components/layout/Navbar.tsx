@@ -1,17 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import Logo from '../ui/Logo';
 
 const navLinks = [
   { href: '/', label: 'Startseite' },
-  { href: '/team', label: 'Team' },
-  { href: '/lenzo-chassis', label: 'Lenzo Chassis' },
-  { href: '/motoren-service', label: 'Motoren & Service' },
-  { href: '/news', label: 'News' },
+  { href: '/chassis', label: 'Chassis' },
+  { href: '/motoren', label: 'Motoren' },
+  { href: '/mehr', label: 'Mehr', hasDropdown: true },
 ];
 
 export default function Navbar() {
@@ -36,16 +34,21 @@ export default function Navbar() {
   return (
     <>
       <header className="navbar">
-        <div className="navbar-inner">
+        <div className="navbar-container">
           <Link href="/" className="navbar-logo">
-            <Logo size="sm" />
+            <Image 
+              src="/image-1766422823019.png" 
+              alt="NB Motorsport" 
+              width={120} 
+              height={40}
+              priority
+              style={{ width: 'auto', height: '32px' }}
+            />
           </Link>
 
-          <div className="navbar-links">
+          <nav className="navbar-nav">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href || 
-                (link.href !== '/' && pathname.startsWith(link.href));
-              
+              const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
@@ -53,42 +56,49 @@ export default function Navbar() {
                   className={`navbar-link ${isActive ? 'active' : ''}`}
                 >
                   {link.label}
+                  {link.hasDropdown && (
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  )}
                 </Link>
               );
             })}
-          </div>
+          </nav>
 
-          <div className="navbar-cta">
-            <Link href="/kontakt" className="btn btn-primary btn-sm">
-              Kontakt
+          <div className="navbar-buttons">
+            <Link href="/anmelden" className="navbar-btn-anmelden">
+              Anmelden
+            </Link>
+            <Link href="/anfrage" className="navbar-btn-anfrage">
+              Anfrage
             </Link>
           </div>
 
           <button
-            className="navbar-mobile-btn"
+            className="navbar-mobile-toggle"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Menü schließen' : 'Menü öffnen'}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               {isOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <>
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </>
               )}
             </svg>
           </button>
         </div>
       </header>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-          >
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="mobile-menu">
+          <div className="mobile-menu-links">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -96,19 +106,23 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`mobile-menu-link ${isActive ? 'active' : ''}`}
+                  onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               );
             })}
-            <div style={{ marginTop: '1rem' }}>
-              <Link href="/kontakt" className="btn btn-primary btn-md w-full">
-                Kontakt aufnehmen
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+          <div className="mobile-menu-buttons">
+            <Link href="/anmelden" className="mobile-menu-anmelden" onClick={() => setIsOpen(false)}>
+              Anmelden
+            </Link>
+            <Link href="/anfrage" className="mobile-menu-anfrage" onClick={() => setIsOpen(false)}>
+              Anfrage
+            </Link>
+          </div>
+        </div>
+      )}
     </>
   );
 }

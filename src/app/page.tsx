@@ -1,353 +1,271 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { TrophyIcon, WrenchIcon, StarIcon, UserIcon, ZapIcon, ShieldIcon, ChassisIcon, NewsIcon } from '@/components/icons/Icons';
+import Image from 'next/image';
+
+// Icons matching Figma exactly
+const ChassisIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 8L4 16H28L24 8H8Z" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M4 16V24H28V16" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="8" cy="24" r="2" stroke="#0C0800" strokeWidth="1.5"/>
+    <circle cx="24" cy="24" r="2" stroke="#0C0800" strokeWidth="1.5"/>
+  </svg>
+);
+
+const TuningIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 4V8M16 24V28M8 16H4M28 16H24" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round"/>
+    <circle cx="16" cy="16" r="6" stroke="#0C0800" strokeWidth="1.5"/>
+  </svg>
+);
+
+const RentalIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="8" width="24" height="16" rx="2" stroke="#0C0800" strokeWidth="1.5"/>
+    <path d="M4 14H28" stroke="#0C0800" strokeWidth="1.5"/>
+    <circle cx="10" cy="20" r="2" fill="#0C0800"/>
+  </svg>
+);
+
+const SupportIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="#0C0800" strokeWidth="1.5" strokeLinejoin="round"/>
+    <path d="M16 14V18M16 22V22.01" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const ImagePlaceholder = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="6" y="10" width="36" height="28" rx="2" stroke="#999" strokeWidth="1.5"/>
+    <circle cx="16" cy="20" r="3" stroke="#999" strokeWidth="1.5"/>
+    <path d="M6 32L16 22L24 30L32 20L42 32" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const ArrowRight = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
 
 export default function HomePage() {
   const features = [
     {
-      Icon: TrophyIcon,
-      title: 'Rennsporterfahrung',
-      description: 'Jahrelange Erfahrung im professionellen Kartsport auf nationaler und internationaler Ebene.',
+      icon: <ChassisIcon />,
+      title: 'Lenzokart Chassis',
+      description: 'Hochwertige Rennfahrzeuge für alle Klassen und Leistungsstufen',
     },
     {
-      Icon: WrenchIcon,
-      title: 'Premium Service',
-      description: 'Kompletter Service von der Beratung über den Verkauf bis hin zur Wartung und Reparatur.',
+      icon: <TuningIcon />,
+      title: 'Motor-Tuning',
+      description: 'Optimierte Leistung für Renneinsätze',
     },
     {
-      Icon: StarIcon,
-      title: 'Qualitätsprodukte',
-      description: 'Nur die besten Produkte von Lenzokart - dem führenden Hersteller für Kart-Chassis.',
+      icon: <RentalIcon />,
+      title: 'Vermietung',
+      description: 'Flexible Lösungen für Fahrer ohne eigenes Equipment',
     },
     {
-      Icon: UserIcon,
-      title: 'Persönliche Betreuung',
-      description: 'Individuelle Beratung und Betreuung für Einsteiger und Profis gleichermaßen.',
+      icon: <SupportIcon />,
+      title: 'Rennbetreuung',
+      description: 'Professionelle Unterstützung an der Strecke',
     },
   ];
 
-  const newsArticles = [
+  const news = [
     {
-      title: 'Neues Chassis-Modell 2024 verfügbar',
-      excerpt: 'Das brandneue Lenzokart LZ-24 ist ab sofort bei uns erhältlich. Entdecken Sie die neueste Generation.',
-      date: '15. Dezember 2024',
-      category: 'Produkte',
-      slug: 'neues-chassis-2024',
-      Icon: ChassisIcon,
-    },
-    {
-      title: 'Erfolgreiches Rennwochenende in Kerpen',
-      excerpt: 'Unser Team konnte beim Saisonfinale in Kerpen mehrere Podiumsplätze erzielen.',
-      date: '10. Dezember 2024',
       category: 'Rennsport',
-      slug: 'rennwochenende-kerpen',
-      Icon: TrophyIcon,
+      date: '15. Januar 2024',
+      title: 'NB Motorsport beim Winterpokal erfolgreich',
+      excerpt: 'Starke Leistungen unserer Fahrer in der K2-Klasse',
     },
     {
-      title: 'Winterservice jetzt buchen',
-      excerpt: 'Bereiten Sie Ihr Kart optimal auf die neue Saison vor. Jetzt Servicetermin vereinbaren.',
-      date: '1. Dezember 2024',
+      category: 'Technik',
+      date: '8. Januar 2024',
+      title: 'Neue Lenzokart Chassis eingetroffen',
+      excerpt: 'Frische Bestände für die kommende Saison verfügbar',
+    },
+    {
       category: 'Service',
-      slug: 'winterservice-2024',
-      Icon: WrenchIcon,
+      date: '2. Januar 2024',
+      title: 'Motoren-Tuning für X30 optimiert',
+      excerpt: 'Verbesserte Performance und Zuverlässigkeit erreicht',
     },
   ];
 
   const events = [
-    { day: '15', month: 'Jan', title: 'Saisonauftakt Training', location: 'Kartbahn Darmstadt' },
-    { day: '22', month: 'Jan', title: 'Rookie Cup Runde 1', location: 'Kerpen' },
-    { day: '5', month: 'Feb', title: 'Technik-Workshop', location: 'MR Motorsport Werkstatt' },
+    {
+      weekday: 'Sa',
+      day: '24',
+      month: 'Feb 2024',
+      title: 'Süddeutsche Meisterschaft',
+      badge: 'KZ',
+      location: 'Ampfing',
+      sublocation: 'Süddeutsche Meisterschaft, Ampfing',
+    },
+    {
+      weekday: 'Sa',
+      day: '09',
+      month: 'Mär 2024',
+      title: 'Deutsche Meisterschaft',
+      badge: '',
+      location: 'Wackersdorf',
+      sublocation: 'Deutsche Meisterschaft, Wackersdorf',
+    },
+    {
+      weekday: 'So',
+      day: '03',
+      month: 'Apr 2024',
+      title: 'X30 Junior Europameisterschaft',
+      badge: '',
+      location: 'Genk',
+      sublocation: 'X30 Junior Europameisterschaft, Genk',
+    },
   ];
 
   return (
     <>
-      {/* Hero Section */}
+      {/* ==================== HERO SECTION ==================== */}
       <section className="hero">
         <div className="container">
-          <div className="hero-grid">
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="hero-badge">Offizieller Lenzokart Importeur</div>
-              </motion.div>
-
-              <motion.h1
-                className="hero-title"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                MR Motorsport – <span>Lenzokart Importeur</span> Deutschland
-              </motion.h1>
-
-              <motion.p
-                className="hero-description"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                Ihr Partner für professionellen Kartsport. Wir bieten erstklassige 
-                Lenzokart Chassis, Motoren, Zubehör und umfassenden Service aus einer Hand.
-              </motion.p>
-
-              <motion.div
-                className="hero-buttons"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <Link href="/lenzo-chassis" className="btn btn-primary btn-lg">
-                  Chassis entdecken
-                </Link>
-                <Link href="/team" className="btn btn-secondary btn-lg">
-                  Über uns
-                </Link>
-              </motion.div>
-
-              <motion.div
-                className="hero-stats"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <div>
-                  <div className="hero-stat-value">20+</div>
-                  <div className="hero-stat-label">Jahre Erfahrung</div>
-                </div>
-                <div>
-                  <div className="hero-stat-value">500+</div>
-                  <div className="hero-stat-label">Zufriedene Kunden</div>
-                </div>
-                <div>
-                  <div className="hero-stat-value">50+</div>
-                  <div className="hero-stat-label">Rennsiege</div>
-                </div>
-              </motion.div>
+          <div className="hero-content">
+            <h1 className="hero-title">
+              NB Motorsport -<br />
+              Lenzokart Importeur<br />
+              Deutschland
+            </h1>
+            <p className="hero-text">
+              Wir sind der offizielle und einzige Lenzokart Importeur in Deutschland. Mit unseren Rennteam setzen wir auf Leistung, Technik und Professionalität auf jeder Strecke.
+            </p>
+            <div className="hero-buttons">
+              <Link href="/chassis" className="btn-white">Chassis</Link>
+              <Link href="/kontakt" className="btn-outline-white">Kontakt</Link>
             </div>
-
-            <motion.div
-              className="hero-visual"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="hero-card">
-                <div className="hero-card-header">
-                  <div className="hero-card-icon">
-                    <ZapIcon />
-                  </div>
-                  <div className="hero-card-header-text">
-                    <h3>Premium Equipment</h3>
-                    <p>Lenzokart Deutschland</p>
-                  </div>
-                </div>
-                <div className="hero-card-stats">
-                  <div className="hero-card-stat">
-                    <div className="hero-card-stat-value">20+</div>
-                    <div className="hero-card-stat-label">Jahre</div>
-                  </div>
-                  <div className="hero-card-stat">
-                    <div className="hero-card-stat-value">500+</div>
-                    <div className="hero-card-stat-label">Kunden</div>
-                  </div>
-                  <div className="hero-card-stat">
-                    <div className="hero-card-stat-value">50+</div>
-                    <div className="hero-card-stat-label">Siege</div>
-                  </div>
-                  <div className="hero-card-stat">
-                    <div className="hero-card-stat-value">100%</div>
-                    <div className="hero-card-stat-label">Service</div>
-                  </div>
-                </div>
-                <div className="hero-card-badge">
-                  <ShieldIcon /> Autorisierter Händler
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="section">
+      {/* ==================== FEATURES SECTION ==================== */}
+      <section className="features">
         <div className="container">
-          <div className="section-header">
-            <h2>Was uns auszeichnet</h2>
-            <p>Profitieren Sie von unserer Expertise und unserem umfassenden Serviceangebot im Kartsport.</p>
-          </div>
-
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                className="feature-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="feature-icon"><feature.Icon /></div>
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-description">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="section">
-        <div className="container">
-          <div className="about-grid">
-            <motion.div
-              className="about-visual"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="about-logo">MR</div>
-              <p style={{ color: 'var(--text-muted)' }}>Seit über 20 Jahren</p>
-            </motion.div>
-
-            <motion.div
-              className="about-content"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="about-label">Über uns</p>
-              <h2>Wer wir sind und was wir tun</h2>
-              <p>
-                MR Motorsport ist der offizielle Lenzokart Importeur für Deutschland. Mit 
-                über 20 Jahren Erfahrung im Kartsport bieten wir unseren Kunden erstklassige 
-                Produkte und einen umfassenden Service.
-              </p>
-              <p>
-                Unser Team besteht aus erfahrenen Rennfahrern und Technikern, die ihre 
-                Leidenschaft für den Kartsport mit Ihnen teilen möchten.
-              </p>
-              <div className="about-buttons">
-                <Link href="/team" className="btn btn-primary btn-md">Mehr über uns</Link>
-                <Link href="/kontakt" className="btn btn-secondary btn-md">Kontakt aufnehmen</Link>
+          <div className="features-layout">
+            <div className="features-left">
+              <div className="features-grid">
+                {features.map((feature) => (
+                  <div key={feature.title} className="feature-card">
+                    <div className="feature-icon">{feature.icon}</div>
+                    <h3 className="feature-title">{feature.title}</h3>
+                    <p className="feature-text">{feature.description}</p>
+                  </div>
+                ))}
               </div>
-            </motion.div>
+              <div className="features-links">
+                <Link href="/mehr" className="link-arrow">
+                  Mehr erfahren <ArrowRight />
+                </Link>
+                <Link href="/pfeil" className="link-arrow">
+                  Pfeil <ArrowRight />
+                </Link>
+              </div>
+            </div>
+            <div className="features-image">
+              <Image 
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop" 
+                alt="Kart Racing" 
+                width={600} 
+                height={500}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* News Section */}
-      <section className="section">
+      {/* ==================== NEWS SECTION ==================== */}
+      <section className="news">
         <div className="container">
           <div className="news-header">
-            <div>
-              <h2>Aus dem Newsbereich</h2>
-              <p style={{ color: 'var(--text-muted)' }}>Aktuelle Neuigkeiten rund um MR Motorsport und den Kartsport.</p>
-            </div>
-            <Link href="/news" className="btn btn-secondary btn-sm">
-              Alle News ansehen
-            </Link>
+            <span className="section-label">News</span>
+            <h2 className="section-title">Aus dem Rennbetrieb</h2>
+            <p className="section-subtitle">Aktuelle Berichte und Meldungen</p>
           </div>
-
           <div className="news-grid">
-            {newsArticles.map((article, index) => (
-              <motion.div
-                key={article.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Link href={`/news/${article.slug}`}>
-                  <div className="news-card">
-                    <div className="news-card-image">
-                      <article.Icon />
-                    </div>
-                    <div className="news-card-content">
-                      <div className="news-card-meta">
-                        <span className="news-card-category">{article.category}</span>
-                        <span className="news-card-date">{article.date}</span>
-                      </div>
-                      <h3 className="news-card-title">{article.title}</h3>
-                      <p className="news-card-excerpt">{article.excerpt}</p>
-                    </div>
+            {news.map((item, index) => (
+              <article key={item.title} className="news-card">
+                <div className="news-image">
+                  <Image 
+                    src={`https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&q=${80 - index * 10}`}
+                    alt={item.title}
+                    width={400}
+                    height={250}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+                <div className="news-content">
+                  <div className="news-meta">
+                    <span className="news-category">{item.category}</span>
+                    <span className="news-date">{item.date}</span>
                   </div>
-                </Link>
-              </motion.div>
+                  <h3 className="news-title">{item.title}</h3>
+                  <p className="news-excerpt">{item.excerpt}</p>
+                  <Link href="#" className="link-arrow">
+                    Mehr <ArrowRight />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="news-footer">
+            <Link href="/news" className="btn-outline-dark">Alle News</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== EVENTS SECTION ==================== */}
+      <section className="events">
+        <div className="container">
+          <div className="events-header">
+            <span className="section-label">Tagline</span>
+            <h2 className="section-title">Events</h2>
+            <p className="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+          </div>
+          <div className="events-tabs">
+            <button className="tab active">View all</button>
+            <button className="tab">Category one</button>
+            <button className="tab">Category two</button>
+            <button className="tab">Category three</button>
+            <button className="tab">Category four</button>
+          </div>
+          <div className="events-list">
+            {events.map((event) => (
+              <div key={event.title} className="event-row">
+                <div className="event-date-box">
+                  <span className="event-weekday">{event.weekday}</span>
+                  <span className="event-day">{event.day}</span>
+                  <span className="event-month">{event.month}</span>
+                </div>
+                <div className="event-info">
+                  <div className="event-title-row">
+                    <h3 className="event-name">{event.title}</h3>
+                    {event.badge && <span className="event-badge">{event.badge}</span>}
+                  </div>
+                  <p className="event-location">{event.location}</p>
+                  <p className="event-sublocation">{event.sublocation}</p>
+                </div>
+                <Link href="#" className="event-link">Termin ansehen</Link>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="section">
+      {/* ==================== CTA SECTION ==================== */}
+      <section className="cta">
         <div className="container">
-          <div className="events-grid">
-            <div className="events-intro">
-              <p className="about-label">Events</p>
-              <h2>Kommende Veranstaltungen</h2>
-              <p style={{ color: 'var(--text-muted)' }}>Treffen Sie uns bei diesen Events und erleben Sie Kartsport hautnah. Wir freuen uns auf Sie!</p>
-              <div style={{ marginTop: '1.5rem' }}>
-                <Link href="/kontakt" className="btn btn-primary btn-md">Event anfragen</Link>
-              </div>
-            </div>
-
-            <div>
-              {events.map((event, index) => (
-                <motion.div
-                  key={event.title}
-                  className="event-item"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <div className="event-date">
-                    <div className="event-date-day">{event.day}</div>
-                    <div className="event-date-month">{event.month}</div>
-                  </div>
-                  <div className="event-info">
-                    <div className="event-title">{event.title}</div>
-                    <div className="event-location">{event.location}</div>
-                  </div>
-                  <div className="event-arrow">›</div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="cta-content">
+            <h2 className="cta-title">Bereit für die Rennstrecke?</h2>
+            <p className="cta-text">Kontaktieren Sie uns für Chassis, Motoren oder Rennbetreuung</p>
+            <Link href="/kontakt" className="btn-yellow">Kontakt</Link>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section">
-        <div className="container">
-          <motion.div
-            className="cta-section"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2>Bereit für die nächste Saison?</h2>
-            <p>
-              Kontaktieren Sie uns noch heute für eine persönliche Beratung. 
-              Wir finden gemeinsam das perfekte Setup für Ihre Ansprüche.
-            </p>
-            <div className="cta-buttons">
-              <Link href="/kontakt" className="btn btn-md cta-btn-primary">
-                Jetzt Kontakt aufnehmen
-              </Link>
-              <Link href="/lenzo-chassis" className="btn btn-md cta-btn-secondary">
-                Produkte ansehen
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
     </>
