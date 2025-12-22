@@ -1545,7 +1545,7 @@ img {
 }
 
 /* ===== NEWS PAGE ===== */
-.news-page .news-grid {
+.news-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
@@ -1622,7 +1622,7 @@ img {
 }
 
 @media (max-width: 768px) {
-  .news-page .news-grid {
+  .section-white .news-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1727,6 +1727,130 @@ img {
 .article-back-cta {
   text-align: center;
   padding: var(--space-3xl) 0;
+}
+
+/* ===== EVENTS PAGE ===== */
+.events-page-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.event-card {
+  display: flex;
+  gap: var(--space-lg);
+  background-color: var(--gray);
+  padding: var(--space-lg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 32, 199, 0.08);
+}
+
+.event-date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: var(--space-sm);
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+}
+
+.event-weekday {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.event-day {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.event-month {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.event-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.event-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.event-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.event-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--light-blue);
+  padding: 4px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-description {
+  font-size: 16px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.event-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-top: var(--space-xs);
+}
+
+.event-location svg {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .event-date-block {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--space-sm);
+    min-width: auto;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .event-day {
+    font-size: 24px;
+  }
+
+  .event-title {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 768px) {

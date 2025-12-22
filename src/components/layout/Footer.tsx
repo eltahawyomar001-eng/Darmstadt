@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Logo */}
         <div className="footer-logo">
           <Image 
-            src="/image-1766422823019.png" 
+            src="/image-1766422658331.png" 
             alt="NB Motorsport Logo" 
             width={200} 
             height={60}
