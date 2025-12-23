@@ -6,16 +6,24 @@ import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon } from '@/components/icons/I
 export default function KontaktPage() {
   return (
     <>
+      {/* Hero Section */}
       <section className="page-hero">
         <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="about-label">Kontakt</p>
-            <h1>Nehmen Sie Kontakt auf</h1>
-            <p>Wir freuen uns auf Ihre Nachricht und beraten Sie gerne persönlich.</p>
+          <motion.div 
+            className="page-hero-content"
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <h1 className="page-hero-title">Kontakt</h1>
+            <p className="page-hero-subtitle">
+              Wir freuen uns auf Ihre Nachricht und beraten Sie gerne persönlich.
+            </p>
           </motion.div>
         </div>
       </section>
-      <section className="section">
+
+      {/* Contact Section */}
+      <section className="section-white">
         <div className="container">
           <div className="contact-wrapper">
             <motion.div 
@@ -61,6 +69,7 @@ export default function KontaktPage() {
                 </div>
               </div>
             </motion.div>
+
             <motion.div 
               className="contact-form"
               initial={{ opacity: 0, x: 20 }}
@@ -86,7 +95,7 @@ export default function KontaktPage() {
                   <label className="form-label">Nachricht</label>
                   <textarea placeholder="Ihre Nachricht an uns..." rows={5} className="form-input form-textarea"></textarea>
                 </div>
-                <button type="submit" className="btn btn-md btn-primary w-full">Nachricht senden</button>
+                <button type="submit">Nachricht senden</button>
               </form>
             </motion.div>
           </div>
