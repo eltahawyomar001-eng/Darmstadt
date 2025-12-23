@@ -9,27 +9,29 @@ const ImagePlaceholder = () => (
 );
 
 const ChevronIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M19 9L12 16L5 9" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
 const WrenchIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M38 10L28 20M20 28L10 38M38 10C38 10 42 14 38 18C34 22 30 18 30 18M10 38C10 38 6 34 10 30C14 26 18 30 18 30" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M18.36 6.64a9 9 0 0 1 0 12.73l-5.66 5.66a4 4 0 0 1-5.66-5.66l5.66-5.66a9 9 0 0 1 12.73 0" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M19 13L25 7M22 4L28 10" strokeLinecap="round"/>
   </svg>
 );
 
 const GaugeIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M8 32C8 20 16 12 24 12C32 12 40 20 40 32M24 24L30 30M12 32H16M32 32H36M20 20L22 22M26 20L28 22" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M16 28c6.627 0 12-5.373 12-12S22.627 4 16 4 4 9.373 4 16s5.373 12 12 12z"/>
+    <path d="M16 8v4M16 16l4 4"/>
   </svg>
 );
 
 const CogIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <circle cx="24" cy="24" r="6"/>
-    <path d="M24 8V12M24 36V40M40 24H36M12 24H8M35.3 12.7L32.5 15.5M15.5 32.5L12.7 35.3M35.3 35.3L32.5 32.5M15.5 15.5L12.7 12.7" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="16" r="4"/>
+    <path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.76 7.76l2.83 2.83M21.41 21.41l2.83 2.83M7.76 24.24l2.83-2.83M21.41 10.59l2.83-2.83"/>
   </svg>
 );
 
@@ -48,7 +50,7 @@ export default function MotorenPage() {
         </div>
       </section>
 
-      {/* Unsere Motoren Carousel */}
+      {/* Unsere Motoren im Überblick - Carousel Section */}
       <section className="section-white">
         <div className="container">
           <div className="section-header-center">
@@ -60,6 +62,7 @@ export default function MotorenPage() {
           </div>
           <div className="engine-carousel">
             <div className="engine-cards">
+              {/* Iame X30 */}
               <div className="engine-card">
                 <div className="engine-image">
                   <div className="image-placeholder">
@@ -79,6 +82,8 @@ export default function MotorenPage() {
                   <p className="engine-price">ab 3.490€</p>
                 </div>
               </div>
+
+              {/* Iame KZ2 */}
               <div className="engine-card">
                 <div className="engine-image">
                   <div className="image-placeholder">
@@ -98,6 +103,8 @@ export default function MotorenPage() {
                   <p className="engine-price">ab 5.990€</p>
                 </div>
               </div>
+
+              {/* Iame Leopard */}
               <div className="engine-card">
                 <div className="engine-image">
                   <div className="image-placeholder">
@@ -118,13 +125,14 @@ export default function MotorenPage() {
                 </div>
               </div>
             </div>
+            {/* Carousel Controls */}
             <div className="carousel-controls">
-              <button className="carousel-btn" aria-label="Previous">
+              <button className="carousel-btn" aria-label="Vorherige">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <button className="carousel-btn" aria-label="Next">
+              <button className="carousel-btn" aria-label="Nächste">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -139,7 +147,7 @@ export default function MotorenPage() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Was wir für dich tun - Services Section */}
       <section className="section-light-blue">
         <div className="container">
           <div className="section-header-center">
@@ -149,31 +157,31 @@ export default function MotorenPage() {
               Von der Auslieferung bis zum Rennwochenende – wir kümmern uns um deinen Motor.
             </p>
           </div>
-          <div className="services-grid">
-            <div className="service-card">
+          <div className="services-grid-three">
+            <div className="service-item">
               <div className="service-icon">
                 <WrenchIcon />
               </div>
               <h3 className="service-title">Wartung & Service</h3>
-              <p className="service-text">
+              <p className="service-desc">
                 Regelmäßige Inspektionen, Ölwechsel und technische Checks halten deinen Motor in Topform.
               </p>
             </div>
-            <div className="service-card">
+            <div className="service-item">
               <div className="service-icon">
                 <GaugeIcon />
               </div>
               <h3 className="service-title">Performance-Tuning</h3>
-              <p className="service-text">
+              <p className="service-desc">
                 Wir holen das Maximum aus deinem Motor heraus – legal, präzise und messbar.
               </p>
             </div>
-            <div className="service-card">
+            <div className="service-item">
               <div className="service-icon">
                 <CogIcon />
               </div>
               <h3 className="service-title">Motorenbau nach Maß</h3>
-              <p className="service-text">
+              <p className="service-desc">
                 Individuelle Anpassungen für spezielle Anforderungen und höchste Ansprüche.
               </p>
             </div>
@@ -181,7 +189,7 @@ export default function MotorenPage() {
         </div>
       </section>
 
-      {/* Drei Schritte Section */}
+      {/* In drei Schritten zu deinem Motor - Steps Section */}
       <section className="section-white">
         <div className="container">
           <div className="section-header-center">
@@ -192,21 +200,21 @@ export default function MotorenPage() {
             <div className="step-card">
               <div className="step-number">1</div>
               <h3 className="step-title">Beratung</h3>
-              <p className="step-text">
+              <p className="step-desc">
                 Wir analysieren deine Anforderungen und empfehlen dir den passenden Motor.
               </p>
             </div>
             <div className="step-card">
               <div className="step-number">2</div>
               <h3 className="step-title">Abstimmung</h3>
-              <p className="step-text">
+              <p className="step-desc">
                 Dein Motor wird individuell auf dein Chassis und deinen Fahrstil eingestellt.
               </p>
             </div>
             <div className="step-card">
               <div className="step-number">3</div>
               <h3 className="step-title">Rennstart</h3>
-              <p className="step-text">
+              <p className="step-desc">
                 Du erhältst einen rennfertigen Motor und unser Team steht dir zur Seite.
               </p>
             </div>
@@ -229,7 +237,7 @@ export default function MotorenPage() {
                   <ChevronIcon />
                 </summary>
                 <div className="faq-answer">
-                  Für Einsteiger empfehlen wir den Iame Leopard oder den X30. Beide sind zuverlässig, wartungsarm und bieten ein ausgewogenes Leistungsprofil für den Einstieg in den Rennsport.
+                  Für Einsteiger empfehlen wir den Iame X30 oder den Iame Leopard. Beide Motoren sind zuverlässig, wartungsarm und bieten ein gutes Leistungsniveau für den Start in den Kartsport.
                 </div>
               </details>
               <details className="faq-item">
@@ -238,7 +246,7 @@ export default function MotorenPage() {
                   <ChevronIcon />
                 </summary>
                 <div className="faq-answer">
-                  Das hängt von der Nutzung ab. Bei regelmäßigen Renneinsätzen empfehlen wir alle 10-15 Betriebsstunden eine Inspektion. Wir erstellen dir gerne einen individuellen Wartungsplan.
+                  Eine Grundwartung empfehlen wir nach jedem Rennwochenende. Eine vollständige Revision sollte je nach Einsatzhäufigkeit alle 15-25 Betriebsstunden durchgeführt werden.
                 </div>
               </details>
               <details className="faq-item">
@@ -247,7 +255,7 @@ export default function MotorenPage() {
                   <ChevronIcon />
                 </summary>
                 <div className="faq-answer">
-                  Ja, wir bieten legales Performance-Tuning innerhalb der Reglement-Vorgaben an. Dadurch optimierst du das Leistungsprofil und die Langlebigkeit deines Motors.
+                  Ja, wir bieten professionelles Performance-Tuning an. Dabei bleiben wir immer innerhalb der Reglement-Grenzen und optimieren den Motor für maximale, legale Leistung.
                 </div>
               </details>
               <details className="faq-item">
@@ -256,7 +264,7 @@ export default function MotorenPage() {
                   <ChevronIcon />
                 </summary>
                 <div className="faq-answer">
-                  Der Preis umfasst den Motor, eine Grundabstimmung und die Erstinspektion. Zusätzliche Leistungen wie individuelles Setup oder Trackside-Support können optional gebucht werden.
+                  Im Kaufpreis ist der rennfertig aufgebaute Motor inklusive erster Grundabstimmung enthalten. Zusätzliche Leistungen wie Tuning oder spezielle Anpassungen können optional dazu gebucht werden.
                 </div>
               </details>
             </div>
@@ -264,7 +272,7 @@ export default function MotorenPage() {
         </div>
       </section>
 
-      {/* Motor anfragen CTA */}
+      {/* CTA Section */}
       <section className="section-dark">
         <div className="container">
           <div className="cta-content-center">
