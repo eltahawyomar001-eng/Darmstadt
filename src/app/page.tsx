@@ -147,7 +147,7 @@ export default function HomePage() {
               <article key={article.id} className="news-card">
                 <div className="news-image">
                   <Image
-                    src="/3.jpeg"
+                    src="/news1.png"
                     alt={article.title}
                     width={400}
                     height={250}

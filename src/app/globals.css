@@ -495,7 +495,7 @@ img {
   position: relative;
   padding-top: 64px;
   min-height: 600px;
-  background: url('/3.jpeg') center/cover no-repeat;
+  background: url('/startseite1.jpg') center/cover no-repeat;
 }
 
 .hero::before {

@@ -1,13 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllArticles } from '@/data/news';
-
-const ImagePlaceholder = () => (
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <rect x="8" y="12" width="48" height="40" rx="4" />
-    <circle cx="22" cy="26" r="4" />
-    <path d="M8 44L20 32L32 44L44 28L56 44" />
-  </svg>
-);
 
 export default function NewsPage() {
   const articles = getAllArticles();
@@ -33,9 +26,13 @@ export default function NewsPage() {
             {articles.map((article) => (
               <Link href={`/news/${article.id}`} key={article.id} className="news-article-card">
                 <div className="news-article-image">
-                  <div className="image-placeholder">
-                    <ImagePlaceholder />
-                  </div>
+                  <Image
+                    src="/news1.png"
+                    alt={article.title}
+                    width={400}
+                    height={250}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
                 </div>
                 <div className="news-article-content">
                   <div className="news-meta">
