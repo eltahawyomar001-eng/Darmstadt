@@ -168,7 +168,6 @@ export default function MotorenServicePage() {
               <p className="rental-step-desc">
                 Finden Sie den passenden Motor für Ihre Klasse.
               </p>
-              <Link href="/kontakt" className="link-arrow-small">Weiter →</Link>
               <div className="rental-step-image">
                 <div className="image-placeholder">
                   <ImagePlaceholder />
@@ -181,7 +180,6 @@ export default function MotorenServicePage() {
               <p className="rental-step-desc">
                 Klären Sie alle Details und Mietbedingungen ab.
               </p>
-              <Link href="/kontakt" className="link-arrow-small">Weiter →</Link>
               <div className="rental-step-image">
                 <div className="image-placeholder">
                   <ImagePlaceholder />
@@ -194,7 +192,6 @@ export default function MotorenServicePage() {
               <p className="rental-step-desc">
                 Übernehmen Sie den Motor und starten Sie.
               </p>
-              <Link href="/kontakt" className="link-arrow-small">Fertig →</Link>
               <div className="rental-step-image">
                 <div className="image-placeholder">
                   <ImagePlaceholder />
@@ -270,9 +267,6 @@ export default function MotorenServicePage() {
             </p>
             <div className="cta-buttons-row">
               <Link href="/kontakt" className="btn-primary">
-                Anfrage starten
-              </Link>
-              <Link href="/kontakt" className="btn-outline-dark">
                 Kontakt
               </Link>
             </div>
