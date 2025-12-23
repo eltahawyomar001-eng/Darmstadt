@@ -30,7 +30,7 @@ export default function TeamPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="page-hero">
+      <section className="page-hero-image">
         <div className="container">
           <div className="page-hero-content">
             <h1 className="page-hero-title">Unser Rennteam</h1>
@@ -155,7 +155,7 @@ export default function TeamPage() {
       </section>
 
       {/* Werde Teil unseres Teams */}
-      <section className="section-dark">
+      <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
             <h2 className="section-heading text-white">Werde Teil unseres Teams</h2>

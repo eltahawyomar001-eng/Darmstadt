@@ -39,12 +39,12 @@ const EuroIcon = () => (
 export default function MotorenServicePage() {
   return (
     <>
-      {/* Hero Section - Blue Background */}
-      <section className="page-hero-blue">
+      {/* Hero Section with Background Image */}
+      <section className="page-hero-image">
         <div className="container">
           <div className="page-hero-content">
-            <h1 className="page-hero-title text-white">Motoren und service</h1>
-            <p className="page-hero-subtitle text-white-muted">
+            <h1 className="page-hero-title">Motoren und Service</h1>
+            <p className="page-hero-subtitle">
               Premium-Rennmotoren, Tuning, Vermietung und Service für maximale Performance.
             </p>
           </div>
@@ -258,18 +258,16 @@ export default function MotorenServicePage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-white">
+      <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
-            <h2 className="section-heading">Motor anfragen oder Service buchen</h2>
-            <p className="section-text">
+            <h2 className="section-heading text-white">Motor anfragen oder Service buchen</h2>
+            <p className="section-text text-white">
               Kontaktieren Sie uns für Miete, Tuning oder Wartung Ihrer Rennmotoren.
             </p>
-            <div className="cta-buttons-row">
-              <Link href="/kontakt" className="btn-primary">
-                Kontakt
-              </Link>
-            </div>
+            <Link href="/kontakt" className="btn-white">
+              Kontakt
+            </Link>
           </div>
         </div>
       </section>

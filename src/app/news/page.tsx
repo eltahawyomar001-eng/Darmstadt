@@ -15,7 +15,7 @@ export default function NewsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="page-hero">
+      <section className="page-hero-image">
         <div className="container">
           <div className="page-hero-content">
             <h1 className="page-hero-title">News & Updates</h1>
@@ -59,7 +59,7 @@ export default function NewsPage() {
       </section>
 
       {/* Bleib informiert CTA */}
-      <section className="section-dark">
+      <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
             <h2 className="section-heading text-white">Bleib informiert</h2>

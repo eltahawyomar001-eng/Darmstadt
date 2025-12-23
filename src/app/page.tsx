@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAllArticles } from '@/data/news';
+import { getUpcomingEvents } from '@/data/events';
 
 // Icons matching Figma exactly
 const ChassisIcon = () => (
@@ -33,17 +35,16 @@ const SupportIcon = () => (
   </svg>
 );
 
-const ImagePlaceholder = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="6" y="10" width="36" height="28" rx="2" stroke="#999" strokeWidth="1.5" />
-    <circle cx="16" cy="20" r="3" stroke="#999" strokeWidth="1.5" />
-    <path d="M6 32L16 22L24 30L32 20L42 32" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const MapPinIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+    <circle cx="12" cy="10" r="3" />
   </svg>
 );
 
@@ -71,56 +72,12 @@ export default function HomePage() {
     },
   ];
 
-  const news = [
-    {
-      category: 'Rennsport',
-      date: '15. Januar 2024',
-      title: 'NB Motorsport beim Winterpokal erfolgreich',
-      excerpt: 'Starke Leistungen unserer Fahrer in der K2-Klasse',
-    },
-    {
-      category: 'Technik',
-      date: '8. Januar 2024',
-      title: 'Neue Lenzokart Chassis eingetroffen',
-      excerpt: 'Frische Bestände für die kommende Saison verfügbar',
-    },
-    {
-      category: 'Service',
-      date: '2. Januar 2024',
-      title: 'Motoren-Tuning für X30 optimiert',
-      excerpt: 'Verbesserte Performance und Zuverlässigkeit erreicht',
-    },
-  ];
+  // Get news from centralized data source
+  const allNews = getAllArticles();
+  const latestNews = allNews.slice(0, 3);
 
-  const events = [
-    {
-      weekday: 'Sa',
-      day: '24',
-      month: 'Feb 2024',
-      title: 'Süddeutsche Meisterschaft',
-      badge: 'KZ',
-      location: 'Ampfing',
-      sublocation: 'Süddeutsche Meisterschaft, Ampfing',
-    },
-    {
-      weekday: 'Sa',
-      day: '09',
-      month: 'Mär 2024',
-      title: 'Deutsche Meisterschaft',
-      badge: '',
-      location: 'Wackersdorf',
-      sublocation: 'Deutsche Meisterschaft, Wackersdorf',
-    },
-    {
-      weekday: 'So',
-      day: '03',
-      month: 'Apr 2024',
-      title: 'X30 Junior Europameisterschaft',
-      badge: '',
-      location: 'Genk',
-      sublocation: 'X30 Junior Europameisterschaft, Genk',
-    },
-  ];
+  // Get events from centralized data source
+  const upcomingEvents = getUpcomingEvents(3);
 
   return (
     <>
@@ -186,12 +143,12 @@ export default function HomePage() {
             <p className="section-subtitle">Aktuelle Berichte und Meldungen</p>
           </div>
           <div className="news-grid">
-            {news.map((item, index) => (
-              <article key={item.title} className="news-card">
+            {latestNews.map((article, index) => (
+              <article key={article.id} className="news-card">
                 <div className="news-image">
                   <Image
-                    src={`https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&q=${80 - index * 10}`}
-                    alt={item.title}
+                    src="/3.jpeg"
+                    alt={article.title}
                     width={400}
                     height={250}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -199,12 +156,18 @@ export default function HomePage() {
                 </div>
                 <div className="news-content">
                   <div className="news-meta">
-                    <span className="news-category">{item.category}</span>
-                    <span className="news-date">{item.date}</span>
+                    <span className="news-category">{article.category}</span>
+                    <span className="news-date">
+                      {new Date(article.date).toLocaleDateString('de-DE', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                      })}
+                    </span>
                   </div>
-                  <h3 className="news-title">{item.title}</h3>
-                  <p className="news-excerpt">{item.excerpt}</p>
-                  <Link href="#" className="link-arrow">
+                  <h3 className="news-title">{article.title}</h3>
+                  <p className="news-excerpt">{article.excerpt}</p>
+                  <Link href={`/news/${article.id}`} className="link-arrow">
                     Mehr <ArrowRight />
                   </Link>
                 </div>
@@ -225,12 +188,37 @@ export default function HomePage() {
             <h2 className="section-title">Events</h2>
             <p className="section-subtitle">Unsere kommenden Rennveranstaltungen und Termine</p>
           </div>
-          <div className="events-list">
-            {/* Event calendar will be populated later */}
+          {upcomingEvents.length > 0 ? (
+            <>
+              <div className="events-list">
+                {upcomingEvents.map((event) => (
+                  <div key={event.id} className="event-card-home">
+                    <div className="event-date-box">
+                      <span className="event-weekday">{event.weekday}</span>
+                      <span className="event-day">{event.day}</span>
+                      <span className="event-month">{event.month}</span>
+                    </div>
+                    <div className="event-info">
+                      <div className="event-title-row">
+                        <h3 className="event-title">{event.title}</h3>
+                        {event.badge && <span className="event-badge">{event.badge}</span>}
+                      </div>
+                      <p className="event-location">
+                        <MapPinIcon /> {event.location}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="events-footer">
+                <Link href="/events" className="btn-outline-dark">Alle Events</Link>
+              </div>
+            </>
+          ) : (
             <div className="events-empty">
               <p>Veranstaltungen werden bald bekannt gegeben.</p>
             </div>
-          </div>
+          )}
         </div>
       </section>
 

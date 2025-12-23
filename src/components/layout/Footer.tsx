@@ -39,8 +39,8 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-legal">
             <Link href="/datenschutz">Datenschutz</Link>
-            <Link href="/nutzungsbedingungen">Nutzungsbedingungen</Link>
-            <Link href="/cookie-einstellungen">Cookie-Einstellungen</Link>
+            <Link href="/agb">AGB</Link>
+            <Link href="/impressum">Impressum</Link>
           </div>
           <p className="footer-copyright">© 2025 NB Motorsport. Alle Rechte vorbehalten.</p>
         </div>

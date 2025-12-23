@@ -7,7 +7,7 @@ export default function KontaktPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="page-hero">
+      <section className="page-hero-image">
         <div className="container">
           <motion.div 
             className="page-hero-content"

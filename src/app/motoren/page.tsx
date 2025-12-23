@@ -36,21 +36,60 @@ const CogIcon = () => (
 );
 
 export default function MotorenPage() {
+  const engines = [
+    {
+      name: 'Iame X30',
+      desc: 'Der meistgefahrene Motor im deutschen und internationalen Kartsport.',
+      specs: ['Leistung: 30 PS', 'Hubraum: 125ccm', 'Gewicht: 11kg'],
+      price: 'ab 3.490€'
+    },
+    {
+      name: 'Iame KZ2',
+      desc: 'Hochleistungsmotor mit Schaltgetriebe für Profis.',
+      specs: ['Leistung: 48 PS', 'Hubraum: 125ccm', 'Gewicht: 14kg'],
+      price: 'ab 5.990€'
+    },
+    {
+      name: 'Iame Leopard',
+      desc: 'Einsteigermotor für Junioren mit starker Performance.',
+      specs: ['Leistung: 23 PS', 'Hubraum: 125ccm', 'Gewicht: 10kg'],
+      price: 'ab 2.790€'
+    },
+    {
+      name: 'Iame X30 Junior',
+      desc: 'Speziell für Junior-Fahrer entwickelt.',
+      specs: ['Leistung: 22 PS', 'Hubraum: 125ccm', 'Gewicht: 10.5kg'],
+      price: 'ab 3.190€'
+    },
+    {
+      name: 'Iame Mini Swift',
+      desc: 'Der perfekte Motor für die Mini-Klasse.',
+      specs: ['Leistung: 12 PS', 'Hubraum: 60ccm', 'Gewicht: 7kg'],
+      price: 'ab 1.990€'
+    },
+    {
+      name: 'Iame Screamer',
+      desc: 'Kraftvoller Motor für erfahrene Fahrer.',
+      specs: ['Leistung: 40 PS', 'Hubraum: 125ccm', 'Gewicht: 12kg'],
+      price: 'ab 4.490€'
+    }
+  ];
+
   return (
     <>
-      {/* Hero Section */}
-      <section className="page-hero">
+      {/* Hero Section with Background Image */}
+      <section className="page-hero-image">
         <div className="container">
           <div className="page-hero-content">
             <h1 className="page-hero-title">Motoren</h1>
             <p className="page-hero-subtitle">
-              Hochleistungsmotoren von Iame – zuverlässig, leistungsstark und auf Sieg programmiert. Wir bieten dir Verkauf, Wartung und Performance-Tuning aus einer Hand.
+              Hochleistungsmotoren von Iame – zuverlässig, leistungsstark und auf Sieg programmiert.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Unsere Motoren im Überblick - Carousel Section */}
+      {/* Engine Cards Section - 6 Engines */}
       <section className="section-white">
         <div className="container">
           <div className="section-header-center">
@@ -60,170 +99,59 @@ export default function MotorenPage() {
               Jeder Motor wird von uns geprüft, eingestellt und rennfertig ausgeliefert.
             </p>
           </div>
-          <div className="engine-carousel">
-            <div className="engine-cards">
-              {/* Iame X30 */}
-              <div className="engine-card">
+          <div className="engine-grid">
+            {engines.map((engine) => (
+              <div key={engine.name} className="engine-card-static">
                 <div className="engine-image">
                   <div className="image-placeholder">
                     <ImagePlaceholder />
                   </div>
                 </div>
                 <div className="engine-content">
-                  <h3 className="engine-name">Iame X30</h3>
-                  <p className="engine-desc">
-                    Der meistgefahrene Motor im deutschen und internationalen Kartsport. Zuverlässig, kraftvoll und wartungsarm.
-                  </p>
+                  <h3 className="engine-name">{engine.name}</h3>
+                  <p className="engine-desc">{engine.desc}</p>
                   <ul className="engine-specs">
-                    <li>Leistung: 30 PS</li>
-                    <li>Hubraum: 125ccm</li>
-                    <li>Gewicht: 11kg</li>
+                    {engine.specs.map((spec) => (
+                      <li key={spec}>{spec}</li>
+                    ))}
                   </ul>
-                  <p className="engine-price">ab 3.490€</p>
+                  <p className="engine-price">{engine.price}</p>
                 </div>
               </div>
-
-              {/* Iame KZ2 */}
-              <div className="engine-card">
-                <div className="engine-image">
-                  <div className="image-placeholder">
-                    <ImagePlaceholder />
-                  </div>
-                </div>
-                <div className="engine-content">
-                  <h3 className="engine-name">Iame KZ2</h3>
-                  <p className="engine-desc">
-                    Hochleistungsmotor mit Schaltgetriebe für Profis und ambitionierte Fahrer in der Schaltkart-Klasse.
-                  </p>
-                  <ul className="engine-specs">
-                    <li>Leistung: 48 PS</li>
-                    <li>Hubraum: 125ccm</li>
-                    <li>Gewicht: 14kg</li>
-                  </ul>
-                  <p className="engine-price">ab 5.990€</p>
-                </div>
-              </div>
-
-              {/* Iame Leopard */}
-              <div className="engine-card">
-                <div className="engine-image">
-                  <div className="image-placeholder">
-                    <ImagePlaceholder />
-                  </div>
-                </div>
-                <div className="engine-content">
-                  <h3 className="engine-name">Iame Leopard</h3>
-                  <p className="engine-desc">
-                    Einsteigermotor für Junioren – ideal für den Start in den Rennsport mit starker Performance.
-                  </p>
-                  <ul className="engine-specs">
-                    <li>Leistung: 23 PS</li>
-                    <li>Hubraum: 125ccm</li>
-                    <li>Gewicht: 10kg</li>
-                  </ul>
-                  <p className="engine-price">ab 2.790€</p>
-                </div>
-              </div>
-            </div>
-            {/* Carousel Controls */}
-            <div className="carousel-controls">
-              <button className="carousel-btn" aria-label="Vorherige">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <button className="carousel-btn" aria-label="Nächste">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
-            <div className="carousel-dots">
-              <span className="dot active"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Was wir für dich tun - Services Section */}
+      {/* Services Section */}
       <section className="section-light-blue">
         <div className="container">
           <div className="section-header-center">
             <span className="section-label">Rundum-Service</span>
             <h2 className="section-heading">Was wir für dich tun</h2>
-            <p className="section-text">
-              Von der Auslieferung bis zum Rennwochenende – wir kümmern uns um deinen Motor.
-            </p>
           </div>
           <div className="services-grid-three">
             <div className="service-item">
-              <div className="service-icon">
-                <WrenchIcon />
-              </div>
+              <div className="service-icon"><WrenchIcon /></div>
               <h3 className="service-title">Wartung & Service</h3>
-              <p className="service-desc">
-                Regelmäßige Inspektionen, Ölwechsel und technische Checks halten deinen Motor in Topform.
-              </p>
+              <p className="service-desc">Regelmäßige Inspektionen und technische Checks.</p>
             </div>
             <div className="service-item">
-              <div className="service-icon">
-                <GaugeIcon />
-              </div>
+              <div className="service-icon"><GaugeIcon /></div>
               <h3 className="service-title">Performance-Tuning</h3>
-              <p className="service-desc">
-                Wir holen das Maximum aus deinem Motor heraus – legal, präzise und messbar.
-              </p>
+              <p className="service-desc">Maximale Leistung – legal und messbar.</p>
             </div>
             <div className="service-item">
-              <div className="service-icon">
-                <CogIcon />
-              </div>
+              <div className="service-icon"><CogIcon /></div>
               <h3 className="service-title">Motorenbau nach Maß</h3>
-              <p className="service-desc">
-                Individuelle Anpassungen für spezielle Anforderungen und höchste Ansprüche.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* In drei Schritten zu deinem Motor - Steps Section */}
-      <section className="section-white">
-        <div className="container">
-          <div className="section-header-center">
-            <span className="section-label">Einfach starten</span>
-            <h2 className="section-heading">In drei Schritten zu deinem Motor</h2>
-          </div>
-          <div className="steps-grid">
-            <div className="step-card">
-              <div className="step-number">1</div>
-              <h3 className="step-title">Beratung</h3>
-              <p className="step-desc">
-                Wir analysieren deine Anforderungen und empfehlen dir den passenden Motor.
-              </p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">2</div>
-              <h3 className="step-title">Abstimmung</h3>
-              <p className="step-desc">
-                Dein Motor wird individuell auf dein Chassis und deinen Fahrstil eingestellt.
-              </p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">3</div>
-              <h3 className="step-title">Rennstart</h3>
-              <p className="step-desc">
-                Du erhältst einen rennfertigen Motor und unser Team steht dir zur Seite.
-              </p>
+              <p className="service-desc">Individuelle Anpassungen für höchste Ansprüche.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="section-light-blue">
+      <section className="section-white">
         <div className="container">
           <div className="faq-container">
             <div className="section-header-center">
@@ -237,7 +165,7 @@ export default function MotorenPage() {
                   <ChevronIcon />
                 </summary>
                 <div className="faq-answer">
-                  Für Einsteiger empfehlen wir den Iame X30 oder den Iame Leopard. Beide Motoren sind zuverlässig, wartungsarm und bieten ein gutes Leistungsniveau für den Start in den Kartsport.
+                  Für Einsteiger empfehlen wir den Iame X30 oder den Iame Leopard.
                 </div>
               </details>
               <details className="faq-item">
@@ -246,7 +174,7 @@ export default function MotorenPage() {
                   <ChevronIcon />
                 </summary>
                 <div className="faq-answer">
-                  Eine Grundwartung empfehlen wir nach jedem Rennwochenende. Eine vollständige Revision sollte je nach Einsatzhäufigkeit alle 15-25 Betriebsstunden durchgeführt werden.
+                  Eine Grundwartung empfehlen wir nach jedem Rennwochenende.
                 </div>
               </details>
               <details className="faq-item">
@@ -255,16 +183,7 @@ export default function MotorenPage() {
                   <ChevronIcon />
                 </summary>
                 <div className="faq-answer">
-                  Ja, wir bieten professionelles Performance-Tuning an. Dabei bleiben wir immer innerhalb der Reglement-Grenzen und optimieren den Motor für maximale, legale Leistung.
-                </div>
-              </details>
-              <details className="faq-item">
-                <summary className="faq-question">
-                  Was ist im Kaufpreis enthalten?
-                  <ChevronIcon />
-                </summary>
-                <div className="faq-answer">
-                  Im Kaufpreis ist der rennfertig aufgebaute Motor inklusive erster Grundabstimmung enthalten. Zusätzliche Leistungen wie Tuning oder spezielle Anpassungen können optional dazu gebucht werden.
+                  Ja, wir bieten professionelles Performance-Tuning an.
                 </div>
               </details>
             </div>
@@ -272,17 +191,15 @@ export default function MotorenPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-dark">
+      {/* CTA Section with Background Image */}
+      <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
             <h2 className="section-heading text-white">Dein Motor wartet auf dich</h2>
             <p className="section-text text-white">
-              Bereit für den nächsten Schritt? Kontaktiere uns und wir finden gemeinsam den perfekten Motor für deine Ziele.
+              Kontaktiere uns und wir finden gemeinsam den perfekten Motor für deine Ziele.
             </p>
-            <Link href="/kontakt" className="btn-white">
-              Kontakt
-            </Link>
+            <Link href="/kontakt" className="btn-white">Kontakt</Link>
           </div>
         </div>
       </section>

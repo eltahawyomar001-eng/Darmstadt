@@ -2,63 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-const events = [
-  {
-    weekday: 'Sa',
-    day: '24',
-    month: 'Feb 2025',
-    title: 'Süddeutsche Meisterschaft',
-    badge: 'KZ',
-    location: 'Ampfing',
-    description: 'Auftakt zur Süddeutschen Kart Meisterschaft in Ampfing.',
-  },
-  {
-    weekday: 'Sa',
-    day: '09',
-    month: 'Mär 2025',
-    title: 'Deutsche Meisterschaft',
-    badge: 'DKM',
-    location: 'Wackersdorf',
-    description: 'Erstes Rennen der Deutschen Kart Meisterschaft auf dem Pro-Kart Raceland.',
-  },
-  {
-    weekday: 'So',
-    day: '03',
-    month: 'Apr 2025',
-    title: 'X30 Junior Europameisterschaft',
-    badge: 'EURO',
-    location: 'Genk',
-    description: 'Internationaler Wettbewerb in der X30 Junior Klasse auf dem Karting Genk.',
-  },
-  {
-    weekday: 'Sa',
-    day: '26',
-    month: 'Apr 2025',
-    title: 'ADAC Kart Masters',
-    badge: 'AKM',
-    location: 'Kerpen',
-    description: 'ADAC Kart Masters Runde auf der legendären Michael Schumacher Kartbahn.',
-  },
-  {
-    weekday: 'So',
-    day: '18',
-    month: 'Mai 2025',
-    title: 'Süddeutsche Meisterschaft',
-    badge: 'KZ',
-    location: 'Wackersdorf',
-    description: 'Zweites Rennen der Süddeutschen Kart Meisterschaft.',
-  },
-  {
-    weekday: 'Sa',
-    day: '07',
-    month: 'Jun 2025',
-    title: 'Deutsche Meisterschaft',
-    badge: 'DKM',
-    location: 'Oschersleben',
-    description: 'DKM Runde auf der Motorsport Arena Oschersleben.',
-  },
-];
+import { getAllEvents } from '@/data/events';
 
 const CalendarIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -77,18 +21,22 @@ const MapPinIcon = () => (
 );
 
 export default function EventsPage() {
+  const events = getAllEvents();
+
   return (
     <>
       {/* Hero Section */}
-      <section className="page-hero">
+      <section className="page-hero-image">
         <div className="container">
           <motion.div
+            className="page-hero-content"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <p className="about-label">Rennkalender</p>
-            <h1>Events & Termine</h1>
-            <p>Alle kommenden Rennveranstaltungen und wichtige Termine der Saison 2025 im Überblick.</p>
+            <h1 className="page-hero-title">Events & Termine</h1>
+            <p className="page-hero-subtitle">
+              Alle kommenden Rennveranstaltungen und wichtige Termine der Saison 2025 im Überblick.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -99,7 +47,7 @@ export default function EventsPage() {
           <div className="events-page-grid">
             {events.map((event, index) => (
               <motion.div
-                key={`${event.title}-${event.day}`}
+                key={event.id}
                 className="event-card"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -128,15 +76,14 @@ export default function EventsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-light-blue">
+      <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
-            <CalendarIcon />
-            <h2 className="section-heading">Interesse an Rennbetreuung?</h2>
-            <p className="section-text">
+            <h2 className="section-heading text-white">Interesse an Rennbetreuung?</h2>
+            <p className="section-text text-white">
               Wir unterstützen Sie bei Rennen mit professioneller Betreuung und technischem Service.
             </p>
-            <Link href="/kontakt" className="btn-primary">
+            <Link href="/kontakt" className="btn-white">
               Kontakt aufnehmen
             </Link>
           </div>

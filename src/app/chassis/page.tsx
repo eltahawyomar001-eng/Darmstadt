@@ -15,9 +15,31 @@ const ChevronIcon = () => (
 );
 
 export default function ChassisPage() {
+  const chassis = [
+    {
+      name: 'Lenzokart GT',
+      desc: 'Hochwertiges Einsteiger-Chassis mit exzellentem Handling und Stabilität.',
+      specs: ['Gewicht: 32kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
+      price: 'ab 2.990€'
+    },
+    {
+      name: 'Formula K (Exprit)',
+      desc: 'Bewährtes Racing-Chassis für ambitionierte Fahrer in allen Klassen.',
+      specs: ['Gewicht: 31kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
+      price: 'ab 3.490€'
+    },
+    {
+      name: 'Tonykart',
+      desc: 'High-End Profi-Chassis für internationale Wettbewerbe und Meisterschaften.',
+      specs: ['Gewicht: 31kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
+      price: 'ab 4.290€'
+    }
+  ];
+
   return (
     <>
-      <section className="page-hero">
+      {/* Hero Section with Background Image */}
+      <section className="page-hero-image">
         <div className="container">
           <div className="page-hero-content">
             <h1 className="page-hero-title">Chassis</h1>
@@ -28,80 +50,39 @@ export default function ChassisPage() {
         </div>
       </section>
 
+      {/* Chassis Cards Section */}
       <section className="section-white">
         <div className="container">
           <div className="section-header-center">
             <span className="section-label">Modelle</span>
-            <h2 className="section-heading">Vier Chassis zur Auswahl</h2>
+            <h2 className="section-heading">Drei Chassis zur Auswahl</h2>
             <p className="section-text">
               Jedes Chassis wird auf höchstem Niveau gefertigt und bietet optimale Performance für deinen Einsatzbereich.
             </p>
           </div>
-          <div className="chassis-grid">
-            <div className="chassis-card">
-              <div className="chassis-image">
-                <div className="image-placeholder"><ImagePlaceholder /></div>
+          <div className="chassis-grid chassis-grid-3">
+            {chassis.map((item) => (
+              <div key={item.name} className="chassis-card">
+                <div className="chassis-image">
+                  <div className="image-placeholder"><ImagePlaceholder /></div>
+                </div>
+                <div className="chassis-content">
+                  <h3 className="chassis-name">{item.name}</h3>
+                  <p className="chassis-desc">{item.desc}</p>
+                  <ul className="chassis-specs">
+                    {item.specs.map((spec) => (
+                      <li key={spec}>{spec}</li>
+                    ))}
+                  </ul>
+                  <p className="chassis-price">{item.price}</p>
+                </div>
               </div>
-              <div className="chassis-content">
-                <h3 className="chassis-name">Lenzokart GT</h3>
-                <p className="chassis-desc">Hochwertiges Einsteiger-Chassis mit exzellentem Handling und Stabilität.</p>
-                <ul className="chassis-specs">
-                  <li>Gewicht: 32kg</li>
-                  <li>Achsabstand: 1040mm</li>
-                  <li>Spurbreite: 1050mm</li>
-                </ul>
-                <p className="chassis-price">ab 2.990€</p>
-              </div>
-            </div>
-            <div className="chassis-card">
-              <div className="chassis-image">
-                <div className="image-placeholder"><ImagePlaceholder /></div>
-              </div>
-              <div className="chassis-content">
-                <h3 className="chassis-name">Formula K (Exprit)</h3>
-                <p className="chassis-desc">Bewährtes Racing-Chassis für ambitionierte Fahrer in allen Klassen.</p>
-                <ul className="chassis-specs">
-                  <li>Gewicht: 31kg</li>
-                  <li>Achsabstand: 1040mm</li>
-                  <li>Spurbreite: 1050mm</li>
-                </ul>
-                <p className="chassis-price">ab 3.490€</p>
-              </div>
-            </div>
-            <div className="chassis-card">
-              <div className="chassis-image">
-                <div className="image-placeholder"><ImagePlaceholder /></div>
-              </div>
-              <div className="chassis-content">
-                <h3 className="chassis-name">Cayman</h3>
-                <p className="chassis-desc">Speziell entwickelt für Mini- und Bambini-Klassen mit hoher Kippsicherheit.</p>
-                <ul className="chassis-specs">
-                  <li>Gewicht: 29kg</li>
-                  <li>Achsabstand: 950mm</li>
-                  <li>Spurbreite: 1000mm</li>
-                </ul>
-                <p className="chassis-price">ab 2.790€</p>
-              </div>
-            </div>
-            <div className="chassis-card">
-              <div className="chassis-image">
-                <div className="image-placeholder"><ImagePlaceholder /></div>
-              </div>
-              <div className="chassis-content">
-                <h3 className="chassis-name">Tonykart</h3>
-                <p className="chassis-desc">High-End Profi-Chassis für internationale Wettbewerbe und Meisterschaften.</p>
-                <ul className="chassis-specs">
-                  <li>Gewicht: 31kg</li>
-                  <li>Achsabstand: 1040mm</li>
-                  <li>Spurbreite: 1050mm</li>
-                </ul>
-                <p className="chassis-price">ab 4.290€</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Info Section 1 */}
       <section className="section-light-blue">
         <div className="container">
           <div className="two-col-layout">
@@ -119,42 +100,26 @@ export default function ChassisPage() {
         </div>
       </section>
 
+      {/* Info Section 2 */}
       <section className="section-white">
         <div className="container">
           <div className="two-col-layout-reversed">
-            <div className="content-side">
-              <span className="section-label">Nachwuchs</span>
-              <h2 className="section-heading">Cayman für Mini- und Bambini-Fahrer</h2>
-              <p className="section-text">
-                Das Cayman-Chassis wurde speziell für die jüngsten Rennfahrer entwickelt. Mit verbesserter Kippsicherheit, angepasstem Gewicht und optimaler Fahrstabilität bietet es den perfekten Einstieg in den Kartsport.
-              </p>
-            </div>
-            <div className="image-side">
-              <div className="image-placeholder-large"><ImagePlaceholder /></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-light-blue">
-        <div className="container">
-          <div className="two-col-layout">
-            <div className="image-side">
-              <div className="image-placeholder-large"><ImagePlaceholder /></div>
-            </div>
             <div className="content-side">
               <span className="section-label">Performance</span>
               <h2 className="section-heading">Das richtige Chassis für deine Ziele</h2>
               <p className="section-text">
                 Wir wählen jedes Chassis nach deinem Fahrstil, deiner Rennklasse und deinen sportlichen Ambitionen aus. Mit jahrelanger Erfahrung im Rennsport wissen wir, worauf es ankommt – und stellen sicher, dass du mit dem besten Material an den Start gehst.
               </p>
-              <Link href="/kontakt" className="btn-primary">Beraten</Link>
+            </div>
+            <div className="image-side">
+              <div className="image-placeholder-large"><ImagePlaceholder /></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-dark">
+      {/* CTA Section with Background Image */}
+      <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
             <h2 className="section-heading text-white">Dein Chassis wartet auf dich</h2>
@@ -166,6 +131,7 @@ export default function ChassisPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
       <section className="section-white">
         <div className="container">
           <div className="faq-container">
@@ -180,7 +146,7 @@ export default function ChassisPage() {
                   <ChevronIcon />
                 </summary>
                 <div className="faq-answer">
-                  Für Einsteiger empfehlen wir das Lenzokart GT oder das Cayman (für jüngere Fahrer). Beide bieten eine ausgezeichnete Balance zwischen Performance und Handling.
+                  Für Einsteiger empfehlen wir das Lenzokart GT. Es bietet eine ausgezeichnete Balance zwischen Performance und Handling.
                 </div>
               </details>
               <details className="faq-item">
