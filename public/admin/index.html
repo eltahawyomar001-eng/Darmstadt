@@ -5,24 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>NB Motorsport - Admin</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
     <script>
-      // Initialize with inline config to avoid 404
       CMS.init({
         config: {
           backend: {
             name: 'github',
             repo: 'eltahawyomar001-eng/Darmstadt',
-            branch: 'main',
-            base_url: 'https://darmstadt.vercel.app',
-            auth_endpoint: '/api/auth'
+            branch: 'main'
           },
           media_folder: 'public/uploads',
           public_folder: '/uploads',
-          locale: 'de',
           collections: [
             {
               name: 'news',
@@ -49,7 +44,6 @@
               fields: [
                 { label: 'Titel', name: 'title', widget: 'string' },
                 { label: 'Datum Start', name: 'dateStart', widget: 'datetime', date_format: 'YYYY-MM-DD' },
-                { label: 'Datum Ende', name: 'dateEnd', widget: 'datetime', date_format: 'YYYY-MM-DD', required: false },
                 { label: 'Ort', name: 'location', widget: 'string' },
                 { label: 'Serie', name: 'series', widget: 'select', options: ['ADAC Kart Masters', 'ADAC Kart Cup', 'DKM', 'Rotax Max', 'IAME X30', 'Training', 'Sonstige'] },
                 { label: 'Status', name: 'status', widget: 'select', options: ['upcoming', 'completed'], default: 'upcoming' },
