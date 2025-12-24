@@ -1373,6 +1373,7 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
   margin-top: var(--space-xl);
+  align-items: stretch;
 }
 
 .chassis-grid-3 {
@@ -1384,51 +1385,66 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: 100%;
+  border-radius: 12px;
 }
 
 .chassis-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 220px;
   background-color: white;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.chassis-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .chassis-content {
   padding: var(--space-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
   flex-grow: 1;
 }
 
 .chassis-name {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--text);
+  margin-bottom: var(--space-xs);
+  min-height: 28px;
 }
 
 .chassis-desc {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text-light);
-  line-height: 1.6;
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+  min-height: 44px;
 }
 
 .chassis-specs {
   list-style: none;
   padding: 0;
-  margin: var(--space-xs) 0;
+  margin: 0 0 var(--space-sm) 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   flex-grow: 1;
 }
 
 .chassis-specs li {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-light);
-  padding-left: 18px;
+  padding-left: 16px;
   position: relative;
 }
 
@@ -1441,10 +1457,11 @@ img {
 }
 
 .chassis-price {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--primary);
   margin-top: auto;
+  padding-top: var(--space-xs);
 }
 
 @media (max-width: 968px) {
@@ -1597,6 +1614,7 @@ img {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
   margin-top: var(--space-xl);
+  align-items: stretch;
 }
 
 .engine-card-static {
@@ -1604,31 +1622,83 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: 100%;
+  border-radius: 12px;
 }
 
 .engine-card-static .engine-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 220px;
   background-color: white;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.engine-card-static .engine-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .engine-card-static .engine-content {
   padding: var(--space-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
   flex-grow: 1;
+}
+
+.engine-card-static .engine-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--space-xs);
+  min-height: 28px;
+}
+
+.engine-card-static .engine-desc {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+  min-height: 44px;
 }
 
 .engine-card-static .engine-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-sm) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   flex-grow: 1;
 }
 
+.engine-card-static .engine-specs li {
+  font-size: 13px;
+  color: var(--text-light);
+  padding-left: 16px;
+  position: relative;
+}
+
+.engine-card-static .engine-specs li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
 .engine-card-static .engine-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
   margin-top: auto;
+  padding-top: var(--space-xs);
 }
 
 @media (max-width: 968px) {
