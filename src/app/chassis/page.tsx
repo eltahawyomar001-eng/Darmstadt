@@ -65,6 +65,7 @@ export default function ChassisPage() {
                     alt={item.name}
                     width={400}
                     height={300}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </div>
                 <div className="chassis-content">
