@@ -1392,6 +1392,7 @@ img {
   width: 100%;
   aspect-ratio: 4 / 3;
   background-color: white;
+  flex-shrink: 0;
 }
 
 .chassis-content {
@@ -1443,7 +1444,7 @@ img {
   font-size: 22px;
   font-weight: 700;
   color: var(--primary);
-  margin-top: var(--space-xs);
+  margin-top: auto;
 }
 
 @media (max-width: 968px) {
@@ -1603,6 +1604,7 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 100%;
 }
 
 .engine-card-static .engine-image {
@@ -1610,6 +1612,7 @@ img {
   width: 100%;
   aspect-ratio: 4 / 3;
   background-color: white;
+  flex-shrink: 0;
 }
 
 .engine-card-static .engine-content {
@@ -1617,6 +1620,15 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
+  flex-grow: 1;
+}
+
+.engine-card-static .engine-specs {
+  flex-grow: 1;
+}
+
+.engine-card-static .engine-price {
+  margin-top: auto;
 }
 
 @media (max-width: 968px) {

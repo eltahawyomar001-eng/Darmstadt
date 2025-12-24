@@ -4,7 +4,7 @@ excerpt: "Wir freuen uns, unsere brandneue Website vorzustellen. Moderne Optik, 
 date: 2024-01-15
 author: "NB Motorsport Team"
 category: "Allgemein"
-image: "/27.jpg"
+image: "/26.png"
 ---
 
 Nach mehreren Monaten Arbeit ist es endlich soweit: Unsere neue Website geht live. Mit frischem Design und verbesserter Benutzerfreundlichkeit möchten wir euch noch besser über unsere Leistungen, Produkte und das Team informieren.
