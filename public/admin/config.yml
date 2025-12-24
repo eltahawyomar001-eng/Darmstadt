@@ -1,0 +1,60 @@
+backend:
+  name: github
+  repo: eltahawyomar001-eng/Darmstadt
+  branch: main
+  base_url: https://nb-motorsport.vercel.app
+  auth_endpoint: /api/auth
+
+# For local development testing, uncomment the following:
+# backend:
+#   name: git-gateway
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+locale: "de"
+
+collections:
+  # News Articles
+  - name: "news"
+    label: "News Artikel"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Kurzbeschreibung", name: "excerpt", widget: "text" }
+      - { label: "Datum", name: "date", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "Autor", name: "author", widget: "string", default: "NB Motorsport Team" }
+      - { label: "Kategorie", name: "category", widget: "select", options: ["Allgemein", "Team", "Rennen", "Produkte"] }
+      - { label: "Bild", name: "image", widget: "image" }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
+
+  # Events / Rennkalender
+  - name: "events"
+    label: "Rennkalender"
+    folder: "content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Datum Start", name: "dateStart", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "Datum Ende", name: "dateEnd", widget: "datetime", date_format: "YYYY-MM-DD", required: false }
+      - { label: "Ort", name: "location", widget: "string" }
+      - { label: "Serie", name: "series", widget: "select", options: ["ADAC Kart Masters", "ADAC Kart Cup", "DKM", "Rotax Max", "IAME X30", "Training", "Sonstige"] }
+      - { label: "Status", name: "status", widget: "select", options: ["upcoming", "completed"], default: "upcoming" }
+      - { label: "Beschreibung", name: "description", widget: "text", required: false }
+
+  # Site Settings
+  - name: "settings"
+    label: "Einstellungen"
+    files:
+      - name: "general"
+        label: "Allgemein"
+        file: "content/settings/general.json"
+        fields:
+          - { label: "Website Titel", name: "siteTitle", widget: "string" }
+          - { label: "Beschreibung", name: "siteDescription", widget: "text" }
+          - { label: "Telefon", name: "phone", widget: "string" }
+          - { label: "E-Mail", name: "email", widget: "string" }
+          - { label: "Adresse", name: "address", widget: "text" }

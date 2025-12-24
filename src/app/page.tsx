@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAllArticles } from '@/data/news';
-import { getUpcomingEvents } from '@/data/events';
+import { getAllNews } from '@/lib/news';
+import { getUpcomingEvents } from '@/lib/events';
 
 // Icons matching Figma exactly
 const ChassisIcon = () => (
@@ -73,7 +73,7 @@ export default function HomePage() {
   ];
 
   // Get news from centralized data source
-  const allNews = getAllArticles();
+  const allNews = getAllNews();
   const latestNews = allNews.slice(0, 3);
 
   // Get events from centralized data source
@@ -143,11 +143,11 @@ export default function HomePage() {
             <p className="section-subtitle">Aktuelle Berichte und Meldungen</p>
           </div>
           <div className="news-grid">
-            {latestNews.map((article, index) => (
-              <article key={article.id} className="news-card">
+            {latestNews.map((article) => (
+              <article key={article.slug} className="news-card">
                 <div className="news-image">
                   <Image
-                    src="/news1.png"
+                    src={article.image}
                     alt={article.title}
                     width={400}
                     height={250}
@@ -167,7 +167,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="news-title">{article.title}</h3>
                   <p className="news-excerpt">{article.excerpt}</p>
-                  <Link href={`/news/${article.id}`} className="link-arrow">
+                  <Link href={`/news/${article.slug}`} className="link-arrow">
                     Mehr <ArrowRight />
                   </Link>
                 </div>
@@ -192,7 +192,7 @@ export default function HomePage() {
             <>
               <div className="events-list">
                 {upcomingEvents.map((event) => (
-                  <div key={event.id} className="event-card-home">
+                  <div key={event.slug} className="event-card-home">
                     <div className="event-date-box">
                       <span className="event-weekday">{event.weekday}</span>
                       <span className="event-day">{event.day}</span>

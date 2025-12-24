@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAllArticles } from '@/data/news';
+import { getAllNews } from '@/lib/news';
 
 export default function NewsPage() {
-  const articles = getAllArticles();
+  const articles = getAllNews();
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function NewsPage() {
         <div className="container">
           <div className="news-grid">
             {articles.map((article) => (
-              <Link href={`/news/${article.id}`} key={article.id} className="news-article-card">
+              <Link href={`/news/${article.slug}`} key={article.slug} className="news-article-card">
                 <div className="news-article-image">
                   <Image
                     src={article.image}

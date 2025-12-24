@@ -1,18 +1,18 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getArticleBySlug, getAllArticles } from '@/data/news';
+import { getNewsBySlug, getAllNews } from '@/lib/news';
 
 export function generateStaticParams() {
-  const articles = getAllArticles();
+  const articles = getAllNews();
   return articles.map((article) => ({
-    slug: article.id,
+    slug: article.slug,
   }));
 }
 
 export default async function NewsArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = getNewsBySlug(slug);
 
   if (!article) {
     notFound();
@@ -65,16 +65,10 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
       <section className="section-white">
         <div className="container">
           <div className="article-content-wrapper">
-            <div className="article-intro">
-              <p>{article.content.intro}</p>
-            </div>
-            
-            {article.content.sections.map((section, index) => (
-              <div key={index} className="article-section">
-                {section.heading && <h2>{section.heading}</h2>}
-                <p>{section.text}</p>
-              </div>
-            ))}
+            <div 
+              className="article-content-markdown"
+              dangerouslySetInnerHTML={{ __html: article.content.replace(/\n\n/g, '</p><p>').replace(/^/, '<p>').replace(/$/, '</p>').replace(/## (.*?)\n/g, '</p><h2>$1</h2><p>') }}
+            />
           </div>
         </div>
       </section>
