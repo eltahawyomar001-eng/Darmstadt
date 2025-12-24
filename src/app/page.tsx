@@ -123,7 +123,7 @@ export default function HomePage() {
             </div>
             <div className="features-image">
               <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop"
+                src="/2.jpeg"
                 alt="Kart Racing"
                 width={600}
                 height={500}

@@ -1,12 +1,5 @@
 import Link from 'next/link';
-
-const ImagePlaceholder = () => (
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <rect x="8" y="12" width="48" height="40" rx="4"/>
-    <circle cx="22" cy="26" r="4"/>
-    <path d="M8 44L20 32L32 44L44 28L56 44"/>
-  </svg>
-);
+import Image from 'next/image';
 
 const HandshakeIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -41,14 +34,18 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Wer wir sind Section */}
+      {/* Wer wir sind Section - Image 16 */}
       <section className="section-white">
         <div className="container">
           <div className="two-col-layout">
             <div className="image-side">
-              <div className="image-placeholder">
-                <ImagePlaceholder />
-              </div>
+              <Image
+                src="/16.jpg"
+                alt="Wer wir sind und was wir tun"
+                width={600}
+                height={450}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+              />
             </div>
             <div className="content-side">
               <span className="section-label">Professional</span>
@@ -103,7 +100,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Auf der Strecke Section */}
+      {/* Auf der Strecke Section - Gallery Images 17-25 */}
       <section className="section-white">
         <div className="container">
           <div className="carousel-section">
@@ -111,43 +108,33 @@ export default function TeamPage() {
               <h2 className="section-heading">Auf der Strecke</h2>
               <p className="section-text">Momente, die zählen, von wer wir sind</p>
             </div>
-            <div className="carousel-wrapper">
-              <div className="carousel-images">
-                <div className="carousel-image">
-                  <div className="image-placeholder">
-                    <ImagePlaceholder />
-                  </div>
-                </div>
-                <div className="carousel-image">
-                  <div className="image-placeholder">
-                    <ImagePlaceholder />
-                  </div>
-                </div>
-                <div className="carousel-image">
-                  <div className="image-placeholder">
-                    <ImagePlaceholder />
-                  </div>
-                </div>
+            <div className="gallery-grid">
+              <div className="gallery-image">
+                <Image src="/17.jpg" alt="Auf der Strecke 1" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
               </div>
-              <div className="carousel-controls">
-                <button className="carousel-btn" aria-label="Previous">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-                <button className="carousel-btn" aria-label="Next">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
+              <div className="gallery-image">
+                <Image src="/18.jpg" alt="Auf der Strecke 2" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
               </div>
-              <div className="carousel-dots">
-                <span className="dot active"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
+              <div className="gallery-image">
+                <Image src="/19.jpg" alt="Auf der Strecke 3" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+              </div>
+              <div className="gallery-image">
+                <Image src="/20.jpg" alt="Auf der Strecke 4" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+              </div>
+              <div className="gallery-image">
+                <Image src="/21.jpg" alt="Auf der Strecke 5" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+              </div>
+              <div className="gallery-image">
+                <Image src="/22.jpg" alt="Auf der Strecke 6" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+              </div>
+              <div className="gallery-image">
+                <Image src="/23.jpg" alt="Auf der Strecke 7" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+              </div>
+              <div className="gallery-image">
+                <Image src="/24.jpg" alt="Auf der Strecke 8" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+              </div>
+              <div className="gallery-image">
+                <Image src="/25.jpg" alt="Auf der Strecke 9" width={400} height={300} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
               </div>
             </div>
           </div>

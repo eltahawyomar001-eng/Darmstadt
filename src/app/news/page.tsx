@@ -27,7 +27,7 @@ export default function NewsPage() {
               <Link href={`/news/${article.id}`} key={article.id} className="news-article-card">
                 <div className="news-article-image">
                   <Image
-                    src="/news1.png"
+                    src={article.image}
                     alt={article.title}
                     width={400}
                     height={250}

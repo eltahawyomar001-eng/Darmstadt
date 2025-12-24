@@ -1,14 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getArticleBySlug, getAllArticles } from '@/data/news';
-
-const ImagePlaceholder = () => (
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <rect x="8" y="12" width="48" height="40" rx="4"/>
-    <circle cx="22" cy="26" r="4"/>
-    <path d="M8 44L20 32L32 44L44 28L56 44"/>
-  </svg>
-);
 
 export function generateStaticParams() {
   const articles = getAllArticles();
@@ -57,9 +50,13 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
       <section className="section-white">
         <div className="container">
           <div className="article-featured-image">
-            <div className="image-placeholder">
-              <ImagePlaceholder />
-            </div>
+            <Image
+              src={article.image}
+              alt={article.title}
+              width={1200}
+              height={600}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+            />
           </div>
         </div>
       </section>

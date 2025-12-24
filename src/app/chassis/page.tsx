@@ -1,12 +1,5 @@
 import Link from 'next/link';
-
-const ImagePlaceholder = () => (
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <rect x="8" y="12" width="48" height="40" rx="4"/>
-    <circle cx="22" cy="26" r="4"/>
-    <path d="M8 44L20 32L32 44L44 28L56 44"/>
-  </svg>
-);
+import Image from 'next/image';
 
 const ChevronIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -20,19 +13,22 @@ export default function ChassisPage() {
       name: 'Lenzokart GT',
       desc: 'Hochwertiges Einsteiger-Chassis mit exzellentem Handling und Stabilität.',
       specs: ['Gewicht: 32kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
-      price: 'ab 2.990€'
+      price: 'ab 2.990€',
+      image: '/4.png'
     },
     {
       name: 'Formula K (Exprit)',
       desc: 'Bewährtes Racing-Chassis für ambitionierte Fahrer in allen Klassen.',
       specs: ['Gewicht: 31kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
-      price: 'ab 3.490€'
+      price: 'ab 3.490€',
+      image: '/5.png'
     },
     {
-      name: 'Tonykart',
+      name: 'Cayman',
       desc: 'High-End Profi-Chassis für internationale Wettbewerbe und Meisterschaften.',
       specs: ['Gewicht: 31kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
-      price: 'ab 4.290€'
+      price: 'ab 4.290€',
+      image: '/6.png'
     }
   ];
 
@@ -64,7 +60,13 @@ export default function ChassisPage() {
             {chassis.map((item) => (
               <div key={item.name} className="chassis-card">
                 <div className="chassis-image">
-                  <div className="image-placeholder"><ImagePlaceholder /></div>
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={400}
+                    height={300}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
                 </div>
                 <div className="chassis-content">
                   <h3 className="chassis-name">{item.name}</h3>
@@ -82,12 +84,18 @@ export default function ChassisPage() {
         </div>
       </section>
 
-      {/* Info Section 1 */}
+      {/* Info Section 1 - Image 7 */}
       <section className="section-light-blue">
         <div className="container">
           <div className="two-col-layout">
             <div className="image-side">
-              <div className="image-placeholder-large"><ImagePlaceholder /></div>
+              <Image
+                src="/7.jpg"
+                alt="Für jeden Rennfahrer das passende Chassis"
+                width={600}
+                height={450}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+              />
             </div>
             <div className="content-side">
               <span className="section-label">Vielfalt</span>
@@ -100,7 +108,7 @@ export default function ChassisPage() {
         </div>
       </section>
 
-      {/* Info Section 2 */}
+      {/* Info Section 2 - Image 9 */}
       <section className="section-white">
         <div className="container">
           <div className="two-col-layout-reversed">
@@ -112,7 +120,13 @@ export default function ChassisPage() {
               </p>
             </div>
             <div className="image-side">
-              <div className="image-placeholder-large"><ImagePlaceholder /></div>
+              <Image
+                src="/9.jpeg"
+                alt="Das richtige Chassis für deine Ziele"
+                width={600}
+                height={450}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+              />
             </div>
           </div>
         </div>
