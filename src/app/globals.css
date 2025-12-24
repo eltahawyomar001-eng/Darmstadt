@@ -1384,6 +1384,7 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 100%;
 }
 
 .chassis-image {
@@ -1398,6 +1399,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  flex-grow: 1;
 }
 
 .chassis-name {
@@ -1419,6 +1421,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex-grow: 1;
 }
 
 .chassis-specs li {
@@ -1519,6 +1522,7 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 100%;
 }
 
 .engine-image {
@@ -1533,6 +1537,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  flex-grow: 1;
 }
 
 .engine-name {
@@ -1554,6 +1559,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex-grow: 1;
 }
 
 .engine-specs li {
