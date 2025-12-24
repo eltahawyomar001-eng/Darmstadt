@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllMotoren } from '@/lib/motoren';
+import { getMotorenPageContent } from '@/lib/pages';
 
 const ChevronIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -29,8 +30,16 @@ const CogIcon = () => (
   </svg>
 );
 
+// Map icon names to components
+const iconMap: { [key: string]: React.FC } = {
+  wrench: WrenchIcon,
+  gauge: GaugeIcon,
+  cog: CogIcon,
+};
+
 export default function MotorenPage() {
   const engines = getAllMotoren();
+  const content = getMotorenPageContent();
 
   return (
     <>
@@ -38,9 +47,9 @@ export default function MotorenPage() {
       <section className="page-hero-image">
         <div className="container">
           <div className="page-hero-content">
-            <h1 className="page-hero-title">Motoren</h1>
+            <h1 className="page-hero-title">{content.heroTitle}</h1>
             <p className="page-hero-subtitle">
-              Hochleistungsmotoren von Iame – zuverlässig, leistungsstark und auf Sieg programmiert.
+              {content.heroText}
             </p>
           </div>
         </div>
@@ -50,10 +59,10 @@ export default function MotorenPage() {
       <section className="section-white">
         <div className="container">
           <div className="section-header-center">
-            <span className="section-label">Iame</span>
-            <h2 className="section-heading">Unsere Motoren im Überblick</h2>
+            <span className="section-label">{content.engineLabel}</span>
+            <h2 className="section-heading">{content.engineTitle}</h2>
             <p className="section-text">
-              Jeder Motor wird von uns geprüft, eingestellt und rennfertig ausgeliefert.
+              {content.engineText}
             </p>
           </div>
           <div className="engine-grid">
@@ -87,25 +96,20 @@ export default function MotorenPage() {
       <section className="section-light-blue">
         <div className="container">
           <div className="section-header-center">
-            <span className="section-label">Rundum-Service</span>
-            <h2 className="section-heading">Was wir für dich tun</h2>
+            <span className="section-label">{content.servicesLabel}</span>
+            <h2 className="section-heading">{content.servicesTitle}</h2>
           </div>
           <div className="services-grid-three">
-            <div className="service-item">
-              <div className="service-icon"><WrenchIcon /></div>
-              <h3 className="service-title">Wartung & Service</h3>
-              <p className="service-desc">Regelmäßige Inspektionen und technische Checks.</p>
-            </div>
-            <div className="service-item">
-              <div className="service-icon"><GaugeIcon /></div>
-              <h3 className="service-title">Performance-Tuning</h3>
-              <p className="service-desc">Maximale Leistung – legal und messbar.</p>
-            </div>
-            <div className="service-item">
-              <div className="service-icon"><CogIcon /></div>
-              <h3 className="service-title">Motorenbau nach Maß</h3>
-              <p className="service-desc">Individuelle Anpassungen für höchste Ansprüche.</p>
-            </div>
+            {content.services?.map((service, index) => {
+              const IconComponent = iconMap[service.icon] || WrenchIcon;
+              return (
+                <div key={index} className="service-item">
+                  <div className="service-icon"><IconComponent /></div>
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-desc">{service.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -115,37 +119,21 @@ export default function MotorenPage() {
         <div className="container">
           <div className="faq-container">
             <div className="section-header-center">
-              <span className="section-label">Häufige Fragen</span>
-              <h2 className="section-heading">FAQ zu Motoren</h2>
+              <span className="section-label">{content.faqLabel}</span>
+              <h2 className="section-heading">{content.faqTitle}</h2>
             </div>
             <div className="faq-list">
-              <details className="faq-item">
-                <summary className="faq-question">
-                  Welcher Motor ist für Anfänger geeignet?
-                  <ChevronIcon />
-                </summary>
-                <div className="faq-answer">
-                  Für Einsteiger empfehlen wir den Iame X30 oder den Iame Leopard.
-                </div>
-              </details>
-              <details className="faq-item">
-                <summary className="faq-question">
-                  Wie oft muss ein Motor gewartet werden?
-                  <ChevronIcon />
-                </summary>
-                <div className="faq-answer">
-                  Eine Grundwartung empfehlen wir nach jedem Rennwochenende.
-                </div>
-              </details>
-              <details className="faq-item">
-                <summary className="faq-question">
-                  Bietet ihr auch Tuning an?
-                  <ChevronIcon />
-                </summary>
-                <div className="faq-answer">
-                  Ja, wir bieten professionelles Performance-Tuning an.
-                </div>
-              </details>
+              {content.faqs?.map((faq, index) => (
+                <details key={index} className="faq-item">
+                  <summary className="faq-question">
+                    {faq.question}
+                    <ChevronIcon />
+                  </summary>
+                  <div className="faq-answer">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </div>
@@ -155,11 +143,11 @@ export default function MotorenPage() {
       <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
-            <h2 className="section-heading text-white">Dein Motor wartet auf dich</h2>
+            <h2 className="section-heading text-white">{content.ctaTitle}</h2>
             <p className="section-text text-white">
-              Kontaktiere uns und wir finden gemeinsam den perfekten Motor für deine Ziele.
+              {content.ctaText}
             </p>
-            <Link href="/kontakt" className="btn-white">Kontakt</Link>
+            <Link href="/kontakt" className="btn-white">{content.ctaButton}</Link>
           </div>
         </div>
       </section>

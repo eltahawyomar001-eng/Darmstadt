@@ -81,6 +81,179 @@
                 { label: 'Preis', name: 'price', widget: 'string' },
                 { label: 'Reihenfolge', name: 'order', widget: 'number', default: 1, hint: 'Niedrigere Zahlen erscheinen zuerst' }
               ]
+            },
+            {
+              name: 'pages',
+              label: 'Seiteninhalt',
+              files: [
+                {
+                  name: 'homepage',
+                  label: 'Startseite',
+                  file: 'content/pages/homepage.md',
+                  fields: [
+                    { label: 'Hero Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Hero Text', name: 'heroText', widget: 'text' },
+                    { label: 'Hero Button 1', name: 'heroButtonPrimary', widget: 'string' },
+                    { label: 'Hero Button 2', name: 'heroButtonSecondary', widget: 'string' },
+                    { label: 'Features', name: 'features', widget: 'list', fields: [
+                      { label: 'Titel', name: 'title', widget: 'string' },
+                      { label: 'Beschreibung', name: 'description', widget: 'string' }
+                    ]},
+                    { label: 'News Label', name: 'newsLabel', widget: 'string' },
+                    { label: 'News Titel', name: 'newsTitle', widget: 'string' },
+                    { label: 'News Untertitel', name: 'newsSubtitle', widget: 'string' },
+                    { label: 'News Button', name: 'newsButtonText', widget: 'string' },
+                    { label: 'Events Label', name: 'eventsLabel', widget: 'string' },
+                    { label: 'Events Titel', name: 'eventsTitle', widget: 'string' },
+                    { label: 'Events Untertitel', name: 'eventsSubtitle', widget: 'string' },
+                    { label: 'Events Button', name: 'eventsButtonText', widget: 'string' }
+                  ]
+                },
+                {
+                  name: 'chassis-page',
+                  label: 'Chassis Seite',
+                  file: 'content/pages/chassis.md',
+                  fields: [
+                    { label: 'Hero Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Hero Text', name: 'heroText', widget: 'text' },
+                    { label: 'Chassis Label', name: 'chassisLabel', widget: 'string' },
+                    { label: 'Chassis Titel', name: 'chassisTitle', widget: 'string' },
+                    { label: 'Chassis Text', name: 'chassisText', widget: 'text' },
+                    { label: 'Info 1 Label', name: 'infoSection1Label', widget: 'string' },
+                    { label: 'Info 1 Titel', name: 'infoSection1Title', widget: 'string' },
+                    { label: 'Info 1 Text', name: 'infoSection1Text', widget: 'text' },
+                    { label: 'Info 1 Bild', name: 'infoSection1Image', widget: 'image' },
+                    { label: 'Info 2 Label', name: 'infoSection2Label', widget: 'string' },
+                    { label: 'Info 2 Titel', name: 'infoSection2Title', widget: 'string' },
+                    { label: 'Info 2 Text', name: 'infoSection2Text', widget: 'text' },
+                    { label: 'Info 2 Bild', name: 'infoSection2Image', widget: 'image' },
+                    { label: 'CTA Titel', name: 'ctaTitle', widget: 'string' },
+                    { label: 'CTA Text', name: 'ctaText', widget: 'text' },
+                    { label: 'CTA Button', name: 'ctaButtonText', widget: 'string' },
+                    { label: 'FAQ Label', name: 'faqLabel', widget: 'string' },
+                    { label: 'FAQ Titel', name: 'faqTitle', widget: 'string' },
+                    { label: 'FAQ Liste', name: 'faqs', widget: 'list', fields: [
+                      { label: 'Frage', name: 'question', widget: 'string' },
+                      { label: 'Antwort', name: 'answer', widget: 'text' }
+                    ]}
+                  ]
+                },
+                {
+                  name: 'motoren-page',
+                  label: 'Motoren Seite',
+                  file: 'content/pages/motoren.md',
+                  fields: [
+                    { label: 'Hero Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Hero Text', name: 'heroText', widget: 'text' },
+                    { label: 'Motoren Label', name: 'engineLabel', widget: 'string' },
+                    { label: 'Motoren Titel', name: 'engineTitle', widget: 'string' },
+                    { label: 'Motoren Text', name: 'engineText', widget: 'text' },
+                    { label: 'Services Label', name: 'servicesLabel', widget: 'string' },
+                    { label: 'Services Titel', name: 'servicesTitle', widget: 'string' },
+                    { label: 'Services', name: 'services', widget: 'list', fields: [
+                      { label: 'Titel', name: 'title', widget: 'string' },
+                      { label: 'Beschreibung', name: 'description', widget: 'string' },
+                      { label: 'Icon', name: 'icon', widget: 'select', options: ['wrench', 'gauge', 'cog'] }
+                    ]},
+                    { label: 'FAQ Label', name: 'faqLabel', widget: 'string' },
+                    { label: 'FAQ Titel', name: 'faqTitle', widget: 'string' },
+                    { label: 'FAQ Liste', name: 'faqs', widget: 'list', fields: [
+                      { label: 'Frage', name: 'question', widget: 'string' },
+                      { label: 'Antwort', name: 'answer', widget: 'text' }
+                    ]},
+                    { label: 'CTA Titel', name: 'ctaTitle', widget: 'string' },
+                    { label: 'CTA Text', name: 'ctaText', widget: 'text' },
+                    { label: 'CTA Button', name: 'ctaButton', widget: 'string' }
+                  ]
+                },
+                {
+                  name: 'team-page',
+                  label: 'Team Seite',
+                  file: 'content/pages/team.md',
+                  fields: [
+                    { label: 'Hero Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Hero Text', name: 'heroText', widget: 'text' },
+                    { label: 'About Label', name: 'aboutLabel', widget: 'string' },
+                    { label: 'About Titel', name: 'aboutTitle', widget: 'string' },
+                    { label: 'About Text', name: 'aboutText', widget: 'text' },
+                    { label: 'About Bild', name: 'aboutImage', widget: 'image' },
+                    { label: 'Werte Label', name: 'valuesLabel', widget: 'string' },
+                    { label: 'Werte Titel', name: 'valuesTitle', widget: 'string' },
+                    { label: 'Werte Text', name: 'valuesText', widget: 'text' },
+                    { label: 'Werte', name: 'values', widget: 'list', fields: [
+                      { label: 'Titel', name: 'title', widget: 'string' },
+                      { label: 'Beschreibung', name: 'description', widget: 'string' }
+                    ]},
+                    { label: 'Galerie Titel', name: 'galleryTitle', widget: 'string' },
+                    { label: 'Galerie Text', name: 'galleryText', widget: 'string' },
+                    { label: 'Galerie Bilder', name: 'galleryImages', widget: 'list', field: { label: 'Bild', name: 'image', widget: 'image' } },
+                    { label: 'CTA Titel', name: 'ctaTitle', widget: 'string' },
+                    { label: 'CTA Text', name: 'ctaText', widget: 'text' },
+                    { label: 'CTA Button', name: 'ctaButtonText', widget: 'string' }
+                  ]
+                },
+                {
+                  name: 'kontakt-page',
+                  label: 'Kontakt Seite',
+                  file: 'content/pages/kontakt.md',
+                  fields: [
+                    { label: 'Hero Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Hero Text', name: 'heroText', widget: 'text' },
+                    { label: 'Firmenname', name: 'companyName', widget: 'string' },
+                    { label: 'Adresse', name: 'address', widget: 'string' },
+                    { label: 'Stadt', name: 'city', widget: 'string' },
+                    { label: 'Telefon', name: 'phone', widget: 'string' },
+                    { label: 'E-Mail', name: 'email', widget: 'string' },
+                    { label: 'Öffnungszeiten', name: 'openingHours', widget: 'text' },
+                    { label: 'Adresse Label', name: 'addressLabel', widget: 'string' },
+                    { label: 'Telefon Label', name: 'phoneLabel', widget: 'string' },
+                    { label: 'E-Mail Label', name: 'emailLabel', widget: 'string' },
+                    { label: 'Öffnungszeiten Label', name: 'hoursLabel', widget: 'string' },
+                    { label: 'Formular Titel', name: 'formTitle', widget: 'string' },
+                    { label: 'Formular Text', name: 'formText', widget: 'text' },
+                    { label: 'Name Label', name: 'formNameLabel', widget: 'string' },
+                    { label: 'Name Placeholder', name: 'formNamePlaceholder', widget: 'string' },
+                    { label: 'E-Mail Label', name: 'formEmailLabel', widget: 'string' },
+                    { label: 'E-Mail Placeholder', name: 'formEmailPlaceholder', widget: 'string' },
+                    { label: 'Betreff Label', name: 'formSubjectLabel', widget: 'string' },
+                    { label: 'Betreff Placeholder', name: 'formSubjectPlaceholder', widget: 'string' },
+                    { label: 'Nachricht Label', name: 'formMessageLabel', widget: 'string' },
+                    { label: 'Nachricht Placeholder', name: 'formMessagePlaceholder', widget: 'string' },
+                    { label: 'Button Text', name: 'formButtonText', widget: 'string' }
+                  ]
+                },
+                {
+                  name: 'motoren-service-page',
+                  label: 'Motoren & Service Seite',
+                  file: 'content/pages/motoren-service.md',
+                  fields: [
+                    { label: 'Hero Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Hero Text', name: 'heroText', widget: 'text' },
+                    { label: 'Motoren Titel', name: 'motorsTitle', widget: 'string' },
+                    { label: 'Motoren Text', name: 'motorsText', widget: 'text' },
+                    { label: 'Services', name: 'services', widget: 'list', fields: [
+                      { label: 'Titel', name: 'title', widget: 'string' },
+                      { label: 'Beschreibung', name: 'description', widget: 'string' }
+                    ]},
+                    { label: 'Schritte Label', name: 'stepsLabel', widget: 'string' },
+                    { label: 'Schritte Titel', name: 'stepsTitle', widget: 'string' },
+                    { label: 'Schritte', name: 'steps', widget: 'list', fields: [
+                      { label: 'Label', name: 'label', widget: 'string' },
+                      { label: 'Titel', name: 'title', widget: 'string' },
+                      { label: 'Beschreibung', name: 'description', widget: 'string' }
+                    ]},
+                    { label: 'FAQ Titel', name: 'faqTitle', widget: 'string' },
+                    { label: 'FAQ Text', name: 'faqText', widget: 'text' },
+                    { label: 'FAQ Liste', name: 'faqs', widget: 'list', fields: [
+                      { label: 'Frage', name: 'question', widget: 'string' },
+                      { label: 'Antwort', name: 'answer', widget: 'text' }
+                    ]},
+                    { label: 'CTA Titel', name: 'ctaTitle', widget: 'string' },
+                    { label: 'CTA Text', name: 'ctaText', widget: 'text' },
+                    { label: 'CTA Button', name: 'ctaButtonText', widget: 'string' }
+                  ]
+                }
+              ]
             }
           ]
         }

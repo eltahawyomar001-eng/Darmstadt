@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getMotorenServicePageContent } from '@/lib/pages';
 
 const ImagePlaceholder = () => (
   <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -36,16 +37,25 @@ const EuroIcon = () => (
   </svg>
 );
 
+// Map icon names to components
+const iconMap: { [key: string]: React.FC } = {
+  engine: EngineIcon,
+  wrench: WrenchIcon,
+  euro: EuroIcon,
+};
+
 export default function MotorenServicePage() {
+  const content = getMotorenServicePageContent();
+
   return (
     <>
       {/* Hero Section with Background Image */}
       <section className="page-hero-image">
         <div className="container">
           <div className="page-hero-content">
-            <h1 className="page-hero-title">Motoren und Service</h1>
+            <h1 className="page-hero-title">{content.heroTitle}</h1>
             <p className="page-hero-subtitle">
-              Premium-Rennmotoren, Tuning, Vermietung und Service für maximale Performance.
+              {content.heroText}
             </p>
           </div>
         </div>
@@ -55,9 +65,9 @@ export default function MotorenServicePage() {
       <section className="section-white">
         <div className="container">
           <div className="section-header-center">
-            <h2 className="section-heading">Unsere Motoren</h2>
+            <h2 className="section-heading">{content.motorsTitle}</h2>
             <p className="section-text">
-              Hochleistungsmotoren von führenden Herstellern für jeden Wettbewerb.
+              {content.motorsText}
             </p>
           </div>
           <div className="motor-gallery">
@@ -117,33 +127,22 @@ export default function MotorenServicePage() {
               </div>
               <div className="content-side">
                 <div className="service-feature-list">
-                  <div className="service-feature-item">
-                    <div className="service-feature-icon">
-                      <EngineIcon />
-                    </div>
-                    <div className="service-feature-content">
-                      <h3>Motoren mieten</h3>
-                      <p>Hochleistungsmotoren für Rennveranstaltungen deutschlandweit verfügbar.</p>
-                    </div>
-                  </div>
-                  <div className="service-feature-item">
-                    <div className="service-feature-icon">
-                      <WrenchIcon />
-                    </div>
-                    <div className="service-feature-content">
-                      <h3>Wartung und Revision</h3>
-                      <p>Professionelle Instandhaltung und Überholung von Rennmotoren.</p>
-                    </div>
-                  </div>
-                  <div className="service-feature-item">
-                    <div className="service-feature-icon">
-                      <EuroIcon />
-                    </div>
-                    <div className="service-feature-content">
-                      <h3>Motorenverkauf</h3>
-                      <p>Wir verkaufen hochwertige Motoren mit optimaler Leistung und technischer Feinabstimmung.</p>
-                    </div>
-                  </div>
+                  {content.services?.map((service, index) => {
+                    const icons = ['engine', 'wrench', 'euro'];
+                    const iconName = icons[index] || 'engine';
+                    const IconComponent = iconMap[iconName] || EngineIcon;
+                    return (
+                      <div key={index} className="service-feature-item">
+                        <div className="service-feature-icon">
+                          <IconComponent />
+                        </div>
+                        <div className="service-feature-content">
+                          <h3>{service.title}</h3>
+                          <p>{service.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
                 <Link href="/kontakt" className="link-arrow">
                   Kontakt →
@@ -158,46 +157,24 @@ export default function MotorenServicePage() {
       <section className="section-white">
         <div className="container">
           <div className="section-header-center">
-            <span className="section-label">Prozess</span>
-            <h2 className="section-heading">Drei Schritte zur Miete</h2>
+            <span className="section-label">{content.stepsLabel}</span>
+            <h2 className="section-heading">{content.stepsTitle}</h2>
           </div>
           <div className="rental-steps-grid">
-            <div className="rental-step-card">
-              <span className="rental-step-label">Schritt eins</span>
-              <h3 className="rental-step-title">Motor auswählen und reservieren</h3>
-              <p className="rental-step-desc">
-                Finden Sie den passenden Motor für Ihre Klasse.
-              </p>
-              <div className="rental-step-image">
-                <div className="image-placeholder">
-                  <ImagePlaceholder />
+            {content.steps?.map((step, index) => (
+              <div key={index} className="rental-step-card">
+                <span className="rental-step-label">{step.label}</span>
+                <h3 className="rental-step-title">{step.title}</h3>
+                <p className="rental-step-desc">
+                  {step.description}
+                </p>
+                <div className="rental-step-image">
+                  <div className="image-placeholder">
+                    <ImagePlaceholder />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="rental-step-card">
-              <span className="rental-step-label">Schritt zwei</span>
-              <h3 className="rental-step-title">Vereinbarung treffen und bezahlen</h3>
-              <p className="rental-step-desc">
-                Klären Sie alle Details und Mietbedingungen ab.
-              </p>
-              <div className="rental-step-image">
-                <div className="image-placeholder">
-                  <ImagePlaceholder />
-                </div>
-              </div>
-            </div>
-            <div className="rental-step-card">
-              <span className="rental-step-label">Schritt drei</span>
-              <h3 className="rental-step-title">Motor abholen und fahren</h3>
-              <p className="rental-step-desc">
-                Übernehmen Sie den Motor und starten Sie.
-              </p>
-              <div className="rental-step-image">
-                <div className="image-placeholder">
-                  <ImagePlaceholder />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -207,51 +184,26 @@ export default function MotorenServicePage() {
         <div className="container">
           <div className="faq-layout-split">
             <div className="faq-header-side">
-              <h2 className="section-heading">FAQ</h2>
+              <h2 className="section-heading">{content.faqTitle}</h2>
               <p className="section-text">
-                Antworten auf Ihre Fragen zu Motoren, Miete und Service.
+                {content.faqText}
               </p>
               <Link href="/kontakt" className="btn-outline-dark">
                 Kontakt
               </Link>
             </div>
             <div className="faq-list-side">
-              <details className="faq-item" open>
-                <summary className="faq-question">
-                  Welche Motoren stehen zur Miete?
-                  <ChevronIcon />
-                </summary>
-                <div className="faq-answer">
-                  Wir vermieten IAME X30 Junior und Senior, IAME KZ, TM KZ sowie LKE Motoren in verschiedenen Klassen. Alle Motoren sind wartungsgepflegt und rennfähig. Verfügbarkeit hängt von Termin und Veranstaltung ab.
-                </div>
-              </details>
-              <details className="faq-item">
-                <summary className="faq-question">
-                  Wie lange dauert eine Motormiete?
-                  <ChevronIcon />
-                </summary>
-                <div className="faq-answer">
-                  Die Mietdauer richtet sich nach Ihrer Veranstaltung. Wir bieten flexible Lösungen von einzelnen Renntagen bis zu mehrtägigen Events. Sprechen Sie uns an für Ihre spezifischen Anforderungen.
-                </div>
-              </details>
-              <details className="faq-item">
-                <summary className="faq-question">
-                  Sind Wartung und Revision enthalten?
-                  <ChevronIcon />
-                </summary>
-                <div className="faq-answer">
-                  Ja, alle Motoren werden vor der Miete vollständig überprüft. Nach Rückgabe führen wir notwendige Wartungsarbeiten durch. Verschleißteile sind bereits im Mietpreis enthalten.
-                </div>
-              </details>
-              <details className="faq-item">
-                <summary className="faq-question">
-                  Wie buche ich einen Motor?
-                  <ChevronIcon />
-                </summary>
-                <div className="faq-answer">
-                  Kontaktieren Sie uns direkt per Telefon oder Formular. Wir besprechen Ihre Wünsche, prüfen Verfügbarkeit und erstellen ein Angebot. Die Reservierung erfolgt nach Bestätigung.
-                </div>
-              </details>
+              {content.faqs?.map((faq, index) => (
+                <details key={index} className="faq-item" open={index === 0}>
+                  <summary className="faq-question">
+                    {faq.question}
+                    <ChevronIcon />
+                  </summary>
+                  <div className="faq-answer">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </div>
@@ -261,12 +213,12 @@ export default function MotorenServicePage() {
       <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
-            <h2 className="section-heading text-white">Motor anfragen oder Service buchen</h2>
+            <h2 className="section-heading text-white">{content.ctaTitle}</h2>
             <p className="section-text text-white">
-              Kontaktieren Sie uns für Miete, Tuning oder Wartung Ihrer Rennmotoren.
+              {content.ctaText}
             </p>
             <Link href="/kontakt" className="btn-white">
-              Kontakt
+              {content.ctaButtonText}
             </Link>
           </div>
         </div>

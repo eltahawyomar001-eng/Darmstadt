@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAllNews } from '@/lib/news';
 import { getUpcomingEvents } from '@/lib/events';
+import { getHomepageContent } from '@/lib/pages';
 
 // Icons matching Figma exactly
 const ChassisIcon = () => (
@@ -48,29 +49,18 @@ const MapPinIcon = () => (
   </svg>
 );
 
+// Map icon names to components
+const iconComponents = [ChassisIcon, TuningIcon, RentalIcon, SupportIcon];
+
 export default function HomePage() {
-  const features = [
-    {
-      icon: <ChassisIcon />,
-      title: 'Lenzokart Chassis',
-      description: 'Hochwertige Rennfahrzeuge für alle Klassen und Leistungsstufen',
-    },
-    {
-      icon: <TuningIcon />,
-      title: 'Motor-Tuning',
-      description: 'Optimierte Leistung für Renneinsätze',
-    },
-    {
-      icon: <RentalIcon />,
-      title: 'Vermietung',
-      description: 'Flexible Lösungen für Fahrer ohne eigenes Equipment',
-    },
-    {
-      icon: <SupportIcon />,
-      title: 'Rennbetreuung',
-      description: 'Professionelle Unterstützung an der Strecke',
-    },
-  ];
+  const content = getHomepageContent();
+
+  // Build features from CMS content with icons
+  const features = content.features?.map((feature, index) => ({
+    icon: iconComponents[index] ? iconComponents[index]() : <ChassisIcon />,
+    title: feature.title,
+    description: feature.description,
+  })) || [];
 
   // Get news from centralized data source
   const allNews = getAllNews();
@@ -85,17 +75,15 @@ export default function HomePage() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">
-              NB Motorsport -<br />
-              Lenzokart Importeur<br />
-              Deutschland
+            <h1 className="hero-title" style={{ whiteSpace: 'pre-line' }}>
+              {content.heroTitle}
             </h1>
             <p className="hero-text">
-              Wir sind der offizielle und einzige Lenzokart Importeur in Deutschland. Mit unseren Rennteam setzen wir auf Leistung, Technik und Professionalität auf jeder Strecke.
+              {content.heroText}
             </p>
             <div className="hero-buttons">
-              <Link href="/chassis" className="btn-white">Chassis</Link>
-              <Link href="/kontakt" className="btn-outline-white">Kontakt</Link>
+              <Link href="/chassis" className="btn-white">{content.heroButtonPrimary}</Link>
+              <Link href="/kontakt" className="btn-outline-white">{content.heroButtonSecondary}</Link>
             </div>
           </div>
         </div>
@@ -138,9 +126,9 @@ export default function HomePage() {
       <section className="news">
         <div className="container">
           <div className="news-header">
-            <span className="section-label">News</span>
-            <h2 className="section-title">Aus dem Rennbetrieb</h2>
-            <p className="section-subtitle">Aktuelle Berichte und Meldungen</p>
+            <span className="section-label">{content.newsLabel}</span>
+            <h2 className="section-title">{content.newsTitle}</h2>
+            <p className="section-subtitle">{content.newsSubtitle}</p>
           </div>
           <div className="news-grid">
             {latestNews.map((article) => (
@@ -175,7 +163,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="news-footer">
-            <Link href="/news" className="btn-outline-dark">Alle News</Link>
+            <Link href="/news" className="btn-outline-dark">{content.newsButtonText}</Link>
           </div>
         </div>
       </section>
@@ -184,9 +172,9 @@ export default function HomePage() {
       <section className="events">
         <div className="container">
           <div className="events-header">
-            <span className="section-label">Rennkalender</span>
-            <h2 className="section-title">Events</h2>
-            <p className="section-subtitle">Unsere kommenden Rennveranstaltungen und Termine</p>
+            <span className="section-label">{content.eventsLabel}</span>
+            <h2 className="section-title">{content.eventsTitle}</h2>
+            <p className="section-subtitle">{content.eventsSubtitle}</p>
           </div>
           {upcomingEvents.length > 0 ? (
             <>
@@ -211,7 +199,7 @@ export default function HomePage() {
                 ))}
               </div>
               <div className="events-footer">
-                <Link href="/events" className="btn-outline-dark">Alle Events</Link>
+                <Link href="/events" className="btn-outline-dark">{content.eventsButtonText}</Link>
               </div>
             </>
           ) : (
