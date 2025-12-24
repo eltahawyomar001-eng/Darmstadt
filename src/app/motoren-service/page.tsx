@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { getMotorenServicePageContent } from '@/lib/pages';
-import { iconMap } from '@/components/icons/Icons';
 
 const ImagePlaceholder = () => (
   <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -100,11 +99,17 @@ export default function MotorenServicePage() {
               <div className="content-side">
                 <div className="service-feature-list">
                   {content.services?.map((service, index) => {
-                    const IconComponent = iconMap[service.icon] || iconMap['engine'];
                     return (
                       <div key={index} className="service-feature-item">
                         <div className="service-feature-icon">
-                          <IconComponent />
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img 
+                            src={service.iconImage} 
+                            alt={service.title}
+                            width={48}
+                            height={48}
+                            style={{ width: '48px', height: '48px' }}
+                          />
                         </div>
                         <div className="service-feature-content">
                           <h3>{service.title}</h3>

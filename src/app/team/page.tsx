@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getTeamPageContent } from '@/lib/pages';
-import { iconMap } from '@/components/icons/Icons';
 
 export default function TeamPage() {
   const content = getTeamPageContent();
@@ -56,11 +55,17 @@ export default function TeamPage() {
           </div>
           <div className="values-grid">
             {content.values?.map((value, index) => {
-              const IconComponent = iconMap[value.icon] || iconMap['trophy'];
               return (
                 <div key={index} className="value-card">
                   <div className="value-icon">
-                    <IconComponent />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={value.iconImage} 
+                      alt={value.title}
+                      width={48}
+                      height={48}
+                      style={{ width: '48px', height: '48px' }}
+                    />
                   </div>
                   <h3 className="value-title">{value.title}</h3>
                   <p className="value-text">

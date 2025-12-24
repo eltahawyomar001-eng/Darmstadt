@@ -11,13 +11,13 @@ motorsText: "Hochleistungsmotoren von führenden Herstellern für jeden Wettbewe
 services:
   - title: "Motoren mieten"
     description: "Hochleistungsmotoren für Rennveranstaltungen deutschlandweit verfügbar."
-    icon: "engine"
+    iconImage: "/uploads/icons/engine-icon.svg"
   - title: "Wartung und Revision"
     description: "Professionelle Instandhaltung und Überholung von Rennmotoren."
-    icon: "wrench"
+    iconImage: "/uploads/icons/wrench-icon.svg"
   - title: "Motorenverkauf"
     description: "Wir verkaufen hochwertige Motoren mit optimaler Leistung und technischer Feinabstimmung."
-    icon: "euro"
+    iconImage: "/uploads/icons/euro-icon.svg"
 
 # Rental Steps Section
 stepsLabel: "Prozess"

@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { getAllNews } from '@/lib/news';
 import { getUpcomingEvents } from '@/lib/events';
 import { getHomepageContent } from '@/lib/pages';
-import { iconMap } from '@/components/icons/Icons';
 
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,10 +54,18 @@ export default function HomePage() {
             <div className="features-left">
               <div className="features-grid">
                 {content.features?.map((feature) => {
-                  const IconComponent = iconMap[feature.icon] || iconMap['chassis'];
                   return (
                     <div key={feature.title} className="feature-card">
-                      <div className="feature-icon"><IconComponent /></div>
+                      <div className="feature-icon">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img 
+                          src={feature.iconImage} 
+                          alt={feature.title}
+                          width={48}
+                          height={48}
+                          style={{ width: '48px', height: '48px' }}
+                        />
+                      </div>
                       <h3 className="feature-title">{feature.title}</h3>
                       <p className="feature-text">{feature.description}</p>
                     </div>

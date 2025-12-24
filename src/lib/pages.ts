@@ -24,7 +24,7 @@ export interface HomepageContent {
   heroText: string;
   heroButtonPrimary: string;
   heroButtonSecondary: string;
-  features: { title: string; description: string; icon: string }[];
+  features: { title: string; description: string; iconImage: string }[];
   newsLabel: string;
   newsTitle: string;
   newsSubtitle: string;
@@ -65,7 +65,7 @@ export interface MotorenPageContent {
   engineText: string;
   servicesLabel: string;
   servicesTitle: string;
-  services: { title: string; description: string; icon: string }[];
+  services: { title: string; description: string; iconImage: string }[];
   faqLabel: string;
   faqTitle: string;
   faqs: { question: string; answer: string }[];
@@ -84,7 +84,7 @@ export interface TeamPageContent {
   valuesLabel: string;
   valuesTitle: string;
   valuesText: string;
-  values: { title: string; description: string; icon: string }[];
+  values: { title: string; description: string; iconImage: string }[];
   galleryTitle: string;
   galleryText: string;
   galleryImages: string[];
@@ -124,7 +124,7 @@ export interface MotorenServicePageContent {
   heroText: string;
   motorsTitle: string;
   motorsText: string;
-  services: { title: string; description: string; icon: string }[];
+  services: { title: string; description: string; iconImage: string }[];
   stepsLabel: string;
   stepsTitle: string;
   steps: { label: string; title: string; description: string }[];

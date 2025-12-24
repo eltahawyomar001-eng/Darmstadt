@@ -14,13 +14,13 @@ servicesTitle: "Was wir für dich tun"
 services:
   - title: "Wartung & Service"
     description: "Regelmäßige Inspektionen und technische Checks."
-    icon: "wrench"
+    iconImage: "/uploads/icons/wrench-icon.svg"
   - title: "Performance-Tuning"
     description: "Maximale Leistung – legal und messbar."
-    icon: "gauge"
+    iconImage: "/uploads/icons/gauge-icon.svg"
   - title: "Motorenbau nach Maß"
     description: "Individuelle Anpassungen für höchste Ansprüche."
-    icon: "cog"
+    iconImage: "/uploads/icons/cog-icon.svg"
 
 # FAQ Section
 faqLabel: "Häufige Fragen"

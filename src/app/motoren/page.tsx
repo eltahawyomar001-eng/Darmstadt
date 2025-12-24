@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAllMotoren } from '@/lib/motoren';
 import { getMotorenPageContent } from '@/lib/pages';
-import { iconMap } from '@/components/icons/Icons';
 
 const ChevronIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -74,10 +73,18 @@ export default function MotorenPage() {
           </div>
           <div className="services-grid-three">
             {content.services?.map((service, index) => {
-              const IconComponent = iconMap[service.icon] || iconMap['wrench'];
               return (
                 <div key={index} className="service-item">
-                  <div className="service-icon"><IconComponent /></div>
+                  <div className="service-icon">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={service.iconImage} 
+                      alt={service.title}
+                      width={48}
+                      height={48}
+                      style={{ width: '48px', height: '48px' }}
+                    />
+                  </div>
                   <h3 className="service-title">{service.title}</h3>
                   <p className="service-desc">{service.description}</p>
                 </div>
