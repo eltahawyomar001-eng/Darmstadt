@@ -1,10 +1,11 @@
 ---
-title: "Frohe Weihnachten und einen guten Rutsch"
-excerpt: "Das gesamte Team von NB Motorsport wünscht frohe Weihnachten, erholsame Feiertage und einen erfolgreichen Start ins neue Rennjahr 2025."
+title: Frohe Weihnachten und einen guten Rutsch
+excerpt: Das gesamte Team von NB Motorsport wünscht frohe Weihnachten, erholsame
+  Feiertage und einen erfolgreichen Start ins neue Rennjahr 2024.
 date: 2024-12-24
-author: "NB Motorsport Team"
-category: "Team"
-image: "/26.png"
+author: NB Motorsport Team
+category: Team
+image: /26.png
 ---
 
 Die Rennsaison 2024 war intensiv, erfolgreich und voller unvergesslicher Momente. Wir möchten uns bei allen Fahrern, Partnern und Unterstützern für das Vertrauen und die tolle Zusammenarbeit bedanken.
