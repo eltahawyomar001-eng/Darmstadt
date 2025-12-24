@@ -29,34 +29,25 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: tokenData.error_description }, { status: 400 });
     }
 
-    // Return HTML that posts the token to the CMS
-    const html = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>Authenticating...</title>
-        </head>
-        <body>
-          <script>
-            (function() {
-              const token = "${tokenData.access_token}";
-              const provider = "github";
-              
-              if (window.opener) {
-                window.opener.postMessage(
-                  'authorization:' + provider + ':success:' + JSON.stringify({ token, provider }),
-                  window.location.origin
-                );
-                window.close();
-              }
-            })();
-          </script>
-          <p>Authenticating... You can close this window if it doesn't close automatically.</p>
-        </body>
-      </html>
+    // Return script that sends message to opener window
+    const script = `
+      <script>
+        (function() {
+          function receiveMessage(e) {
+            console.log("receiveMessage %o", e);
+            window.opener.postMessage(
+              'authorization:github:success:${JSON.stringify({ token: tokenData.access_token, provider: 'github' })}',
+              e.origin
+            );
+            window.removeEventListener("message", receiveMessage, false);
+          }
+          window.addEventListener("message", receiveMessage, false);
+          window.opener.postMessage("authorizing:github", "*");
+        })();
+      </script>
     `;
 
-    return new NextResponse(html, {
+    return new NextResponse(script, {
       headers: { 'Content-Type': 'text/html' },
     });
   } catch (error) {
