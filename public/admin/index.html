@@ -51,6 +51,36 @@
                 { label: 'Status', name: 'status', widget: 'select', options: ['upcoming', 'completed'], default: 'upcoming' },
                 { label: 'Beschreibung', name: 'description', widget: 'text', required: false }
               ]
+            },
+            {
+              name: 'motoren',
+              label: 'Motoren',
+              folder: 'content/motoren',
+              create: true,
+              slug: '{{slug}}',
+              fields: [
+                { label: 'Name', name: 'title', widget: 'string' },
+                { label: 'Beschreibung', name: 'description', widget: 'text' },
+                { label: 'Bild', name: 'image', widget: 'image' },
+                { label: 'Technische Daten', name: 'specs', widget: 'list', field: { label: 'Spezifikation', name: 'spec', widget: 'string' } },
+                { label: 'Preis', name: 'price', widget: 'string' },
+                { label: 'Reihenfolge', name: 'order', widget: 'number', default: 1, hint: 'Niedrigere Zahlen erscheinen zuerst' }
+              ]
+            },
+            {
+              name: 'chassis',
+              label: 'Chassis',
+              folder: 'content/chassis',
+              create: true,
+              slug: '{{slug}}',
+              fields: [
+                { label: 'Name', name: 'title', widget: 'string' },
+                { label: 'Beschreibung', name: 'description', widget: 'text' },
+                { label: 'Bild', name: 'image', widget: 'image' },
+                { label: 'Technische Daten', name: 'specs', widget: 'list', field: { label: 'Spezifikation', name: 'spec', widget: 'string' } },
+                { label: 'Preis', name: 'price', widget: 'string' },
+                { label: 'Reihenfolge', name: 'order', widget: 'number', default: 1, hint: 'Niedrigere Zahlen erscheinen zuerst' }
+              ]
             }
           ]
         }

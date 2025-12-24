@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAllChassis } from '@/lib/chassis';
 
 const ChevronIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -8,29 +9,7 @@ const ChevronIcon = () => (
 );
 
 export default function ChassisPage() {
-  const chassis = [
-    {
-      name: 'Lenzokart GT',
-      desc: 'Hochwertiges Einsteiger-Chassis mit exzellentem Handling und Stabilität.',
-      specs: ['Gewicht: 32kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
-      price: 'ab 2.990€',
-      image: '/4.png'
-    },
-    {
-      name: 'Formula K (Exprit)',
-      desc: 'Bewährtes Racing-Chassis für ambitionierte Fahrer in allen Klassen.',
-      specs: ['Gewicht: 31kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
-      price: 'ab 3.490€',
-      image: '/5.png'
-    },
-    {
-      name: 'Cayman',
-      desc: 'High-End Profi-Chassis für internationale Wettbewerbe und Meisterschaften.',
-      specs: ['Gewicht: 31kg', 'Achsabstand: 1040mm', 'Spurbreite: 1050mm'],
-      price: 'ab 4.290€',
-      image: '/6.png'
-    }
-  ];
+  const chassisList = getAllChassis();
 
   return (
     <>
@@ -57,20 +36,20 @@ export default function ChassisPage() {
             </p>
           </div>
           <div className="chassis-grid chassis-grid-3">
-            {chassis.map((item) => (
-              <div key={item.name} className="chassis-card">
+            {chassisList.map((item) => (
+              <div key={item.slug} className="chassis-card">
                 <div className="chassis-image">
                   <Image
                     src={item.image}
-                    alt={item.name}
+                    alt={item.title}
                     width={400}
                     height={300}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </div>
                 <div className="chassis-content">
-                  <h3 className="chassis-name">{item.name}</h3>
-                  <p className="chassis-desc">{item.desc}</p>
+                  <h3 className="chassis-name">{item.title}</h3>
+                  <p className="chassis-desc">{item.description}</p>
                   <ul className="chassis-specs">
                     {item.specs.map((spec) => (
                       <li key={spec}>{spec}</li>

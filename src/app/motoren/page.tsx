@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAllMotoren } from '@/lib/motoren';
 
 const ChevronIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -29,50 +30,7 @@ const CogIcon = () => (
 );
 
 export default function MotorenPage() {
-  const engines = [
-    {
-      name: 'Iame X30',
-      desc: 'Der meistgefahrene Motor im deutschen und internationalen Kartsport.',
-      specs: ['Leistung: 30 PS', 'Hubraum: 125ccm', 'Gewicht: 11kg'],
-      price: 'ab 3.490€',
-      image: '/10.png'
-    },
-    {
-      name: 'Iame KZ2',
-      desc: 'Hochleistungsmotor mit Schaltgetriebe für Profis.',
-      specs: ['Leistung: 48 PS', 'Hubraum: 125ccm', 'Gewicht: 14kg'],
-      price: 'ab 5.990€',
-      image: '/11.jpg'
-    },
-    {
-      name: 'Iame Leopard',
-      desc: 'Einsteigermotor für Junioren mit starker Performance.',
-      specs: ['Leistung: 23 PS', 'Hubraum: 125ccm', 'Gewicht: 10kg'],
-      price: 'ab 2.790€',
-      image: '/12.png'
-    },
-    {
-      name: 'Iame X30 Junior',
-      desc: 'Speziell für Junior-Fahrer entwickelt.',
-      specs: ['Leistung: 22 PS', 'Hubraum: 125ccm', 'Gewicht: 10.5kg'],
-      price: 'ab 3.190€',
-      image: '/13.jpg'
-    },
-    {
-      name: 'Iame Mini Swift',
-      desc: 'Der perfekte Motor für die Mini-Klasse.',
-      specs: ['Leistung: 12 PS', 'Hubraum: 60ccm', 'Gewicht: 7kg'],
-      price: 'ab 1.990€',
-      image: '/14.png'
-    },
-    {
-      name: 'Iame Screamer',
-      desc: 'Kraftvoller Motor für erfahrene Fahrer.',
-      specs: ['Leistung: 40 PS', 'Hubraum: 125ccm', 'Gewicht: 12kg'],
-      price: 'ab 4.490€',
-      image: '/15.png'
-    }
-  ];
+  const engines = getAllMotoren();
 
   return (
     <>
@@ -100,18 +58,18 @@ export default function MotorenPage() {
           </div>
           <div className="engine-grid">
             {engines.map((engine) => (
-              <div key={engine.name} className="engine-card-static">
+              <div key={engine.slug} className="engine-card-static">
                 <div className="engine-image">
                   <Image
                     src={engine.image}
-                    alt={engine.name}
+                    alt={engine.title}
                     width={400}
                     height={300}
                   />
                 </div>
                 <div className="engine-content">
-                  <h3 className="engine-name">{engine.name}</h3>
-                  <p className="engine-desc">{engine.desc}</p>
+                  <h3 className="engine-name">{engine.title}</h3>
+                  <p className="engine-desc">{engine.description}</p>
                   <ul className="engine-specs">
                     {engine.specs.map((spec) => (
                       <li key={spec}>{spec}</li>
