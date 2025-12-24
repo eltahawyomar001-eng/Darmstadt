@@ -2,7 +2,7 @@ backend:
   name: github
   repo: eltahawyomar001-eng/Darmstadt
   branch: main
-  base_url: https://nb-motorsport.vercel.app
+  base_url: https://darmstadt.vercel.app
   auth_endpoint: /api/auth
 
 # For local development testing, uncomment the following:
