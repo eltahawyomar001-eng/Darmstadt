@@ -16,10 +16,13 @@ valuesText: "Wir sind klein, aber entschlossen. Jeder Fahrer erhält unsere voll
 values:
   - title: "Fairness und Integrität"
     description: "Wir fahren sauber und erweisen das gleiche von unseren Fahrern."
+    icon: "handshake"
   - title: "Kundenorientiert und erreichbar"
     description: "Deine Ziele sind unsere Ziele - wir arbeiten eng mit dir zusammen."
+    icon: "phone"
   - title: "Hunger nach Erfolg"
     description: "Wir bringen deine Performance nach vorne, mit Leidenschaft und Präzision."
+    icon: "trophy"
 
 # Gallery Section
 galleryTitle: "Auf der Strecke"

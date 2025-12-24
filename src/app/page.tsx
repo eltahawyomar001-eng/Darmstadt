@@ -3,38 +3,7 @@ import Image from 'next/image';
 import { getAllNews } from '@/lib/news';
 import { getUpcomingEvents } from '@/lib/events';
 import { getHomepageContent } from '@/lib/pages';
-
-// Icons matching Figma exactly
-const ChassisIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 8L4 16H28L24 8H8Z" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M4 16V24H28V16" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <circle cx="8" cy="24" r="2" stroke="#0C0800" strokeWidth="1.5" />
-    <circle cx="24" cy="24" r="2" stroke="#0C0800" strokeWidth="1.5" />
-  </svg>
-);
-
-const TuningIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 4V8M16 24V28M8 16H4M28 16H24" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" />
-    <circle cx="16" cy="16" r="6" stroke="#0C0800" strokeWidth="1.5" />
-  </svg>
-);
-
-const RentalIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="4" y="8" width="24" height="16" rx="2" stroke="#0C0800" strokeWidth="1.5" />
-    <path d="M4 14H28" stroke="#0C0800" strokeWidth="1.5" />
-    <circle cx="10" cy="20" r="2" fill="#0C0800" />
-  </svg>
-);
-
-const SupportIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="#0C0800" strokeWidth="1.5" strokeLinejoin="round" />
-    <path d="M16 14V18M16 22V22.01" stroke="#0C0800" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
-);
+import { iconMap } from '@/components/icons/Icons';
 
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,18 +18,8 @@ const MapPinIcon = () => (
   </svg>
 );
 
-// Map icon names to components
-const iconComponents = [ChassisIcon, TuningIcon, RentalIcon, SupportIcon];
-
 export default function HomePage() {
   const content = getHomepageContent();
-
-  // Build features from CMS content with icons
-  const features = content.features?.map((feature, index) => ({
-    icon: iconComponents[index] ? iconComponents[index]() : <ChassisIcon />,
-    title: feature.title,
-    description: feature.description,
-  })) || [];
 
   // Get news from centralized data source
   const allNews = getAllNews();
@@ -95,13 +54,16 @@ export default function HomePage() {
           <div className="features-layout">
             <div className="features-left">
               <div className="features-grid">
-                {features.map((feature) => (
-                  <div key={feature.title} className="feature-card">
-                    <div className="feature-icon">{feature.icon}</div>
-                    <h3 className="feature-title">{feature.title}</h3>
-                    <p className="feature-text">{feature.description}</p>
-                  </div>
-                ))}
+                {content.features?.map((feature) => {
+                  const IconComponent = iconMap[feature.icon] || iconMap['chassis'];
+                  return (
+                    <div key={feature.title} className="feature-card">
+                      <div className="feature-icon"><IconComponent /></div>
+                      <h3 className="feature-title">{feature.title}</h3>
+                      <p className="feature-text">{feature.description}</p>
+                    </div>
+                  );
+                })}
               </div>
               <div className="features-links">
                 <Link href="/chassis" className="link-arrow">

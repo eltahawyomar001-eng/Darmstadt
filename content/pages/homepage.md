@@ -9,12 +9,16 @@ heroButtonSecondary: "Kontakt"
 features:
   - title: "Lenzokart Chassis"
     description: "Hochwertige Rennfahrzeuge für alle Klassen und Leistungsstufen"
+    icon: "chassis"
   - title: "Motor-Tuning"
     description: "Optimierte Leistung für Renneinsätze"
+    icon: "tune"
   - title: "Vermietung"
     description: "Flexible Lösungen für Fahrer ohne eigenes Equipment"
+    icon: "rental"
   - title: "Rennbetreuung"
     description: "Professionelle Unterstützung an der Strecke"
+    icon: "support"
 
 # News Section
 newsLabel: "News"

@@ -154,3 +154,199 @@ export const ClockIcon = () => (
     <polyline points="12 6 12 12 16 14" />
   </svg>
 );
+
+// Additional icons for CMS selection
+export const HandshakeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+    <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+    <path d="m21 3 1 11h-2" />
+    <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+    <path d="M3 4h8" />
+  </svg>
+);
+
+export const RentalIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="6" width="20" height="12" rx="2" />
+    <path d="M2 10h20" />
+    <circle cx="8" cy="15" r="1.5" fill="currentColor" />
+  </svg>
+);
+
+export const SupportIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2L22 8.5V15.5L12 22L2 15.5V8.5L12 2Z" />
+    <path d="M12 11V14M12 17V17.01" />
+  </svg>
+);
+
+export const CogIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+    <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+    <path d="M12 2v2" />
+    <path d="M12 22v-2" />
+    <path d="m17 20.66-1-1.73" />
+    <path d="M11 10.27 7 3.34" />
+    <path d="m20.66 17-1.73-1" />
+    <path d="m3.34 7 1.73 1" />
+    <path d="M14 12h8" />
+    <path d="M2 12h2" />
+    <path d="m20.66 7-1.73 1" />
+    <path d="m3.34 17 1.73-1" />
+    <path d="m17 3.34-1 1.73" />
+    <path d="m11 13.73-4 6.93" />
+  </svg>
+);
+
+export const EuroIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M16 8c-1.5-1.5-3.5-2-5.5-2-3.5 0-6.5 2.5-6.5 6s3 6 6.5 6c2 0 4-.5 5.5-2" />
+    <path d="M4 10h10" />
+    <path d="M4 14h10" />
+  </svg>
+);
+
+export const TargetIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>
+);
+
+export const RocketIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+  </svg>
+);
+
+export const HeartIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+  </svg>
+);
+
+export const UsersIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
+
+export const CheckCircleIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+);
+
+export const AwardIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="8" r="6" />
+    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+  </svg>
+);
+
+export const SpeedometerIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2a10 10 0 1 0 10 10" />
+    <path d="M12 12 19 5" />
+    <path d="M12 8v4" />
+  </svg>
+);
+
+// Icon map for CMS - maps string names to icon components
+export const iconMap: { [key: string]: React.FC } = {
+  // Vehicle & Racing
+  chassis: ChassisIcon,
+  engine: EngineIcon,
+  gauge: GaugeIcon,
+  speedometer: SpeedometerIcon,
+  flag: FlagIcon,
+  trophy: TrophyIcon,
+  
+  // Tools & Service
+  wrench: WrenchIcon,
+  tune: TuneIcon,
+  tools: ToolsIcon,
+  cog: CogIcon,
+  
+  // Business & Support
+  rental: RentalIcon,
+  support: SupportIcon,
+  headset: HeadsetIcon,
+  handshake: HandshakeIcon,
+  euro: EuroIcon,
+  
+  // People & Team
+  user: UserIcon,
+  users: UsersIcon,
+  
+  // Communication
+  phone: PhoneIcon,
+  mail: MailIcon,
+  mappin: MapPinIcon,
+  
+  // Time & Calendar
+  clock: ClockIcon,
+  calendar: CalendarIcon,
+  
+  // Other
+  star: StarIcon,
+  shield: ShieldIcon,
+  zap: ZapIcon,
+  news: NewsIcon,
+  target: TargetIcon,
+  rocket: RocketIcon,
+  heart: HeartIcon,
+  checkcircle: CheckCircleIcon,
+  award: AwardIcon,
+};
+
+// Available icon options for CMS (as array for select widget)
+export const availableIcons = [
+  'chassis',
+  'engine', 
+  'gauge',
+  'speedometer',
+  'flag',
+  'trophy',
+  'wrench',
+  'tune',
+  'tools',
+  'cog',
+  'rental',
+  'support',
+  'headset',
+  'handshake',
+  'euro',
+  'user',
+  'users',
+  'phone',
+  'mail',
+  'mappin',
+  'clock',
+  'calendar',
+  'star',
+  'shield',
+  'zap',
+  'news',
+  'target',
+  'rocket',
+  'heart',
+  'checkcircle',
+  'award',
+];
+
+// Helper function to get icon component by name
+export const getIconByName = (name: string): React.FC => {
+  return iconMap[name] || ChassisIcon;
+};

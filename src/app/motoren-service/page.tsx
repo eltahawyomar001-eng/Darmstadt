@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getMotorenServicePageContent } from '@/lib/pages';
+import { iconMap } from '@/components/icons/Icons';
 
 const ImagePlaceholder = () => (
   <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -14,35 +15,6 @@ const ChevronIcon = () => (
     <path d="M19 9L12 16L5 9" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
-
-const EngineIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <rect x="6" y="10" width="20" height="12" rx="2"/>
-    <path d="M10 10V6M22 10V6M10 22v4M22 22v4"/>
-    <circle cx="16" cy="16" r="3"/>
-  </svg>
-);
-
-const WrenchIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M18.36 6.64a9 9 0 0 1 0 12.73l-5.66 5.66a4 4 0 0 1-5.66-5.66l5.66-5.66a9 9 0 0 1 12.73 0"/>
-    <path d="M19 13L25 7M22 4L28 10"/>
-  </svg>
-);
-
-const EuroIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <circle cx="16" cy="16" r="12"/>
-    <path d="M20 11c-1.5-1.5-3.5-2-5.5-2-4 0-7 3-7 7s3 7 7 7c2 0 4-.5 5.5-2M8 14h10M8 18h10"/>
-  </svg>
-);
-
-// Map icon names to components
-const iconMap: { [key: string]: React.FC } = {
-  engine: EngineIcon,
-  wrench: WrenchIcon,
-  euro: EuroIcon,
-};
 
 export default function MotorenServicePage() {
   const content = getMotorenServicePageContent();
@@ -128,9 +100,7 @@ export default function MotorenServicePage() {
               <div className="content-side">
                 <div className="service-feature-list">
                   {content.services?.map((service, index) => {
-                    const icons = ['engine', 'wrench', 'euro'];
-                    const iconName = icons[index] || 'engine';
-                    const IconComponent = iconMap[iconName] || EngineIcon;
+                    const IconComponent = iconMap[service.icon] || iconMap['engine'];
                     return (
                       <div key={index} className="service-feature-item">
                         <div className="service-feature-icon">

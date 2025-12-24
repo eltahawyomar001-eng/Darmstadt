@@ -1,31 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getTeamPageContent } from '@/lib/pages';
-
-const HandshakeIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M16 24L8 16L12 12L20 20M32 24L40 16L36 12L28 20M16 24L24 32L32 24M24 32L20 36L16 40M24 32L28 36L32 40" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const PhoneIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M14 8C14 8 18 12 18 16C18 20 14 20 14 24C14 28 20 34 24 34C28 34 28 30 32 30C36 30 40 34 40 34M12 36L16 40M32 8L36 12" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const TrophyIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M12 8H36M12 8V16C12 20 16 24 24 24C32 24 36 20 36 16V8M12 8H8V16C8 18 10 20 12 20M36 8H40V16C40 18 38 20 36 20M24 24V32M20 32H28M18 40H30" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-// Map icon names to components
-const iconMap: { [key: string]: React.FC } = {
-  handshake: HandshakeIcon,
-  phone: PhoneIcon,
-  trophy: TrophyIcon,
-};
+import { iconMap } from '@/components/icons/Icons';
 
 export default function TeamPage() {
   const content = getTeamPageContent();
@@ -80,9 +56,7 @@ export default function TeamPage() {
           </div>
           <div className="values-grid">
             {content.values?.map((value, index) => {
-              const icons = ['handshake', 'phone', 'trophy'];
-              const iconName = icons[index] || 'trophy';
-              const IconComponent = iconMap[iconName] || TrophyIcon;
+              const IconComponent = iconMap[value.icon] || iconMap['trophy'];
               return (
                 <div key={index} className="value-card">
                   <div className="value-icon">
