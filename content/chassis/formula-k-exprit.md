@@ -1,6 +1,6 @@
 ---
 title: "Ramses "
-description: Bewährtes Racing-Chassis für ambitionierte Fahrer in allen Klassen.
+description: OK/J X30/J KZ
 image: /5.png
 specs:
   - Rohrdurchmesser Ø 32 mm
