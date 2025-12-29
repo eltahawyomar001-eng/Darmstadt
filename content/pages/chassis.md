@@ -28,17 +28,13 @@ faqLabel: Häufige Fragen
 faqTitle: FAQ zu Chassis
 faqs:
   - question: Welches Chassis ist für Anfänger geeignet?
-    answer: Für Einsteiger empfehlen wir das Lenzokart GT. Es bietet eine
-      ausgezeichnete Balance zwischen Performance und Handling.
+    answer: >
+      Ein spezielles Anfänger-Chassis gibt es nicht. Die aktuellen Chassis
+      unterscheiden sich nur in Nuancen, weshalb persönliche Präferenzen,
+      Fahrstil und Abstimmung eine größere Rolle spielen als das Chassis selbst.
   - question: Wie lange dauert die Lieferung eines Chassis?
     answer: Die Lieferzeit beträgt in der Regel 2-4 Wochen, je nach Verfügbarkeit
       und individuellen Anpassungen.
-  - question: Kann ich das Chassis individuell anpassen lassen?
-    answer: Ja, wir bieten verschiedene Setup- und Anpassungsmöglichkeiten an. Von
-      Sitzposition über Spurweite bis hin zu speziellen Lackierungen.
-  - question: Sind die Preise inklusive Setup und Abstimmung?
-    answer: Die angegebenen Preise verstehen sich als Grundpreise für das Chassis.
-      Setup und Feinabstimmung können optional dazu gebucht werden.
   - question: Bietet ihr auch gebrauchte Chassis an?
     answer: Ja, gelegentlich haben wir auch geprüfte und gewartete Gebraucht-Chassis
       im Angebot. Kontaktiere uns für aktuelle Verfügbarkeit.
