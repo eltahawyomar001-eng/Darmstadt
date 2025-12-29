@@ -1,11 +1,11 @@
 ---
-title: TM KZ
-description: Der meistgefahrene Motor im deutschen und internationalen Kartsport.
+title: TM R2
+description: KZ/2
 image: /10.png
 specs:
-  - "Leistung: 30 PS"
-  - "Hubraum: 125ccm"
-  - "Gewicht: 11kg"
-price: ab 3.490€
+  - "Leistung: ≈ 50 Ps"
+  - " Hubraum: 124,66 cm³"
+  - "Bohrung × Hub Ø 54 mm × 54,43 mm "
+price: "Preis auf Anfrage "
 order: 1
 ---
