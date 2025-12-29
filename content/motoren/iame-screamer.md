@@ -1,11 +1,11 @@
 ---
 title: LKE R16
-description: Kraftvoller Motor für erfahrene Fahrer.
+description: Mini 60
 image: /15.png
 specs:
-  - "Leistung: 40 PS"
-  - "Hubraum: 125ccm"
-  - "Gewicht: 12kg"
-price: ab 4.490€
+  - "Leistung: ≈10 PS"
+  - "Hubraum: 60 ccm"
+  - "Drehzahl: ≈14.000"
+price: "Preis auf Anfrage "
 order: 6
 ---
