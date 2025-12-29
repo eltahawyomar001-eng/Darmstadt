@@ -11,13 +11,13 @@ features:
     iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
   - title: Motor-Tuning
     description: Optimierte Leistung für Renneinsätze
-    iconImage: /uploads/icons/tune-icon.svg
+    iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
   - title: Vermietung
     description: Flexible Lösungen für Fahrer ohne eigenes Equipment
-    iconImage: /uploads/icons/rental-icon.svg
+    iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
   - title: Rennbetreuung
     description: Professionelle Unterstützung an der Strecke
-    iconImage: /uploads/icons/support-icon.svg
+    iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
 newsLabel: News
 newsTitle: Aus dem Rennbetrieb
 newsSubtitle: Aktuelle Berichte und Meldungen
