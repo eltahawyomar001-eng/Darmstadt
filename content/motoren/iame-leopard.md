@@ -1,11 +1,11 @@
 ---
-title: LKE KZ
-description: Einsteigermotor für Junioren mit starker Performance.
+title: LKE Blackrock
+description: KZ/2
 image: /12.png
 specs:
-  - "Leistung: 23 PS"
-  - "Hubraum: 125ccm"
-  - "Gewicht: 10kg"
-price: ab 2.790€
+  - "Leistung: ≈ 50 PS"
+  - "Hubraum: 124,98 cm³"
+  - Bohrung × Hub 54,00 mm × 54,4 mm
+price: "Preis auf Anfrage "
 order: 3
 ---
