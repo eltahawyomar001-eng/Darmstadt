@@ -1,6 +1,6 @@
 ---
 title: Cayman
-description: High-End Profi-Chassis für internationale Wettbewerbe und Meisterschaften.
+description: Mini 60
 image: /6.png
 specs:
   - "Gewicht: 31kg"
