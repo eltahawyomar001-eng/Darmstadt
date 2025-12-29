@@ -6,6 +6,6 @@ specs:
   - Rohrdurchmesser Ø 32 mm
   - "Achsabstand: 1042mm"
   - Homologation 033-CH-10
-price: ab 3.490€
+price: Preis auf Anfrage
 order: 2
 ---
