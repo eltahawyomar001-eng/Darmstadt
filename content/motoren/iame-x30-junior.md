@@ -1,11 +1,11 @@
 ---
 title: Iame X30 J/S
-description: Speziell für Junior-Fahrer entwickelt.
+description: "X30 "
 image: /13.jpg
 specs:
-  - "Leistung: 22 PS"
-  - "Hubraum: 125ccm"
-  - "Gewicht: 10.5kg"
-price: ab 3.190€
+  - "Leistung:  21 / ≈30"
+  - "Hubraum: 123,67 cm³"
+  - Drehmoment ≈11 Nm / ≈19,5 Nm
+price: "Preis auf Anfrage "
 order: 4
 ---
