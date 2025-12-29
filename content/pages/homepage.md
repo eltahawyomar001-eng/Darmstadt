@@ -8,7 +8,7 @@ heroButtonSecondary: Kontakt
 features:
   - title: Lenzokart Chassis
     description: "Hochwertige Rennkarts für alle Klassen "
-    iconImage: /uploads/icons/chassis-icon.svg
+    iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
   - title: Motor-Tuning
     description: Optimierte Leistung für Renneinsätze
     iconImage: /uploads/icons/tune-icon.svg
