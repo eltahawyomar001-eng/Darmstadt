@@ -15,7 +15,7 @@ services:
     iconImage: /uploads/icons/gauge-icon.svg
   - title: Motoren An- & Verkauf
     description: An- und Verkauf von Kartmotoren.
-    iconImage: /uploads/icons/cog-icon.svg
+    iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
 faqLabel: Häufige Fragen
 faqTitle: FAQ zu Motoren
 faqs:
