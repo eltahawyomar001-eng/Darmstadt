@@ -5,7 +5,7 @@ excerpt: Das gesamte Team von NB Motorsport wünscht frohe Weihnachten, erholsam
 date: 2025-12-23T23:00:00.000Z
 author: NB Motorsport Team
 category: Team
-image: /27.jpg
+image: /uploads/newsexample.png
 ---
 Die Rennsaison 2025 war intensiv, erfolgreich und voller unvergesslicher Momente. Wir möchten uns bei allen Fahrern, Partnern und Unterstützern für das Vertrauen und die tolle Zusammenarbeit bedanken.
 
