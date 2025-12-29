@@ -20,11 +20,15 @@ faqLabel: Häufige Fragen
 faqTitle: FAQ zu Motoren
 faqs:
   - question: Welcher Motor ist für Anfänger geeignet?
-    answer: Für Einsteiger empfehlen wir den Iame X30 oder den Iame Leopard.
+    answer: "Für Einsteiger empfehlen wir den Iame X30 "
   - question: Wie oft muss ein Motor gewartet werden?
-    answer: Eine Grundwartung empfehlen wir nach jedem Rennwochenende.
-  - question: Bietet ihr auch Tuning an?
-    answer: Ja, wir bieten professionelles Performance-Tuning an.
+    answer: Eine pauschale Angabe ist nicht möglich. Wartung und Revision richten
+      sich nach Motor-Klasse, Einsatz und Art des Service. Bei Interesse an
+      Wartung oder Motorrevisionen stehen wir gerne für eine persönliche
+      Beratung zur Verfügung.
+  - question: Vermietet ihr auch Rennmotoren?
+    answer: Ja, wir vermieten KZ- und X30-Rennmotoren. Bei Interesse beraten wir
+      euch gerne persönlich.
 ctaTitle: Dein Motor wartet auf dich
 ctaText: Kontaktiere uns und wir finden gemeinsam den perfekten Motor für deine Ziele.
 ctaButton: Kontakt
