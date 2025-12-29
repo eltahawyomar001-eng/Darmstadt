@@ -1,6 +1,6 @@
 ---
-title: Iame KZ
-description: Hochleistungsmotor mit Schaltgetriebe für Profis.
+title: Iame Screamer IV
+description: KZ/2
 image: /11.jpg
 specs:
   - "Leistung:  ≈ 50 PS"
