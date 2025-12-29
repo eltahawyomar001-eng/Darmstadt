@@ -4,7 +4,7 @@ heroText: "Wir bieten eine breite Auswahl an professionellen Lenzokart-Chassis
   für alle Rennklassen – vom Mini bis zur KZ Klasse "
 chassisLabel: Modelle
 chassisTitle: Drei Chassis zur Auswahl
-chassisText: Jedes Chassis wird auf höchstem Niveau gefertigt und bietet
+chassisText: Jedes Chassis wird nach höchsten Standards gefertigt und bietet
   optimale Performance für deinen Einsatzbereich.
 infoSection1Label: Vielfalt
 infoSection1Title: Für jeden Rennfahrer das passende Chassis
