@@ -10,8 +10,8 @@ openingHours: |-
   Mo–Fr: 9:00–18:00 Uhr
   Sa: 10:00–14:00 Uhr
 addressLabel: Adresse
-phoneLabel: +49 155 11718812
-emailLabel: "office@bamberger-racing.de "
+phoneLabel: Telefon
+emailLabel: Mail
 hoursLabel: Öffnungszeiten
 formTitle: Schreiben Sie uns
 formText: Füllen Sie das Formular aus und wir melden uns schnellstmöglich bei Ihnen.
