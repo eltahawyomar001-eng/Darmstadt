@@ -1,8 +1,7 @@
 ---
 heroTitle: Motoren
-heroText: Hochleistungsmotoren von Iame – zuverlässig, leistungsstark und auf
-  Sieg programmiert.
-engineLabel: Iame
+heroText: Hochleistungsmotoren – zuverlässig, leistungsstark und auf Sieg programmiert.
+engineLabel: Verkauf / Vermietung
 engineTitle: Unsere Motoren im Überblick
 engineText: Jeder Motor wird von uns geprüft, eingestellt und rennfertig ausgeliefert.
 servicesLabel: Rundum-Service
