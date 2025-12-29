@@ -3,9 +3,9 @@ title: "Ramses "
 description: Bewährtes Racing-Chassis für ambitionierte Fahrer in allen Klassen.
 image: /5.png
 specs:
-  - "Gewicht: 31kg"
-  - "Achsabstand: 1040mm"
-  - "Spurbreite: 1050mm"
+  - Rahmen-Rohrdurchmesser Ø 32 mm
+  - "Achsabstand: 1042mm"
+  - Homologation 033-CH-10
 price: ab 3.490€
 order: 2
 ---
