@@ -11,7 +11,7 @@ features:
     iconImage: /uploads/iconchassie.png
   - title: Motor-Tuning
     description: Optimierte Leistung für Renneinsätze
-    iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
+    iconImage: /uploads/iconmotor.png
   - title: Vermietung
     description: Flexible Lösungen für Fahrer ohne eigenes Equipment
     iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
