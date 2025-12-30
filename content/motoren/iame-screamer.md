@@ -7,5 +7,5 @@ specs:
   - "Hubraum: 60 cm³"
   - "Drehzahl: ≈14.000"
 price: "Preis auf Anfrage "
-order: 6
+order: 3
 ---
