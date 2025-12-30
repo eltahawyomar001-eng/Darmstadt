@@ -136,6 +136,37 @@ export interface MotorenServicePageContent {
   ctaButtonText: string;
 }
 
+export interface ImpressumPageContent {
+  heroTitle: string;
+  heroLabel: string;
+  companyName: string;
+  street: string;
+  city: string;
+  country: string;
+  phone: string;
+  email: string;
+  representative: string;
+  representativeRole: string;
+  ustIdNr?: string;
+  handelsregister?: string;
+  section6Content: string;
+  section7Content: string;
+}
+
+export interface DatenschutzPageContent {
+  heroTitle: string;
+  heroLabel: string;
+  sections: { title: string; content: string }[];
+  lastUpdated: string;
+}
+
+export interface AGBPageContent {
+  heroTitle: string;
+  heroSubtitle: string;
+  sections: { title: string; content: string }[];
+  lastUpdated: string;
+}
+
 // Helper functions with proper typing
 export function getHomepageContent(): HomepageContent {
   return getPageContent('homepage') as HomepageContent;
@@ -159,4 +190,16 @@ export function getKontaktPageContent(): KontaktPageContent {
 
 export function getMotorenServicePageContent(): MotorenServicePageContent {
   return getPageContent('motoren-service') as MotorenServicePageContent;
+}
+
+export function getImpressumPageContent(): ImpressumPageContent {
+  return getPageContent('impressum') as ImpressumPageContent;
+}
+
+export function getDatenschutzPageContent(): DatenschutzPageContent {
+  return getPageContent('datenschutz') as DatenschutzPageContent;
+}
+
+export function getAGBPageContent(): AGBPageContent {
+  return getPageContent('agb') as AGBPageContent;
 }

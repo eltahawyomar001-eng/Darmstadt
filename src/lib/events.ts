@@ -29,11 +29,17 @@ function getBadge(series: string): string {
     'ADAC Kart Cup': 'AKC',
     'DKM': 'DKM',
     'Rotax Max': 'ROTAX',
-    'IAME X30': 'EURO',
+    'IAME X30': 'X30',
+    'SAKC': 'SAKC',
+    'WAKC': 'WAKC',
+    'OAKC': 'OAKC',
+    'CIK FIA': 'CIK',
+    'EM': 'EM',
+    'WM': 'WM',
     'Training': 'TRN',
-    'Sonstige': 'KZ',
+    'Sonstige': 'SONST',
   };
-  return badges[series] || 'KZ';
+  return badges[series] || series;
 }
 
 export function getAllEvents(): Event[] {

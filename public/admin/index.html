@@ -47,7 +47,7 @@
                 { label: 'Titel', name: 'title', widget: 'string' },
                 { label: 'Datum Start', name: 'dateStart', widget: 'datetime', date_format: 'YYYY-MM-DD' },
                 { label: 'Ort', name: 'location', widget: 'string' },
-                { label: 'Serie', name: 'series', widget: 'select', options: ['ADAC Kart Masters', 'ADAC Kart Cup', 'DKM', 'Rotax Max', 'IAME X30', 'Training', 'Sonstige'] },
+                { label: 'Serie', name: 'series', widget: 'select', options: ['ADAC Kart Masters', 'ADAC Kart Cup', 'DKM', 'Rotax Max', 'IAME X30', 'SAKC', 'WAKC', 'OAKC', 'CIK FIA', 'EM', 'WM', 'Training', 'Sonstige'] },
                 { label: 'Status', name: 'status', widget: 'select', options: ['upcoming', 'completed'], default: 'upcoming' },
                 { label: 'Beschreibung', name: 'description', widget: 'text', required: false }
               ]
@@ -254,6 +254,55 @@
                     { label: 'CTA Titel', name: 'ctaTitle', widget: 'string' },
                     { label: 'CTA Text', name: 'ctaText', widget: 'text' },
                     { label: 'CTA Button', name: 'ctaButtonText', widget: 'string' }
+                  ]
+                },
+                {
+                  name: 'impressum-page',
+                  label: 'Impressum',
+                  file: 'content/pages/impressum.md',
+                  fields: [
+                    { label: 'Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Label', name: 'heroLabel', widget: 'string' },
+                    { label: 'Firmenname', name: 'companyName', widget: 'string' },
+                    { label: 'Straße', name: 'street', widget: 'string' },
+                    { label: 'Stadt/PLZ', name: 'city', widget: 'string' },
+                    { label: 'Land', name: 'country', widget: 'string' },
+                    { label: 'Telefon', name: 'phone', widget: 'string' },
+                    { label: 'E-Mail', name: 'email', widget: 'string' },
+                    { label: 'Vertreter Name', name: 'representative', widget: 'string' },
+                    { label: 'Vertreter Rolle', name: 'representativeRole', widget: 'string' },
+                    { label: 'USt-IdNr.', name: 'ustIdNr', widget: 'string', required: false },
+                    { label: 'Handelsregister', name: 'handelsregister', widget: 'string', required: false },
+                    { label: 'Haftungsausschluss', name: 'section6Content', widget: 'text' },
+                    { label: 'Haftung für Links', name: 'section7Content', widget: 'text' }
+                  ]
+                },
+                {
+                  name: 'datenschutz-page',
+                  label: 'Datenschutz',
+                  file: 'content/pages/datenschutz.md',
+                  fields: [
+                    { label: 'Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Label', name: 'heroLabel', widget: 'string' },
+                    { label: 'Abschnitte', name: 'sections', widget: 'list', fields: [
+                      { label: 'Überschrift', name: 'title', widget: 'string' },
+                      { label: 'Inhalt', name: 'content', widget: 'text' }
+                    ]},
+                    { label: 'Zuletzt aktualisiert', name: 'lastUpdated', widget: 'datetime', date_format: 'YYYY-MM-DD' }
+                  ]
+                },
+                {
+                  name: 'agb-page',
+                  label: 'AGB',
+                  file: 'content/pages/agb.md',
+                  fields: [
+                    { label: 'Titel', name: 'heroTitle', widget: 'string' },
+                    { label: 'Untertitel', name: 'heroSubtitle', widget: 'string' },
+                    { label: 'Abschnitte', name: 'sections', widget: 'list', fields: [
+                      { label: 'Überschrift', name: 'title', widget: 'string' },
+                      { label: 'Inhalt', name: 'content', widget: 'text' }
+                    ]},
+                    { label: 'Zuletzt aktualisiert', name: 'lastUpdated', widget: 'datetime', date_format: 'YYYY-MM-DD' }
                   ]
                 }
               ]
