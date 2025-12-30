@@ -15,9 +15,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MR Motorsport - Lenzokart Importeur Deutschland",
+  title: "NB Motorsport - Lenzokart Importeur Deutschland",
   description: "Offizieller Lenzokart Importeur für Deutschland. Ihr Partner für Kartsport auf höchstem Niveau - Chassis, Motoren, Service und mehr.",
-  keywords: ["Kartsport", "Lenzokart", "Motorsport", "Darmstadt", "Chassis", "Kart Racing"],
+  keywords: ["Kartsport", "Lenzokart", "Motorsport", "NB Motorsport", "Chassis", "Kart Racing"],
+  icons: {
+    icon: "/uploads/nb-logo.png",
+    shortcut: "/uploads/nb-logo.png",
+    apple: "/uploads/nb-logo.png",
+  },
 };
 
 export default function RootLayout({
