@@ -2,7 +2,7 @@
 title: Unsere neue Website ist online
 excerpt: Wir freuen uns, unsere brandneue Website vorzustellen. Moderne Optik,
   einfache Navigation und alle Infos rund um Chassis, Motoren und unser Team.
-date: 2024-01-15
+date: 2025-12-29T23:00:00.000Z
 author: NB Motorsport Team
 category: Allgemein
 image: /uploads/nb-logo.png
