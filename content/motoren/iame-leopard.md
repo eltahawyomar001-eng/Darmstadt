@@ -7,5 +7,5 @@ specs:
   - "Hubraum: 124,98 cm³"
   - Bohrung × Hub 54,00 mm × 54,4 mm
 price: "Preis auf Anfrage "
-order: 3
+order: 1
 ---
