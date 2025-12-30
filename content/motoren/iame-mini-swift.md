@@ -7,5 +7,5 @@ specs:
   - "Hubraum: 124,7 cm³"
   - "Drehzahl: ≈15.000 rpm / ≈16.000 rpm"
 price: "Preis auf Anfrage "
-order: 5
+order: 2
 ---
