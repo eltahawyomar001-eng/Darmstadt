@@ -5,7 +5,7 @@ companyName: NB Motorsport
 address: Bertha-von-Suttner-Straße 87
 city: 64846 Groß-Zimmern
 phone: +49 155 11718812
-email: info@nb-motorsport.de
+email: office@bamberger-racing.de
 openingHours: |-
   Mo–Fr: 9:00–18:00 Uhr
   Sa: 10:00–14:00 Uhr
