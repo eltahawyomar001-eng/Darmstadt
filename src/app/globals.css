@@ -693,8 +693,8 @@ img {
 
 .feature-icon svg,
 .feature-icon img {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
 }
 
 .feature-title {
@@ -1223,8 +1223,8 @@ img {
 
 .value-icon svg,
 .value-icon img {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
 }
 
 .value-title {
@@ -1738,8 +1738,8 @@ img {
 
 .service-icon svg,
 .service-icon img {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
 }
 
 .service-title {
@@ -2197,8 +2197,8 @@ img {
 
 .service-feature-icon {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2207,8 +2207,8 @@ img {
 
 .service-feature-icon svg,
 .service-feature-icon img {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
 }
 
 .service-feature-content h3 {
