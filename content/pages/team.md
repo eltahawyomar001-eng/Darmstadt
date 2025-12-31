@@ -2,7 +2,7 @@
 heroTitle: Unser Rennteam
 heroText: Wir sind mit unserem Kart-Rennteam im deutschen und internationalen
   Kartsport vertreten.
-aboutLabel: Professional
+aboutLabel: Professionell
 aboutTitle: Wer wir sind und was wir tun
 aboutText: NB Motorsport ist ein engagiertes und professionelles Kart-Rennteam
   mit Einsatz auf nationalem und internationalem Top-Niveau. Wir begleiten
