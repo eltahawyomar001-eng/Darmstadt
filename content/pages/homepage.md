@@ -14,7 +14,7 @@ features:
     iconImage: /uploads/iconmotor.png
   - title: Vermietung
     description: Flexible Lösungen für Fahrer ohne eigenes Equipment
-    iconImage: /uploads/wrench-icon.svg
+    iconImage: /uploads/iconvermietung.png
   - title: Rennbetreuung
     description: Professionelle Unterstützung an der Strecke
     iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
