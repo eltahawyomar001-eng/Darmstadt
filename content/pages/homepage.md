@@ -17,7 +17,7 @@ features:
     iconImage: /uploads/iconvermietung.png
   - title: Rennbetreuung
     description: Professionelle Unterstützung an der Strecke
-    iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
+    iconImage: /uploads/bertreungicon.png
 newsLabel: News
 newsTitle: Aus dem Rennbetrieb
 newsSubtitle: Aktuelle Berichte und Meldungen
