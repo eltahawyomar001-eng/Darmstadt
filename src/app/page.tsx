@@ -61,9 +61,6 @@ export default function HomePage() {
                         <img 
                           src={feature.iconImage} 
                           alt={feature.title}
-                          width={48}
-                          height={48}
-                          style={{ width: '48px', height: '48px' }}
                         />
                       </div>
                       <h3 className="feature-title">{feature.title}</h3>

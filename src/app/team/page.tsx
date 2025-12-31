@@ -62,9 +62,6 @@ export default function TeamPage() {
                     <img 
                       src={value.iconImage} 
                       alt={value.title}
-                      width={48}
-                      height={48}
-                      style={{ width: '48px', height: '48px' }}
                     />
                   </div>
                   <h3 className="value-title">{value.title}</h3>

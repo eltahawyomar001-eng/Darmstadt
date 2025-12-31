@@ -106,9 +106,6 @@ export default function MotorenServicePage() {
                           <img 
                             src={service.iconImage} 
                             alt={service.title}
-                            width={48}
-                            height={48}
-                            style={{ width: '48px', height: '48px' }}
                           />
                         </div>
                         <div className="service-feature-content">

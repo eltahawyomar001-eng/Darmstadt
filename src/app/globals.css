@@ -691,9 +691,10 @@ img {
   margin-bottom: var(--space-xs);
 }
 
-.feature-icon svg {
-  width: 32px;
-  height: 32px;
+.feature-icon svg,
+.feature-icon img {
+  width: 56px;
+  height: 56px;
 }
 
 .feature-title {
@@ -1220,6 +1221,12 @@ img {
   margin-bottom: var(--space-xs);
 }
 
+.value-icon svg,
+.value-icon img {
+  width: 56px;
+  height: 56px;
+}
+
 .value-title {
   font-size: 22px;
   font-weight: 600;
@@ -1729,6 +1736,12 @@ img {
   margin-bottom: var(--space-xs);
 }
 
+.service-icon svg,
+.service-icon img {
+  width: 56px;
+  height: 56px;
+}
+
 .service-title {
   font-size: 22px;
   font-weight: 600;
@@ -2184,12 +2197,18 @@ img {
 
 .service-feature-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary);
+}
+
+.service-feature-icon svg,
+.service-feature-icon img {
+  width: 56px;
+  height: 56px;
 }
 
 .service-feature-content h3 {
