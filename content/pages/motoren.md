@@ -9,13 +9,13 @@ servicesTitle: Was wir für dich tun
 services:
   - title: Wartung & Service
     description: Motorrevision und Instandsetzung
-    iconImage: /uploads/icons/wrench-icon.svg
+    iconImage: /uploads/bertreungicon.png
   - title: Motorenvermietung
     description: Vermietung unserer Rennmotoren – einsatzbereit und professionell betreut.
-    iconImage: /uploads/icons/gauge-icon.svg
+    iconImage: /uploads/iconvermietung.png
   - title: Motoren An- & Verkauf
     description: An- und Verkauf von Kartmotoren.
-    iconImage: /uploads/leeres-durchsichtiges-hintergrundbild_191095-80808.avif
+    iconImage: /uploads/anverkauf.png
 faqLabel: Häufige Fragen
 faqTitle: FAQ zu Motoren
 faqs:
