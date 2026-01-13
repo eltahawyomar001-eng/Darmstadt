@@ -1374,6 +1374,10 @@ img {
   color: white !important;
 }
 
+.text-yellow {
+  color: var(--yellow) !important;
+}
+
 /* ===== CHASSIS PAGE ===== */
 .chassis-grid {
   display: grid;

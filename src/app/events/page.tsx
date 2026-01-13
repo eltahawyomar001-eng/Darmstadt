@@ -60,8 +60,8 @@ export default function EventsPage() {
       <section className="section-cta-image">
         <div className="container">
           <div className="cta-content-center">
-            <h2 className="section-heading text-white">Interesse an Rennbetreuung?</h2>
-            <p className="section-text text-white">
+            <h2 className="section-heading text-yellow">Interesse an Rennbetreuung?</h2>
+            <p className="section-text text-yellow">
               Wir unterstützen Sie bei Rennen mit professioneller Betreuung und technischem Service.
             </p>
             <Link href="/kontakt" className="btn-white">
