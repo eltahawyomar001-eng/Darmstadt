@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nbmotorsport.de"),
+  metadataBase: new URL("https://www.nbmotorsport.de"),
   title: "NB Motorsport - Lenzokart Importeur Deutschland",
   description: "Offizieller Lenzokart Importeur für Deutschland. Ihr Partner für Kartsport auf höchstem Niveau - Chassis, Motoren, Service und mehr.",
   keywords: ["Kartsport", "Lenzokart", "Motorsport", "NB Motorsport", "Chassis", "Kart Racing"],
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NB Motorsport - Lenzokart Importeur Deutschland",
     description: "Offizieller Lenzokart Importeur für Deutschland. Ihr Partner für Kartsport auf höchstem Niveau.",
-    url: "https://nbmotorsport.de",
+    url: "https://www.nbmotorsport.de",
     siteName: "NB Motorsport",
     images: [
       {
-        url: "https://nbmotorsport.de/uploads/nb-logo.png",
+        url: "https://www.nbmotorsport.de/uploads/nb-logo.png",
         width: 800,
         height: 800,
         alt: "NB Motorsport Logo",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "NB Motorsport - Lenzokart Importeur Deutschland",
     description: "Offizieller Lenzokart Importeur für Deutschland. Ihr Partner für Kartsport auf höchstem Niveau.",
-    images: ["https://nbmotorsport.de/uploads/nb-logo.png"],
+    images: ["https://www.nbmotorsport.de/uploads/nb-logo.png"],
   },
 };
 

@@ -3,7 +3,7 @@ import { getAllNews, NewsArticle } from '@/lib/news'
 import { getAllEvents, Event } from '@/lib/events'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://nbmotorsport.de'
+  const baseUrl = 'https://www.nbmotorsport.de'
   
   // Static pages
   const staticPages = [

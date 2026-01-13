@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://nbmotorsport.de/sitemap.xml',
+    sitemap: 'https://www.nbmotorsport.de/sitemap.xml',
   }
 }
