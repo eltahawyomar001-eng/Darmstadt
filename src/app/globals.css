@@ -2035,23 +2035,26 @@ img {
   text-align: center;
 }
 
-.event-weekday {
+.event-date-block .event-weekday {
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   opacity: 0.8;
+  color: var(--yellow);
 }
 
-.event-day {
+.event-date-block .event-day {
   font-size: 32px;
   font-weight: 700;
   line-height: 1.1;
+  color: var(--yellow);
 }
 
-.event-month {
+.event-date-block .event-month {
   font-size: 13px;
   font-weight: 500;
+  color: var(--yellow);
 }
 
 .event-info {
